@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Context>
+	<Resource
+		name="jdbc/mysql"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username= "root"
+		password="1234"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		url="jdbc:mysql://localhost:3306/vegan?serverTimezone=Asia/Seoul"
+		maxActive="500"
+		maxIdle="30"	
+	/>
+</Context>
+
+
+
+
+
+
+
