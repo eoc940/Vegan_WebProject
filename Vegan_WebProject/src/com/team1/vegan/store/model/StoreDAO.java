@@ -13,7 +13,7 @@ public interface StoreDAO {
 	StoreVO getStoreDetail(int storeId) throws SQLException;
 	void addHitCount(int storeId) throws SQLException;
 	ArrayList<StoreImageVO> getBestNine() throws SQLException;
-	MapVO findMap(int storeId) throws SQLException;
-
+	MapVO findStoreMap(int storeId) throws SQLException;
+	StoreImageVO findStoreImage(int storeId) throws SQLException;
 	
 }
