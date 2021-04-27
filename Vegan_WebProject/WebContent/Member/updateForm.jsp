@@ -20,7 +20,7 @@ $(function () {
    function passCheck() {
 	//비밀번호가 일치하지 않으면 페이지 이동 안되도록...
 	//메세지 띄워주고
-	var f = document.registerForm;
+	var f = document.updateForm;
 	if(f.password.value != f.repassword.value){
 		alert("비밀번호가 일치하지 않습니다");
 		f.repassword.value="";
@@ -36,7 +36,7 @@ $(function () {
 <center>
 	
 		<h2>회원 정보 수정하기</h2>
-		<form action="update.do" method="post">
+		<form action="update.do" method="post" name="updateForm">
 			<table width="300" border="1">
 			<tr height="40">
 				<td width="120">아이디 :</td>
