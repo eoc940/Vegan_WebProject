@@ -6,6 +6,7 @@ import com.team1.vegan.servlet.controller.MemberController.LoginController;
 import com.team1.vegan.servlet.controller.MemberController.LogoutController;
 import com.team1.vegan.servlet.controller.MemberController.RegisterController;
 import com.team1.vegan.servlet.controller.MemberController.UpdateController;
+import com.team1.vegan.servlet.controller.StoreController.BestNineController;
 
 //ControllerFactory에서 이름을 바꿈
 public class HandlerMapping {
@@ -30,8 +31,9 @@ public class HandlerMapping {
 		}if(command.equals("Member/logout.do")) {
 			controller = new LogoutController();
 		}if(command.equals("Member/idCheck.do")) {
-
 			controller = new IdCheckController();
+		}if(command.equals("bestNine.do")) {
+			controller = new BestNineController();
 		}
 		return controller;
 	}

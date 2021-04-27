@@ -41,9 +41,29 @@
 		document.getElementById("menu_img").innerHTML="<img src="+img_url+" width=300px>  "+name;
 		
 	}
+	var xhr;
+	function showBestNine(){
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=callback;
+		xhr.open("post","bestNine.do",true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+		xhr.send();
+	}
 	
+	function callback(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				var list=JSON.parse(xhr.responseText);
+				var resultView=document.getElementById("bestNine");
+				if(list!=null)
+				for(var i=0;i<9;i++)
+				{resultView.innerHTML+=list[i].name+" <img src="+"store_img/"+list[i].imageUrl+" width=300px> <br/> ";}		
+			}
+		}
+	}
 	window.onload=function(){
 		showMenu();
+		showBestNine();
 	}
 	
 </script>
@@ -59,10 +79,17 @@
 
 
 <div class="menu_recommend">
-	Today's MENU is ....
+<h2>Today's MENU is ....</h2>
 	<div id="menu_img"></div>
 	<input type="button" value="reset" onclick="showMenu()"><br><br>
 </div>
+
+<div id="bestNine">
+<h2>BEST 10 Restaurants</h2>
+
+</div>
+
+
 
 </body>
 </html>
