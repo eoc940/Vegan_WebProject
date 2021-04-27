@@ -150,6 +150,7 @@ public class BoardDAOImpl implements BoardDAO{
 		}
 	}
 
+	
 	@Override
 	public ArrayList<BoardVO> findByTitle(String title) throws SQLException {
 		Connection conn = null;
