@@ -1136,6 +1136,7 @@ section {
 
 <body>
 
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center">
@@ -1146,10 +1147,15 @@ section {
           <li><a href="#about">About Us</a></li>
           <li><a href="#menu">Board</a></li>
           <li><a href="#specials">Restautants</a></li>
-          <li><a href="#events">My Page</a></li>
+          <li><a href="#events">M.y Page</a></li>
  
           <li class="book-a-table text-center" ><a href="Member/loginForm.html">login</a></li>
         </ul>
+
+
+<!-- <a href = "StoreList.do">음식점</a>
+<a href = "Board/boardList.do">게시판</a> -->
+
 
 
       </nav><!-- .nav-menu -->
@@ -1165,6 +1171,17 @@ section {
     
     </div> 
   </header><!-- End Header -->
+
+<!-- <div class="menu_recommend">
+<h2>Today's MENU is ....</h2>
+	<div id="menu_img"></div>
+	<input type="button" value="reset" onclick="showMenu()"><br><br>
+</div>
+<a href="storeDetail.do?storeId=25">식당보기</a>
+<div id="bestNine">
+<h2>BEST 10 Restaurants</h2>
+>>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject -->
+
 
   <!-- ======= 슬라이드 부분 Hero Section ======= -->
   <section id="hero">
@@ -1346,6 +1363,10 @@ section {
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+
+
+
+</div>
 
 
 </body>

@@ -1,7 +1,13 @@
 package com.team1.vegan.servlet.controller;
 
+import com.team1.vegan.servlet.controller.BoardController.BoardDeleteController;
 import com.team1.vegan.servlet.controller.BoardController.BoardDetailPageController;
 import com.team1.vegan.servlet.controller.BoardController.BoardListController;
+import com.team1.vegan.servlet.controller.BoardController.CommentDeleteController;
+import com.team1.vegan.servlet.controller.BoardController.CommentWriteController;
+import com.team1.vegan.servlet.controller.BoardController.BoardRegisterController;
+import com.team1.vegan.servlet.controller.BoardController.BoardUpdateController;
+
 import com.team1.vegan.servlet.controller.MemberController.DeleteController;
 import com.team1.vegan.servlet.controller.MemberController.IdCheckController;
 import com.team1.vegan.servlet.controller.MemberController.LoginController;
@@ -9,6 +15,12 @@ import com.team1.vegan.servlet.controller.MemberController.LogoutController;
 import com.team1.vegan.servlet.controller.MemberController.RegisterController;
 import com.team1.vegan.servlet.controller.MemberController.UpdateController;
 import com.team1.vegan.servlet.controller.StoreController.BestNineController;
+
+import com.team1.vegan.servlet.controller.StoreController.FindByStoreAreaController;
+import com.team1.vegan.servlet.controller.StoreController.FindByStoreNameController;
+import com.team1.vegan.servlet.controller.StoreController.StoreListController;
+import com.team1.vegan.servlet.controller.StoreController.StoreDetailController;
+
 
 //ControllerFactory에서 이름을 바꿈
 public class HandlerMapping {
@@ -34,13 +46,38 @@ public class HandlerMapping {
 			controller = new LogoutController();
 		}if(command.equals("Member/idCheck.do")) {
 			controller = new IdCheckController();
-		}if(command.equals("boardList.do")) {
+		}if(command.equals("Board/boardList.do")) {
 			controller = new BoardListController();
-		}if(command.equals("boardDetailPage.do")) {
+		}if(command.equals("Board/boardDetailPage.do")) {
 			controller = new BoardDetailPageController();
+
+		}if(command.equals("writeComment.do")) {
+			controller = new CommentWriteController();
+		}if(command.equals("deleteComment.do")) {
+			controller = new CommentDeleteController();
+
+		}if(command.equals("Board/boardRegister.do")) {
+			controller = new BoardRegisterController();
+		}if(command.equals("Board/boardUpdate.do")) {
+			controller = new BoardUpdateController();
+		}if(command.equals("Board/boardDelete.do")) {
+			controller = new BoardDeleteController();
+
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
+
+		}if(command.equals("StoreList.do")) {
+			controller = new StoreListController();
+		}if(command.equals("findByStoreName.do")) {
+			controller = new FindByStoreNameController();
+		}if(command.equals("findByStoreArea.do")) {
+			controller = new FindByStoreAreaController();
+
+		}if(command.equals("storeDetail.do")) {
+			controller = new StoreDetailController();
+
 		}
+		
 		return controller;
 	}
 }

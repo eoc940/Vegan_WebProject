@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -136,7 +137,8 @@ h1, h2, h3, h4, h5,
 	  center: center;
 	   font-weight: 400;
 	}
-	
+
+
 	a:hover{
 	 color:#D9B0A7
 	
