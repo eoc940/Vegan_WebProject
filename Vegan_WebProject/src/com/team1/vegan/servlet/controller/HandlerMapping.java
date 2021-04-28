@@ -12,6 +12,7 @@ import com.team1.vegan.servlet.controller.MemberController.LogoutController;
 import com.team1.vegan.servlet.controller.MemberController.RegisterController;
 import com.team1.vegan.servlet.controller.MemberController.UpdateController;
 import com.team1.vegan.servlet.controller.StoreController.BestNineController;
+import com.team1.vegan.servlet.controller.StoreController.StoreDetailController;
 
 //ControllerFactory에서 이름을 바꿈
 public class HandlerMapping {
@@ -49,6 +50,8 @@ public class HandlerMapping {
 			controller = new BoardDeleteController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
+		}if(command.equals("storeDetail.do")) {
+			controller = new StoreDetailController();
 		}
 		return controller;
 	}
