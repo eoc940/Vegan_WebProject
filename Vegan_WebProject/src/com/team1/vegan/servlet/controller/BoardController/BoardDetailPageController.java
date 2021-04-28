@@ -20,6 +20,7 @@ public class BoardDetailPageController implements Controller {
 		String path = "boardDetailPage.jsp";
 		try {
 			board = BoardDAOImpl.getInstance().getPost(boardId);
+			BoardDAOImpl.getInstance().addViewCount(boardId);
 		} catch (SQLException e) {
 			
 		}

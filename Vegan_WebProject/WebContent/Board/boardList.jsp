@@ -11,7 +11,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th>No.</th> <th>게시판 제목</th> <th>작성자/작성일시/조회수/댓글수</th>
+				<th>No.</th> <th>게시판 제목</th> <th>작성자/작성일시/조회 수/댓글 수</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,11 +25,24 @@
 					<a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a>
 					</td>
 					<td>
-					${board.memberId}
+					${board.memberId}/
+					</td>
+					<td>
+					${board.date}/
+					</td>
+					<td>
+					${board.viewCount}/
+					</td>
+					<td>
+					${board.viewCount}
 					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<div>
+		<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
+	</div>
 </body>
 </html>

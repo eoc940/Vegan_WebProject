@@ -14,5 +14,9 @@
 <div>
 	내용 : ${board.content}
 </div>
+
+<div>
+	<input type="button" value="수정" onClick="location.href='updateForm.jsp'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do'">
+</div>
 </body>
 </html>
