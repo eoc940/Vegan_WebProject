@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
- 	alert("로그아웃!!"); 	
+ 	alert("Logout!!"); 	
  	location.href="../index.jsp";
 </script>
 </head>
