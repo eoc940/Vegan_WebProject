@@ -16,7 +16,7 @@
 </div>
 
 <div>
-	<input type="button" value="수정" onClick="location.href='updateForm.jsp'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do'">
+	<input type="button" value="수정" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do?boardId=${board.boardId}'">
 </div>
 </body>
 </html>

@@ -11,20 +11,18 @@ import com.team1.vegan.board.model.BoardVO;
 import com.team1.vegan.servlet.controller.Controller;
 import com.team1.vegan.servlet.controller.ModelAndView;
 
-public class BoardDeleteController implements Controller{
+public class FindByTitleController implements Controller{
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		int boardId = Integer.parseInt(request.getParameter("boardId"));
-		
+		String title = request.getParameter("title");
 		String path = "boardList.jsp";
 		
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
 		try {
-			BoardDAOImpl.getInstance().deletePost(boardId);
-			list = BoardDAOImpl.getInstance().getAllPost();
+			list = BoardDAOImpl.getInstance().findByTitle(title);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 			
