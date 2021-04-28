@@ -232,7 +232,10 @@ public class StoreDAOImpl implements StoreDAO {
 		
 		try {	
 			conn = getConnection();
-			String query = "select s.name,i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+
+
+			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			rs = ps.executeQuery();

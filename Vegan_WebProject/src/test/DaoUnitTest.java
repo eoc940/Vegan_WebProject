@@ -39,51 +39,6 @@ public class DaoUnitTest{
 		closeAll(ps, conn);		
 	}
 	
-	public ArrayList<StoreVO> getBestNine() throws SQLException {
-		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
-		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		
-		try {
-			conn = getConnection();
-			String query = "select store_id,name,address,hit,description,url,area_id,source from store order by hit desc limit 9";
-			ps = conn.prepareStatement(query);
-			rs = ps.executeQuery();
-			while(rs.next()) {
-				list.add(new StoreVO(
-									rs.getInt(1),
-									rs.getString(2),
-									rs.getString(3),
-									rs.getInt(4),
-									rs.getString(5),
-									rs.getString(6),
-									rs.getInt(7),
-									rs.getString(8)
-						));
-			}
-		}finally {
-			closeAll(rs, ps, conn);
-		}
-		return list;
-	}
-	
-	public void addHitCount(int storeId) throws SQLException {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		try {
-			conn = getConnection();
-			String query = "UPDATE store SET hit=hit+1 WHERE store_id=?";
-			ps = conn.prepareStatement(query);
-			ps.setInt(1, storeId);
-			System.out.println(ps.executeUpdate()+"row update OK!!");
-		}finally {
-			closeAll(ps, conn);
-		}
-		
-	}
-
-
 	public ArrayList<StoreVO> getAllStore() throws SQLException {
 		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
 		Connection conn = null;
@@ -107,7 +62,7 @@ public class DaoUnitTest{
 		}
 		return list;
 	}
-	
+
 	public ArrayList<StoreVO> findByArea(int areaId) throws SQLException {
 		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
 		Connection conn = null;
@@ -135,7 +90,6 @@ public class DaoUnitTest{
 		return list;
 	}
 
-	
 	public ArrayList<StoreVO> findByName(String name) throws SQLException {
 		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
 		Connection conn = null;
@@ -162,7 +116,7 @@ public class DaoUnitTest{
 		}
 		return list;
 	}
-	
+
 	public StoreVO getStoreDetail(int storeId) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -188,7 +142,42 @@ public class DaoUnitTest{
 
 		return store;
 	}
-	
+
+	public void addHitCount(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = getConnection();
+			String query = "UPDATE store SET hit=hit+1 WHERE store_id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			System.out.println(ps.executeUpdate() + "row update OK!!");
+		} finally {
+			closeAll(ps, conn);
+		}
+
+	}
+
+	public ArrayList<StoreImageVO> getBestNine() throws SQLException {
+		ArrayList<StoreImageVO> list = new ArrayList<StoreImageVO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = getConnection();	
+			String query = "select s.store_id ,s.name, sm.image_url from Store s, store_image sm "
+					+ "where s.store_id = sm.store_id and sm.image_url like '%-1%'  order by hit desc limit 9";
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new StoreImageVO(rs.getString("sm.image_url"),rs.getInt("s.store_id"),rs.getString("s.name")));
+			}
+		} finally {
+			closeAll(rs, ps, conn);
+		}
+		return list;
+	}
+
 	public MapVO findStoreMap(int storeId) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -219,15 +208,18 @@ public class DaoUnitTest{
 		
 		try {	
 			conn = getConnection();
-			String query = "select s.name,i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+			String query = "select i.image_url, s.store_id, s.name from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			rs = ps.executeQuery();
-			if(rs.next()) {
+			
+			if(rs.next()) {//store당 사진이 세장이지만 첫번째 사진만 가져옴
+				
 				image = new StoreImageVO(
 						rs.getString("i.image_url"),
-						storeId,
-						rs.getString("s.name"));
+						rs.getInt("s.store_id"),
+						rs.getString("s.name")
+						);
 			}
 			//String imageUrl, int storeId, String name
 		}finally {
@@ -236,46 +228,48 @@ public class DaoUnitTest{
 		
 		return image;
 	}
-	
-	
+
+
 	public static void main(String[] args)throws Exception {
 		DaoUnitTest test = new DaoUnitTest();
-		/*ArrayList<StoreVO> list = new ArrayList<StoreVO>();
-		list=test.getBestNine();
-		for(StoreVO s: list) {
-			System.out.println(s);
-		}*/
-		/*System.out.println("=====================");
-		ArrayList<StoreVO> list1 = new ArrayList<StoreVO>();
-		list1 = test.getAllStore();
-		for(StoreVO s1: list1) {
-			System.out.println(s1);
-		}
-		/*System.out.println("=====================");
-		ArrayList<StoreVO> list2 = new ArrayList<StoreVO>();
-		list2 = test.findByArea(310);
-		for(StoreVO s2: list2) {
-			System.out.println(s2);
-			}
-		}*/
-		/*System.out.println("=====================");
 		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
+		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
+		StoreVO svo = new StoreVO();
+		MapVO mvo = new MapVO();
+		StoreImageVO ivo = new StoreImageVO();
 		list=test.findByName("플랜");
 		for(StoreVO s: list) {
 			System.out.println(s);
 		}
-		/*System.out.println("=====================");
-		StoreVO vo = test.getStoreDetail(42);
-		System.out.println(vo);*/
-		
-		/*MapVO vo = test.findStoreMap(42);
-		System.out.println(vo);*/
-		
-		/*System.out.println("=====================");
-		StoreImageVO vo = test.findStoreImage(42);
-		System.out.println(vo);*/
+		System.out.println("=====================");
+		list = test.getAllStore();
+		for(StoreVO s: list) {
+			System.out.println(s);
+		}
+		System.out.println("=====================");
+		svo = test.getStoreDetail(25);
+		System.out.println(svo);
+		System.out.println("=====================");
+		test.addHitCount(25);
+		System.out.println(svo);
+		System.out.println("=====================");
+		imageList = test.getBestNine();
+		for(StoreImageVO s: imageList) {
+			System.out.println(s);
+		}
+		System.out.println("=====================");
+		mvo = test.findStoreMap(25);
+		System.out.println(mvo);
+		System.out.println("=====================");
+		ivo = test.findStoreImage(31);
+		System.out.println(ivo);
 		
 		System.out.println("=====================");
-		test.addHitCount(42);
-	}
+		
+	
+	}	
 }
+
+
+
+

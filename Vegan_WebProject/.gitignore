@@ -1,12 +1,5 @@
 /build/
 Context.xml
-*.dll
-*.exe
-*.o
-*.so
-*.com
-*.class
-*.log
-logs/
+.classpath/
 .settings/
 

@@ -4,6 +4,7 @@ public class StoreImageVO {
 	private String imageUrl;
 	private int storeId;
 	private String name;
+	
 	public StoreImageVO(String imageUrl, int storeId, String name) {
 		super();
 		this.imageUrl = imageUrl;
