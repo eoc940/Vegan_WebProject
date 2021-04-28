@@ -77,7 +77,8 @@
 <a href ="Member/deleteForm.jsp">회원삭제하기</a>
 <a href ="Member/logout.do">로그아웃하기</a>
 
-
+<!-- dskds -->
+<!-- sad.. -->
 <a href = "StoreList.do">음식점</a>
 
 <a href = "Board/boardList.do">게시판</a>
