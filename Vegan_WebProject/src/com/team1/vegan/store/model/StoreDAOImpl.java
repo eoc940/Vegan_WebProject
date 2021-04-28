@@ -231,14 +231,14 @@ public class StoreDAOImpl implements StoreDAO {
 		
 		try {	
 			conn = getConnection();
-			String query = "select s.name i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				image = new StoreImageVO(
 						rs.getString("i.image_url"),
-						rs.getInt(storeId),
+						rs.getInt("i.store_id"),
 						rs.getString("s.name"));
 			}
 			//String imageUrl, int storeId, String name

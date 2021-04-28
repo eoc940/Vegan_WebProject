@@ -84,9 +84,10 @@
 	<div id="menu_img"></div>
 	<input type="button" value="reset" onclick="showMenu()"><br><br>
 </div>
-
+<a href="storeDetail.do?storeId=25">식당보기</a>
 <div id="bestNine">
 <h2>BEST 10 Restaurants</h2>
+
 
 </div>
 
