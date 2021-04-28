@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login Success</title>
+<script type="text/javascript">
+ 	alert("Login Success!"); 	
+ 	location.href="../index.jsp";
+</script>
 </head>
 <body>
-로그인성공
-<a href="../index.jsp">메인</a>
+
 </body>
 </html>
