@@ -7,13 +7,11 @@ import com.team1.vegan.servlet.controller.BoardController.CommentDeleteControlle
 import com.team1.vegan.servlet.controller.BoardController.CommentWriteController;
 import com.team1.vegan.servlet.controller.BoardController.BoardRegisterController;
 import com.team1.vegan.servlet.controller.BoardController.BoardUpdateController;
-<<<<<<< HEAD
+
 import com.team1.vegan.servlet.controller.BoardController.FindByContentController;
 import com.team1.vegan.servlet.controller.BoardController.FindByMemberIdController;
 import com.team1.vegan.servlet.controller.BoardController.FindByTitleController;
-=======
 
->>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 import com.team1.vegan.servlet.controller.MemberController.DeleteController;
 import com.team1.vegan.servlet.controller.MemberController.IdCheckController;
 import com.team1.vegan.servlet.controller.MemberController.LoginController;
