@@ -1,3 +1,4 @@
+
 package test;
 /*
  * 디비서버 정보의 상수값으로 구성된 인터페이스
@@ -13,3 +14,4 @@ public interface ServerInfo {
 	String PASS = "1234";
 	
 }
+

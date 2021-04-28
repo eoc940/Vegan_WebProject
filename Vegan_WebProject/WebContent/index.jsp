@@ -76,6 +76,7 @@
 <a href ="Member/updateForm.jsp">회원수정하기</a>
 <a href ="Member/deleteForm.jsp">회원삭제하기</a>
 <a href ="Member/logout.do">로그아웃하기</a>
+<a href = "boardList.do">게시판</a>
 
 
 <div class="menu_recommend">
@@ -88,8 +89,6 @@
 <h2>BEST 10 Restaurants</h2>
 
 </div>
-
-
 
 </body>
 </html>
