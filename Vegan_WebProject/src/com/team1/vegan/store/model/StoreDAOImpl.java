@@ -117,14 +117,15 @@ public class StoreDAOImpl implements StoreDAO {
 
 		try {
 			conn = getConnection();
-			String query = "select * from Store where name = ?";
+			String query = "select * from Store where name like ?";
 			System.out.println("preparedstatement...findByName()...");
 			ps = conn.prepareStatement(query);
+			name = "%" + name + "%";
 			ps.setString(1, name);
 			rs = ps.executeQuery();
 			
 			while (rs.next()) {
-				list.add(new StoreVO(rs.getInt("store_id"), name, rs.getString("address"), rs.getInt("hit"),
+				list.add(new StoreVO(rs.getInt("store_id"), rs.getString("name"), rs.getString("address"), rs.getInt("hit"),
 						rs.getString("description"), rs.getString("url"), rs.getInt("area_id"),
 						rs.getString("source")));
 			}
@@ -231,7 +232,10 @@ public class StoreDAOImpl implements StoreDAO {
 		
 		try {	
 			conn = getConnection();
+
+
 			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			rs = ps.executeQuery();
