@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script type="text/javascript">
+ 	alert("Register Success!"); 	
+ 	location.href="../index.jsp";
+</script>
 </head>
 <body>
-<h4>${param.name} 님이 회원으로 등록되셨습니다.</h4>
-<hr>
-<a href="loginForm.jsp">로그인하기</a>
+
 </body>
 </html>
