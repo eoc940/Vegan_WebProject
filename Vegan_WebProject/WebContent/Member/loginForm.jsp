@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	var id = memberId.val();
+	localStorage.setItem();
+</script>
 </head>
 <body>
 <center>
@@ -14,7 +18,7 @@
 			<table width="300" border="1">
 			<tr height="40">
 				<td width="120">아이디</td>
-				<td width="180"><input type="text" name="memberId"></td>
+				<td width="180"><input type="text" name="memberId" id="memberId"></td>
 			</tr>
 			
 			<tr height="40">

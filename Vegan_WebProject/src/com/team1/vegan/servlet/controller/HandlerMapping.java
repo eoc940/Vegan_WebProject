@@ -1,7 +1,10 @@
 package com.team1.vegan.servlet.controller;
 
+import com.team1.vegan.servlet.controller.BoardController.BoardDeleteController;
 import com.team1.vegan.servlet.controller.BoardController.BoardDetailPageController;
 import com.team1.vegan.servlet.controller.BoardController.BoardListController;
+import com.team1.vegan.servlet.controller.BoardController.BoardRegisterController;
+import com.team1.vegan.servlet.controller.BoardController.BoardUpdateController;
 import com.team1.vegan.servlet.controller.MemberController.DeleteController;
 import com.team1.vegan.servlet.controller.MemberController.IdCheckController;
 import com.team1.vegan.servlet.controller.MemberController.LoginController;
@@ -34,10 +37,16 @@ public class HandlerMapping {
 			controller = new LogoutController();
 		}if(command.equals("Member/idCheck.do")) {
 			controller = new IdCheckController();
-		}if(command.equals("boardList.do")) {
+		}if(command.equals("Board/boardList.do")) {
 			controller = new BoardListController();
-		}if(command.equals("boardDetailPage.do")) {
+		}if(command.equals("Board/boardDetailPage.do")) {
 			controller = new BoardDetailPageController();
+		}if(command.equals("Board/boardRegister.do")) {
+			controller = new BoardRegisterController();
+		}if(command.equals("Board/boardUpdate.do")) {
+			controller = new BoardUpdateController();
+		}if(command.equals("Board/boardDelete.do")) {
+			controller = new BoardDeleteController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
 		}
