@@ -12,13 +12,12 @@ import com.team1.vegan.servlet.controller.MemberController.LogoutController;
 import com.team1.vegan.servlet.controller.MemberController.RegisterController;
 import com.team1.vegan.servlet.controller.MemberController.UpdateController;
 import com.team1.vegan.servlet.controller.StoreController.BestNineController;
-<<<<<<< HEAD
+
 import com.team1.vegan.servlet.controller.StoreController.FindByStoreAreaController;
 import com.team1.vegan.servlet.controller.StoreController.FindByStoreNameController;
 import com.team1.vegan.servlet.controller.StoreController.StoreListController;
-=======
 import com.team1.vegan.servlet.controller.StoreController.StoreDetailController;
->>>>>>> upstream/main
+
 
 //ControllerFactory에서 이름을 바꿈
 public class HandlerMapping {
