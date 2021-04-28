@@ -32,6 +32,8 @@ public class BoardDetailPageController implements Controller {
 		try {
 			board = BoardDAOImpl.getInstance().getPost(boardId);
 			commentList=CommentDAOImpl.getInstance().getAllComment(boardId);
+			BoardDAOImpl.getInstance().addViewCount(boardId);
+
 		} catch (SQLException e) {
 			
 		}

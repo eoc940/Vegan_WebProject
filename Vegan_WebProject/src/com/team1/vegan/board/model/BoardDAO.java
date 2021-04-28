@@ -18,6 +18,7 @@ public interface BoardDAO {
 	void updatePost(BoardVO vo) throws SQLException ;
 	void deletePost(int boardId) throws SQLException ;
 	void addViewCount(int boardId) throws SQLException ;
+	int maxId() throws SQLException;
 	ArrayList<BoardVO> findByTitle(String title) throws SQLException ;
 	ArrayList<BoardVO> findByContent(String content) throws SQLException ;
 	ArrayList<BoardVO> findByWriter(String writer) throws SQLException ;

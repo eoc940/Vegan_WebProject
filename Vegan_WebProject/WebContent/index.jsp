@@ -76,7 +76,13 @@
 <a href ="Member/updateForm.jsp">회원수정하기</a>
 <a href ="Member/deleteForm.jsp">회원삭제하기</a>
 <a href ="Member/logout.do">로그아웃하기</a>
-<a href = "boardList.do">게시판</a>
+
+<!-- dskds -->
+<!-- sad.. -->
+<a href = "StoreList.do">음식점</a>
+
+<a href = "Board/boardList.do">게시판</a>
+
 
 
 <div class="menu_recommend">
@@ -84,9 +90,10 @@
 	<div id="menu_img"></div>
 	<input type="button" value="reset" onclick="showMenu()"><br><br>
 </div>
-
+<a href="storeDetail.do?storeId=25">식당보기</a>
 <div id="bestNine">
 <h2>BEST 10 Restaurants</h2>
+
 
 </div>
 

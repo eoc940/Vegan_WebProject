@@ -273,5 +273,28 @@ public class BoardDAOImpl implements BoardDAO{
 		}
 		return list;
 	}
+	@Override
+	public int maxId() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		int num = 0;
+		try {
+			conn = getConnection();
+			String query = "SELECT MAX(board_id) FROM board";
+			ps = conn.prepareStatement(query);
+			
+			System.out.println("PreparedStatement...maxId()..");
+			rs = ps.executeQuery();
+			
+			if(!rs.next()) {
+				num = rs.getInt(1);
+			}
+			
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return num;
+	}
 
 }
