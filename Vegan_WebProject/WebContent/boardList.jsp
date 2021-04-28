@@ -11,7 +11,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th>No.</th> <th>게시판 제목</th> <th>작성자/작성일시/조회수/댓글수</th>
+				<th>No.</th> <th>게시판 제목</th> <th>작성자</th><th>작성일시</th><th>조회수</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +27,13 @@
 					<td>
 					${board.memberId}
 					</td>
+					<td>
+					${board.date}
+					</td>
+					<td>
+					${board.viewCount}
+					</td>
+					
 				</tr>
 			</c:forEach>
 		</tbody>
