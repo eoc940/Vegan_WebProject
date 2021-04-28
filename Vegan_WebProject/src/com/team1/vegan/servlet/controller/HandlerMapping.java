@@ -1,5 +1,7 @@
 package com.team1.vegan.servlet.controller;
 
+import com.team1.vegan.servlet.controller.BoardController.BoardDetailPageController;
+import com.team1.vegan.servlet.controller.BoardController.BoardListController;
 import com.team1.vegan.servlet.controller.MemberController.DeleteController;
 import com.team1.vegan.servlet.controller.MemberController.IdCheckController;
 import com.team1.vegan.servlet.controller.MemberController.LoginController;
@@ -32,6 +34,10 @@ public class HandlerMapping {
 			controller = new LogoutController();
 		}if(command.equals("Member/idCheck.do")) {
 			controller = new IdCheckController();
+		}if(command.equals("boardList.do")) {
+			controller = new BoardListController();
+		}if(command.equals("boardDetailPage.do")) {
+			controller = new BoardDetailPageController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
 		}
