@@ -782,6 +782,7 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
+						${svo}
 							<header>
 							<h2>식당이름</h2>
 							<!-- <h2>${storeVO.name}</h2> -->	

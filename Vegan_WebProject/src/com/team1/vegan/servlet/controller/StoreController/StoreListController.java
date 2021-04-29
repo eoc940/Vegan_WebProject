@@ -16,7 +16,7 @@ public class StoreListController implements Controller{
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
-		String path = "storeList.jsp";
+		String path = "storeMain.jsp";
 		
 		try {
 			list = StoreDAOImpl.getInstance().getAllStore();
