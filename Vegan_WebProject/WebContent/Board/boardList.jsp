@@ -11,7 +11,8 @@
 	<table>
 		<thead>
 			<tr>
-				<th>No.</th> <th>게시판 제목</th> <th>작성자/작성일시/조회 수/댓글 수</th>
+				<th>No.</th> <th>게시판 제목</th><th>No.</th> <th>게시판 제목</th> <th>작성자</th><th>작성일시</th><th>조회수</th>
+
 			</tr>
 		</thead>
 		<tbody>
