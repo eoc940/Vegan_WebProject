@@ -15,5 +15,6 @@ public interface StoreDAO {
 	ArrayList<StoreImageVO> getBestNine() throws SQLException;
 	MapVO findStoreMap(int storeId) throws SQLException;
 	StoreImageVO findStoreImage(int storeId) throws SQLException;
+	AreaVO findStoreArea(int storeId) throws SQLException;
 	// asdf
 }
