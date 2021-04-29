@@ -54,9 +54,9 @@ public class HandlerMapping {
 			controller = new BoardListController();
 		}if(command.equals("Board/boardDetailPage.do")) {
 			controller = new BoardDetailPageController();
-		}if(command.equals("writeComment.do")) {
+		}if(command.equals("Board/writeComment.do")) {
 			controller = new CommentWriteController();
-		}if(command.equals("deleteComment.do")) {
+		}if(command.equals("Board/deleteComment.do")) {
 			controller = new CommentDeleteController();
 		}if(command.equals("Board/boardRegister.do")) {
 			controller = new BoardRegisterController();
