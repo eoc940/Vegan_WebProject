@@ -239,15 +239,14 @@
 
 })
 
+  // findbyname
+  $(document).ready(function() {
+	$('#search').keyup(function() {
+		var k = $(this).val();
+	})
+})
 </script>
 
-
-
-
-
-
-
- 
 <style>
 
 /* vendor css */
@@ -1123,7 +1122,7 @@ a:focus{
             <h3>Restaurants for VEGAN</h3>
             	<div class="container-1">
             		<span class="icon"><i class="fa fa-search"></i></span>
-      				<input type="search" id="search" placeholder="Search..." />
+      				<input type="text" id="search" placeholder="Search..." />
         		</div>
         </div>
         
@@ -1141,44 +1140,33 @@ a:focus{
 		         
 		       </div>
 		     
-		     
-
-		          </div>
-		     
-		       
-
-        
-        
-        
-
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 	        <c:forEach items="${storeShowList}" var="store">
 	          <div class="item ${store.area} ">
-	            <a href="storeDetail.jsp" class="item-wrap fancybox">
+	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do" class="item-wrap fancybox">
 	              <div class="work-info">
-
-	    			 <h3>${store.area}</h3>
+					<h3>${store.area}</h3>
 	                <span>${store.area} &nbsp; ${store.name}</span>
-
-	              </div>
-
-			</c:forEach>
-
-	              <img class="img-fluid" src="../store_img/${store.imageUrl}">
-
-	            </a>
 	          </div>
+	              <img class="img-fluid" src="../store_img/${store.imageUrl}">
+				</a>
+	      </div>
+	      </c:forEach>
 
-	           <%-- <div class="item 300 ">
-	        </c:forEach>
-	        
-	           <div class="item 300 ">
-	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
+	        <div class="item 300 ">
+	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do?storenumber=${store.storeId}" class="item-wrap fancybox">
 	              <div class="work-info">
 	                <h3>종로구</h3>
 	                <span>종로구 식당이름1</span>
 	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
+	              <img class ="img-fluid" src="../bg_img/bgimg (10).jpg">
+	            </a>
+	         </div>
+	         
+	         </div>
+	         </div>
+	        </section>
+	              <!-- <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
 	           <div class="item 300 ">
