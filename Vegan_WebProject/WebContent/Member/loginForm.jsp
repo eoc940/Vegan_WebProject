@@ -100,7 +100,8 @@ h1, h2, h3, h4, h5,
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s; 
-  center: center;}
+  center: center;
+  outline:none;}
   
   input::placeholder {
   color: rgba(255, 255, 255, 0.7);
