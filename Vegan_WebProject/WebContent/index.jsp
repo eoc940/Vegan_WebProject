@@ -1619,7 +1619,7 @@ section {
         </ul>
 
 
-		<!-- <a href = "StoreList.do">음식점</a>
+		<!--  <a href = "StoreList.do">음식점</a>
 		<a href = "Board/boardList.do">게시판</a> -->
 
 

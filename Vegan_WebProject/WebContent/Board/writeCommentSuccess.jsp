@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+ 	alert("댓글작성 완료"); 	
+ 	location.href="boardDetailPage.do?boardId=${boardId}";
+</script>
 </head>
 <body>
-댓글 작성 완료
-<a href="boardDetailPage.do?boardId=${boardId}">게시판으로</a>
 </body>
 </html>
