@@ -27,7 +27,7 @@
 
 
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& javascript 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
-
+<!--  ddd -->
 <script type="text/javascript">
 /**
 * Template Name: Delicious - v2.2.1
