@@ -15,11 +15,12 @@
 		<h2>${board.title}</h2>
 		작성자 : ${board.memberId} 작성일시 : ${board.date}
 	</div>
-
 	<div>내용 : ${board.content}</div>
-	<div>
-	<input type="button" value="수정" onClick="location.href='updateForm.jsp'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do'">
-	</div>
+	
+<div>
+	<input type="button" value="수정" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do?boardId=${board.boardId}'">
+</div>
+
 	<div>
 		<!-- 댓글리스트 출력테이블 -->
 		<table bgcolor='lightgray' >
@@ -33,7 +34,7 @@
 						<td>내 용: ${comment.content}</td>
 						<c:if test="${comment.memberId eq vo.memberId}">
 							<td>
-								<input type="button" value="delete" onClick="location.href='deleteComment.do?commentId=${comment.commentId}'">
+								<input type="button" value="delete" onClick="location.href='deleteComment.do?boardId=${board.boardId}&&commentId=${comment.commentId}'">
 							</td>
 						</c:if>
 					</tr>
@@ -56,5 +57,10 @@
 			</table>
 		</form>
 	</div>
+
+	<div>
+		<input type="button" value="목록" onClick="location.href='boardList.do'">
+	</div>
+
 </body>
 </html>

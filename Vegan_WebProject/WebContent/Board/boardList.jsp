@@ -11,12 +11,10 @@
 	<table>
 		<thead>
 			<tr>
-				<th>No.</th> <th>게시판 제목</th><th>No.</th> <th>게시판 제목</th> <th>작성자</th><th>작성일시</th><th>조회수</th>
-
+				<th>No.</th> <th>게시판 제목</th> <th>작성자</th><th>작성일시</th><th>조회수</th>
 			</tr>
 		</thead>
 		<tbody>
-			
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<td>
@@ -44,6 +42,21 @@
 	
 	<div>
 		<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
+	</div>
+	
+	<div>
+		<form action = "findByTitle.do">
+			제목으로 검색<input type="text" name="title">
+			<input type="submit" value="검색">
+		</form>
+		<form action = "findByContent.do">
+			내용으로 검색<input type="text" name="content">
+			<input type="submit" value="검색">
+		</form>
+		<form action = "findByMemberId.do">
+			작성자로 검색<input type="text" name="memberId">
+			<input type="submit" value="검색">
+		</form>
 	</div>
 </body>
 </html>
