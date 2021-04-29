@@ -27,11 +27,11 @@ public class BoardRegisterController implements Controller{
 		String date = format1.format(time);
 		int boardId = 0;
 		try {
-			boardId = BoardDAOImpl.getInstance().maxId();
+			boardId = BoardDAOImpl.getInstance().maxId() + 1;
 		} catch (SQLException e1) {
 			
 		}
-		
+
 		BoardVO vo = new BoardVO(title, content, date, 0, boardId, memberId);
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		

@@ -64,8 +64,8 @@ public class MemberDAOImpl implements MemberDAO {
 			
 			ps.setString(1, vo.getMemberId());
 			ps.setString(2, vo.getPassword());
-			ps.setString(3, vo.getName());
-			ps.setString(4, vo.getAddress());
+			ps.setString(3, vo.getAddress());
+			ps.setString(4, vo.getName());
 			
 			System.out.println(ps.executeUpdate()+" row INSERT OK!!");
 		}finally{
@@ -84,7 +84,7 @@ public class MemberDAOImpl implements MemberDAO {
 		try{
 			conn = getConnection();
 			//
-			String query = "SELECT member_id, password, name, address FROM member WHERE memberId=?";
+			String query = "SELECT member_id, password, address, name FROM member WHERE memberId=?";
 			ps = conn.prepareStatement(query);
 			System.out.println("PreparedStatement....findByIdMember()..");
 			
@@ -94,8 +94,8 @@ public class MemberDAOImpl implements MemberDAO {
 			if(rs.next()) {
 				vo =  new MemberVO(memberId, 
 								   rs.getString("password"), 
-								   rs.getString("name"),
-								   rs.getString("address"));
+								   rs.getString("address"),
+								   rs.getString("name"));
 			}
 		}finally{
 			closeAll(rs, ps, conn);
@@ -111,12 +111,12 @@ public class MemberDAOImpl implements MemberDAO {
 		try {
 			conn = getConnection();
 			
-			String query = "UPDATE member SET password=? , name=?, address=? WHERE member_id=?";
+			String query = "UPDATE member SET password=? , address=?, name=? WHERE member_id=?";
 			ps = conn.prepareStatement(query);
 			
 			ps.setString(1, vo.getPassword());
-			ps.setString(2, vo.getName());
-			ps.setString(3, vo.getAddress());
+			ps.setString(2, vo.getAddress());
+			ps.setString(3, vo.getName());
 			ps.setString(4, vo.getMemberId());
 			
 			System.out.println(ps.executeUpdate()+" 명 수정됨...");
@@ -182,7 +182,7 @@ public class MemberDAOImpl implements MemberDAO {
 		
 		try {
 			conn = getConnection();
-			String query = "SELECT member_id, password, name, address FROM member WHERE member_id=? AND password=?";
+			String query = "SELECT member_id, password, address, name FROM member WHERE member_id=? AND password=?";
 			ps = conn.prepareStatement(query);
 			
 			ps.setString(1, memberId);
@@ -192,8 +192,8 @@ public class MemberDAOImpl implements MemberDAO {
 			if(rs.next()) {
 				vo=  new MemberVO(memberId, 
 							      password, 
-							      rs.getString("name"), 
-							      rs.getString("address"));
+							      rs.getString("address"), 
+							      rs.getString("name"));
 			}
 			
 		}finally {

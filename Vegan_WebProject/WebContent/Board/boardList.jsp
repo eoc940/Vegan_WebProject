@@ -30,9 +30,6 @@
 					${board.date}/
 					</td>
 					<td>
-					${board.viewCount}/
-					</td>
-					<td>
 					${board.viewCount}
 					</td>
 				</tr>
@@ -57,6 +54,15 @@
 			작성자로 검색<input type="text" name="memberId">
 			<input type="submit" value="검색">
 		</form>
+	</div>
+	<div>
+		<select>
+			<option>제목</option>
+			<option>내용</option>
+			<option>작성자</option>
+		</select> 
+		<input type="text" name="title">
+		<input type="submit" value="검색">
 	</div>
 </body>
 </html>

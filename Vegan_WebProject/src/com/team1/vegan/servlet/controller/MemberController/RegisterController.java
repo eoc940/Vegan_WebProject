@@ -22,7 +22,7 @@ public class RegisterController implements Controller {
 		System.out.println(areas);
 		String path = "";
 		
-		MemberVO mvo = new MemberVO(memberId, password, name, address);
+		MemberVO mvo = new MemberVO(memberId, password, address, name);
 		
 		try {
 			MemberDAOImpl.getInstance().registerMember(mvo);
