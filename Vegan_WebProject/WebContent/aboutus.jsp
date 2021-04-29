@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
 <meta charset="utf-8" />
@@ -877,9 +877,6 @@ user-select: none;
 /*  navi css end   &&&&&&&&&&&&&&&&&& */
 
 
-
-
-
 body {
 	margin-top: 50px;
 	 font-family: 'Montserrat', sans-serif;
@@ -892,67 +889,108 @@ body {
 	  padding: 0; 
 	}
 	
-.title {
-  text-align: center;
-  margin-bottom: 50px;
+.aboutus-section {
+    padding: 90px 0;
+   
+    
+}
+
+.aboutus-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+}
+.aboutus-title::after {
+    background: #fdb801 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 170px;
+}
+.aboutus-text {
+    color: #606060;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0 0 35 px;
 }
 
 
-.text-gray {
-  color: #777777;
+.level-section {
+    padding: 90px 0;
+   
+    
+}
+
+.level-title {
+	float: right;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+}
+.level-title::after {
+    background: #fdb801 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 320px;
+}
+.level-text {
+	text-align: right;
+    color: #606060;
+    font-size: 18px;
+    line-height: 30px;
+    margin:35 px;
+    padding-top: 50px;
+    padding-left: 30px;
+    
 }
 
 
-.section .title-area {
-  max-width: 100%;
-  margin: 0 auto ;
-  display: block;
-  padding: 15px;
-  text-align: center;
+
+.team-section {
+    padding: 90px 0;
+   
+    
 }
 
-.section .title-area .description {
-  font-size: 16px;
-  color: #777777;
+.team-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 50px ;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
 }
-
-
-.section .text-area .description,
-.section .text-area .description p {
-  font-size: 16px;
-  color: #777777;
-  
-  
+.team-title::after {
+    background: #fdb801 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 350px;
 }
-
-.section-header-freebie {
-  padding: 0;
-}
-
-table{
-size:100%;
-
-margin-left: 30px;
-margin-right: 30px;
-}
-
-
-.image-clients {
-  width: 20px;
-  margin: 0 auto;
-  margin-right: 8px;
-  margin-left: 8px;
-}
-
-.image-clients img{
- 	width: 90px;
- 	height: 90px;
-}
-
-hr{
-	width: 90%;
-	background-color: 
-	
+.team-text {
+    color: #606060;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0 0 35 px;
 }
 
 #footer{
@@ -971,15 +1009,43 @@ hr{
 
 }
 
+hr{	width:85%;
+
+}
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: transparent;
+    padding: 10px;
+  }
+  @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+     margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    font-size: 15px;
+    font-family: 'Hanna', sans-serif;
+    text-align: center;
+    
+  }
+  .item1 {
+  grid-column:1/4;
+  grid-row: 1;
+}
+ .grid-item img{
+	width: 100px;
+	height: 100px;
+	center: center;
+  }
+\
+
 </style>
    
  <title>About Us</title>
   
 </head>
-
-
-
-
 
 <body>
 
@@ -1004,62 +1070,108 @@ hr{
  
   </header><!-- End Header -->
 
-
-    <div class="section">
-       
-                <div class="title-area"><br/>
-             		<h2>Our Services</h2>
-                    <table class="description">
-                    	<tr>
-                    		<td>
-                    			<img alt="" src="bg_img/bgimg (3).png" width=750px height= 500px; object-fit=cover;>
-                    		</td>
-                    		<td id ="index">
-                    			Our journalistic focus is on the following issues: animal rights, the plant-based, cruelty-free lifestyle, climate change, food justice, health and associated issues like human world hunger and workers’ rights.
-								<br/><br/>Because we cover animal issues, and animals cannot offer their side of the story, we articulate the needs and rights of animals who would otherwise be utterly voiceless and powerless. This is our mandate: to speak for those who cannot speak for themselves and to report on animal issues often ignored by mainstream media..
-                    	 	</td>
-                    	</tr>
-                    </table>
-           
-        </div>
-    </div>
-
-	<hr>
-
-
-    <div class="section section-our-clients-freebie">
+<div class="aboutus-section">
         <div class="container">
-            <div class="title-area">
-            	<h5 class="subtitle text-gray">Who We Are</h5> 
-             <h2>Team Introduction</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="aboutus">
+                        <h2 class="aboutus-title">About Us</h2>
+                        
+                        <p class="aboutus-text"> Our journalistic focus is on the following issues: animal rights, the plant-based, cruelty-free lifestyle, climate change, food justice, health and associated issues like human world hunger and workers’ rights.
+								</p>
+                        <p class="aboutus-text"> Because we cover animal issues, and animals cannot offer their side of the story, we articulate the needs and rights of animals who would otherwise be utterly voiceless and powerless. This is our mandate: to speak for those who cannot speak for themselves and to report on animal issues often ignored by mainstream media..
+                    	 	</p>
+                       
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="aboutus-banner">
+                        <img src="bg_img/bgimg (3).png" width=550px height= 400px>
+                    </div>
+                </div>
+             
             </div>
-
-            <ul class="nav nav-text" role="tablist">
+       </div>
+</div>
+    
+<hr>
+	<div class="level-section">
+        <div class="container">
+            <div class="row">
+            	<div class="col-md-12">
+            		<h2 class="level-title">Vegetarian Level</h2>
+            	</div>
+             	<div class="col-md-6">
+                    <div class="level-banner">
+                        <img src="bg_img/bgimg (3).png" width=550px height= 400px>
+                    </div>
+              	</div>
+                <div class="col-md-6">
+                    <div class="level">                    
+                        <p class="level-text"> Our journalistic focus is on the following issues: animal rights, the plant-based, cruelty-free lifestyle, climate change, food justice, health and associated issues like human world hunger and workers’ rights.
+								</p>
+                        <p class="level-text"> Because we cover animal issues, and animals cannot offer their side of the story, we articulate the needs and rights of animals who would otherwise be utterly voiceless and powerless. This is our mandate: to speak for those who cannot speak for themselves and to report on animal issues often ignored by mainstream media..
+                    	 	</p>
+                       
+                    </div>
+                </div>
+               
+             
+            </div>
+       </div>
+</div>
+    
+	
+	
+	
+	
+	
+	
+	
+	<hr>
+    <div class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="team">
+                        <h2 class="team-title">Team Introduction</h2>
+                        
+                      
+                        <div class="grid-container">
+                         <div class="grid-item item1">
+                         	<img src="assets/icon/banana.png"><br/>김형근
+                         	<br/>
+                         </div>
+						  <div class="grid-item">
+						  	<img src="assets/icon/avocado.png"><br/>강수진
+						  </div>
+						  <div class="grid-item">
+						  	<img src="assets/icon/carrot.png"><br/>김진철
+						  </div>
+						  <div class="grid-item">
+						  	<img src="assets/icon/tomato.png"><br/>박재영
+						  </div>  
+						  <div class="grid-item">
+						  	<img src="assets/icon/apple.png"><br/>원광연
+						  </div>
+						  <div class="grid-item">
+						  	<img src="assets/icon/broccoli.png"><br/>임해리
+						  </div>
+						  <div class="grid-item">
+						  	<img src="assets/icon/pumpkin.png"><br/>정다솜
+						  	
+						  </div>  
+						  
+						</div>
+                       
+                    </div>
+                </div>
                 
-                    
-                        <span class="image-clients">
-                            <img alt="..." class="img-circle" src="bg_img/tomato.png"/>
-                        </span>
-                  
-                   
-                        <span class="image-clients">
-                            <img alt="..." class="img-circle" src="bg_img/tomato.png"/>
-                        </span>
-                    
-                        <span class="image-clients">
-                            <img alt="..." class="img-circle" src="bg_img/tomato.png"/>
-                        </span>
-                  
-                
-            </ul>
-
-
-           
-
+             
+            </div>
         </div>
     </div>
-
-
+    
 
     <!-- ======= Footer ======= -->
 		 <center>
