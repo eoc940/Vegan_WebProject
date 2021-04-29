@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +36,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
 !(function($) {
   "use strict";
 
@@ -1084,6 +1088,7 @@ a:focus{
 </head>
 <body>
 
+
 <!-- ======= Header ======= -->
 
 
@@ -1122,53 +1127,32 @@ a:focus{
         		</div>
         </div>
         
-        	<c:forEach items="${areas}" var="a">
+        	
 		        <div  data-aos="fade-up" data-aos-delay="100">
 		            <div id="filters" class="filters" >
 		              <a href="#" data-filter="*" class="active" >All</a>
-		              <a href="#" data-filter=".${a.areaId}" >${a.areaId}</a>
-		              <a href="#" data-filter=".301" >중구</a>
-		              <a href="#" data-filter=".302" >용산구</a>
-		              <a href="#" data-filter=".303" >성동구</a>
-		              <a href="#" data-filter=".304" >광진구</a>
-		              <a href="#" data-filter=".305" >동대문구</a>
-		              <a href="#" data-filter=".306" >중랑구</a>
-		              <a href="#" data-filter=".307" >성북구</a>
-		              <a href="#" data-filter=".308" >강북구</a>
-		              <a href="#" data-filter=".309"  >도봉구</a>
-		              <a href="#" data-filter=".310" >노원구</a>
-		              <a href="#" data-filter=".311" >은평구</a>
-		              <a href="#" data-filter=".312">서대문구</a>
-		              <a href="#" data-filter=".313" >마포구</a>
-		              <a href="#" data-filter=".314" >양천구</a>
-		              <a href="#" data-filter=".315" >강서구</a>
-		              <a href="#" data-filter=".316" >구로구</a>
-		              <a href="#" data-filter=".317" >금천구</a>
-		              <a href="#" data-filter=".318" >영등포구</a>
-		              <a href="#" data-filter=".319" >동작구</a>
-		              <a href="#" data-filter=".320" >관악구</a>
-		              <a href="#" data-filter=".321" >서초구</a>
-		              <a href="#" data-filter=".322" >강남구</a>
-		              <a href="#" data-filter=".323" >송파구</a>
-		              <a href="#" data-filter=".324" >강동구</a>
+		              <c:forEach items="${areaList}" var="a">
+		              	<a href="#" data-filter=".${a.areaId}" >${a.name}</a>
+		              </c:forEach>
 		            </div>
 		          </div>
-		     </c:forEach>
+		     
 		       
         
         
         
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-	        
+	        <c:forEach items="${storeList}" var="store">
 	          <div class="item 300 ">
 	            <a href="storeDetail.jsp" class="item-wrap fancybox">
 	              <div class="work-info">
-	                <h3>종로구</h3>
-	                <span>종로구 식당이름</span>
+	    			
+	                <span>${store.name}</span>
 	              </div>
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
+	        </c:forEach>
 	           <div class="item 300 ">
 	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
 	              <div class="work-info">
@@ -1178,294 +1162,9 @@ a:focus{
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
-	           <div class="item 300 ">
-	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>종로구</h3>
-	                <span>종로구 식당이름2</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	           <div class="item 300 ">
-	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>종로구</h3>
-	                <span>종로구 식당이름3</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 301 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>중구</h3>
-	                <span>중구 식당이름1</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 302 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>종로구</h3>
-	                <span>Branding</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 303 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Nike Shoe</h3>
-	                <span>Design</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 304 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Kitchen Sink</h3>
-	                <span>Photography</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
-	          <div class="item 305 ">
-	            <a href="work-single.html" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>Amazon</h3>
-	                <span>brandingn</span>
-	              </div>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
-	            </a>
-	          </div>
+	           
+	          
+	  
           
         </div>
         

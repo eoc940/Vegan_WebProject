@@ -76,7 +76,6 @@
  
  
  
- 
  <script type="text/javascript">
  
  // 스벅꺼 
@@ -844,22 +843,47 @@ h1, h2, h3, h4, h5, h6 {
 .reserve-store .inner {
   height: 800px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: top;
+  
 }
 .reserve-store .medal {
-  width: 200px;
-  height: 200px;
-  perspective: 600px;
+  width: 300px ;
+  height: 300px;
+  perspective: 300px;
+
 }
-.reserve-store .medal .front,
-.reserve-store .medal .back {
-  width: inherit;
-  height: inherit;
+.reserve-store .medal .front
+{
+  width: 300px ;
+  height: 300px;
   position: absolute;
   transition: 1.5s;
   backface-visibility: hidden;
 }
+.reserve-store .medal .back {
+  
+
+  width: 300px ;
+  height: 300px;
+
+  border-radius: 70%;
+  overflow: hidden;
+  
+  position: absolute;
+  transition: 1.5s;
+  backface-visibility: hidden;
+
+}
+
+.reserve-store .btn:hover {
+
+  color: #ffb03b; 
+
+}
+
+
 .reserve-store .medal .front {
   transform: rotateY(0deg);
 }
@@ -872,13 +896,7 @@ h1, h2, h3, h4, h5, h6 {
 .reserve-store .medal:hover .back {
   transform: rotateY(0deg);
 }
-.reserve-store .medal .back .btn {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
+
 
 
 
@@ -1514,7 +1532,7 @@ section {
 /*YOUTUBE VIDEO----------------------------------------------------------*/
 .youtube {
   position: relative;
-  height: 1000px;
+  height: 900px;
   background-color: #333;
   overflow: hidden;
 }
@@ -1610,8 +1628,10 @@ section {
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="aboutus.jsp">About Us</a></li>
           <li><a href="./Board/boardList.do">Board</a></li>
-          <li><a href="./Store/storeMain.jsp">Restautants</a></li>
+
+          <li><a href="./Store/StoreList.do">Restautants</a></li>
           <li><a href="./Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+
  
           <li class="book-a-table text-center" ><a href="Member/loginForm.jsp">login</a></li>
         </ul>
@@ -1750,7 +1770,7 @@ function showMenu(){
 	var randomNum=Math.floor(Math.random() * arr.length);
 	var img_url=arr[randomNum][0];
 	var name=arr[randomNum][1];
-	document.getElementById("menu_img").innerHTML="<img src="+img_url+" width=300px>  "+name;
+	document.getElementById("menu_img").innerHTML="<img src="+img_url+" height=300px>  "+name;
 	
 }
 var xhr;
@@ -1769,7 +1789,7 @@ function callback(){
 			var resultView=document.getElementById("bestNine");
 			if(list!=null)
 			for(var i=0;i<9;i++)
-			{resultView.innerHTML+=list[i].name+" <img src=store_img/"+list[i].imageUrl+" width=300px > <br/> ";}		
+			{resultView.innerHTML+=list[i].name+" <img src=store_img/"+list[i].imageUrl+" height=300px > <br/> ";}		
 		}
 	}
 }
@@ -1788,17 +1808,21 @@ $(document).ready(function(){
 
       <div class="medal">
         <div class="front">
-          <img  src="./assets/img/reserve_store_medal_back.png" height="200" alt="R">
+          <img  src="./assets/img/reserve_store_medal_back.png" height="300" alt="R">
         </div>
         <div class="back" id="menu_img">
-          <img src="./assets/img/reserve_store_medal_back.png" height="200" alt="돌려돌려 음식판">
+          <img src="./assets/img/reserve_store_medal_back.png" height="300" alt="돌려돌려 음식판">
         </div>
-  <div>
-    <a class="btn" onclick="showMenu()">
-            <h2> 돌려 음식판 </h2>
-          </a>
-    </div>
+        
       </div>
+      <div>
+      <a class="btn" onclick="showMenu()">
+        <br>
+        <br>
+          <h2>▶   누르고 마우스를 가져가면 ?!! </h2>
+      </a>
+      </div>
+      
     </div>
    
   </section>
