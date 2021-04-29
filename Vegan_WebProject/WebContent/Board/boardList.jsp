@@ -37,32 +37,21 @@
 		</tbody>
 	</table>
 	
-	<div>
-		<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
-	</div>
+<div>
+	<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
+</div>
+
+<div>
+	<form action="searchBoard.do">
+    	<select name="opt">
+            <option value="0">제목</option>
+            <option value="1">내용</option>
+            <option value="2">작성자</option>
+        </select>
+        <input type="text" size="20" name="contents"/>
+        <input type="submit" value="검색"/>
+    </form> 
+</div>
 	
-	<div>
-		<form action = "findByTitle.do">
-			제목으로 검색<input type="text" name="title">
-			<input type="submit" value="검색">
-		</form>
-		<form action = "findByContent.do">
-			내용으로 검색<input type="text" name="content">
-			<input type="submit" value="검색">
-		</form>
-		<form action = "findByMemberId.do">
-			작성자로 검색<input type="text" name="memberId">
-			<input type="submit" value="검색">
-		</form>
-	</div>
-	<div>
-		<select>
-			<option>제목</option>
-			<option>내용</option>
-			<option>작성자</option>
-		</select> 
-		<input type="text" name="title">
-		<input type="submit" value="검색">
-	</div>
 </body>
 </html>
