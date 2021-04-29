@@ -11,6 +11,7 @@ import com.team1.vegan.servlet.controller.ModelAndView;
 import com.team1.vegan.store.model.AreaVO;
 import com.team1.vegan.store.model.StoreDAOImpl;
 import com.team1.vegan.store.model.StoreImageVO;
+import com.team1.vegan.store.model.StoreShowVO;
 import com.team1.vegan.store.model.StoreVO;
 
 public class StoreListController implements Controller{
@@ -18,23 +19,29 @@ public class StoreListController implements Controller{
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 
+
 		ArrayList<StoreVO> storeList = new ArrayList<StoreVO>();
 		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
 		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
+		ArrayList<StoreShowVO> storeShowList = new ArrayList<StoreShowVO>();
+
 		String path = "storeMain.jsp";
 		
 		try {
 			storeList = StoreDAOImpl.getInstance().getAllStore();
+			areaList = StoreDAOImpl.getInstance().getAllArea();
 			for(StoreVO svo : storeList) {
-				AreaVO avo = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId());
-				areaList.add(avo);
-				StoreImageVO ivo = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId());
-				imageList.add(ivo);
+				String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
+				String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
+				
+				storeShowList.add(new StoreShowVO(
+						area, svo.getName(), imageUrl
+						));
 			}
 			
-			request.setAttribute("storeList", storeList);
+			request.setAttribute("storeShowList", storeShowList);
 			request.setAttribute("areaList", areaList);
-			request.setAttribute("imageList", imageList);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

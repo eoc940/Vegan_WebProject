@@ -283,5 +283,29 @@ public class StoreDAOImpl implements StoreDAO {
 		return area;
 	}
 
+	@Override
+	public ArrayList<AreaVO> getAllArea() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
+		try {
+			conn = getConnection();
+			String query = "select area_id, name from area";
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				AreaVO avo = new AreaVO(
+						rs.getInt("area_id"),
+						rs.getString("name")
+						);
+				areaList.add(avo);
+			}
+ 		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return areaList;
+	}
+
 	
 }

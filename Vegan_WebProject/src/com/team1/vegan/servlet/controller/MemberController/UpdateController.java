@@ -22,7 +22,7 @@ public class UpdateController implements Controller {
 		String[] areas = request.getParameterValues("areas");
 		
 		//2.
-		MemberVO mvo = new MemberVO(memberId, password, name, address);
+		MemberVO mvo = new MemberVO(memberId, password, address, name);
 		
 		String path="index.jsp";
 		try{			

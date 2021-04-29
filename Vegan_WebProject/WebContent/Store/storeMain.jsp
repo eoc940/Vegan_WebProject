@@ -237,7 +237,7 @@
     $('.venobox').venobox();
   });
 
-})(jQuery);
+})
 
 </script>
 
@@ -1053,6 +1053,32 @@ a:focus{
 
 }
 
+.pagination {
+  display: inline-block;
+  center: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.center {
+  text-align: center;
+}
+
 </style>
 
 
@@ -1126,20 +1152,26 @@ a:focus{
         
 
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-	        <c:forEach items="${storeList}" var="store">
-	          <div class="item 300 ">
+	        <c:forEach items="${storeShowList}" var="store">
+	          <div class="item ${store.area} ">
 	            <a href="storeDetail.jsp" class="item-wrap fancybox">
 	              <div class="work-info">
-	    	
-	                <span>${store.name}</span>
+
+	    			 <h3>${store.area}</h3>
+	                <span>${store.area} &nbsp; ${store.name}</span>
+
 	              </div>
+
 			</c:forEach>
-	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
+
+	              <img class="img-fluid" src="../store_img/${store.imageUrl}">
+
 	            </a>
 	          </div>
 
 	           <%-- <div class="item 300 ">
 	        </c:forEach>
+	        
 	           <div class="item 300 ">
 	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
 	              <div class="work-info">
@@ -1443,6 +1475,18 @@ a:focus{
     
      
     </section>
+    
+   <div class = "center">
+    <div class="pagination">
+	  <a href="#">&laquo;</a>
+	  <a href="#">1</a>
+	  <a href="#">2</a>
+	  <a href="#">3</a>
+	  <a href="#">&raquo;</a>
+	</div>
+   </div>	
+   
+    
     	     <!-- ======= Footer ======= -->
 		 <center>
 		  <footer id="footer">
