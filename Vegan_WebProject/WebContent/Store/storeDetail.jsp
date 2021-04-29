@@ -765,7 +765,7 @@
 					<ul>
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="aboutus.jsp">About Us</a></li>
-						<li><a href="aboutus.jsp">Board</a></li>
+						<li><a href="./Board/boardList.do">Board</a></li>
 						<li><a href="storeMain.jsp">Restaurants</a></li>
 						<li><a href="aboutus.jsp">My Page</a></li>
 						
