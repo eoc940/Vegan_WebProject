@@ -244,7 +244,11 @@ label {
 
 
 </style>
-<script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
 $(function () {	
 	$('input:checkbox[name=areas]').click(function(){
 		var areas = $('input:checkbox[name=areas]:checked').length;
