@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& javascript 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 <!--  ddd -->
 <script type="text/javascript">
-/**
+<!-- /**
 * Template Name: Delicious - v2.2.1
 * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
 * Author: BootstrapMade.com
@@ -242,7 +243,7 @@
 
 
 
-<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& css 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& css 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
  
 <style>
@@ -869,7 +870,7 @@ user-select: none;
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
-
+ -->
 
 
 /*  navi css end   &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
@@ -1059,6 +1060,7 @@ a:focus{
 </head>
 <body>
 
+
 <!-- ======= Header ======= -->
 
 
@@ -1097,50 +1099,32 @@ a:focus{
         		</div>
         </div>
         
-        	<c:forEach items="${areas}" var="a">
-		        <div  data-aos="fade-up" data-aos-delay="100">
-		            <div id="filters" class="filters" >
-		              <a href="#" data-filter="*" class="active" >All</a>
-		              <a href="#" data-filter=".${a.areaId}" >${a.areaId}</a>
-		              <a href="#" data-filter=".301" >중구</a>
-		              <a href="#" data-filter=".302" >용산구</a>
-		              <a href="#" data-filter=".303" >성동구</a>
-		              <a href="#" data-filter=".304" >광진구</a>
-		              <a href="#" data-filter=".305" >동대문구</a>
-		              <a href="#" data-filter=".306" >중랑구</a>
-		              <a href="#" data-filter=".307" >성북구</a>
-		              <a href="#" data-filter=".308" >강북구</a>
-		              <a href="#" data-filter=".309"  >도봉구</a>
-		              <a href="#" data-filter=".310" >노원구</a>
-		              <a href="#" data-filter=".311" >은평구</a>
-		              <a href="#" data-filter=".312">서대문구</a>
-		              <a href="#" data-filter=".313" >마포구</a>
-		              <a href="#" data-filter=".314" >양천구</a>
-		              <a href="#" data-filter=".315" >강서구</a>
-		              <a href="#" data-filter=".316" >구로구</a>
-		              <a href="#" data-filter=".317" >금천구</a>
-		              <a href="#" data-filter=".318" >영등포구</a>
-		              <a href="#" data-filter=".319" >동작구</a>
-		              <a href="#" data-filter=".320" >관악구</a>
-		              <a href="#" data-filter=".321" >서초구</a>
-		              <a href="#" data-filter=".322" >강남구</a>
-		              <a href="#" data-filter=".323" >송파구</a>
-		              <a href="#" data-filter=".324" >강동구</a>
+        	
+		    <div  data-aos="fade-up" data-aos-delay="100">
+		        
+		            <div id="filters" class="filters">
+		              	<a href="#" data-filter="*" class="active" >All</a>
+		              		
+		              			<c:forEach items="${areaList}" var="a">
+		              	<a href="#" data-filter="${a.areaId}" >${a.name}</a>
+								</c:forEach>
+							
 		            </div>
-		          </div>
-		     </c:forEach>
-		       
+		         
+		       </div>
+		     
+		     
         
         
         
-        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 
-	          <div class="item 300">
-	            <a href="storeDetail.jsp" class="item-wrap fancybox">
-	              <div class="work-info">
-	                <h3>종로구</h3>
-	                <span>종로구 식당이름</span>
-	              </div>
+	       <div class="item 300">
+	            <a href="storeDetail.do/" class="item-wrap fancybox">
+	              	<div class="work-info">
+	                	<h3>${a.name}</h3>
+	                	<span>${s.name}</span>
+	              	</div>
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
