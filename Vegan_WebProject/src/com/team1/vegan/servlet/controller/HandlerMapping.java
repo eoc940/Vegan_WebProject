@@ -72,13 +72,13 @@ public class HandlerMapping {
 			controller = new FindByMemberIdController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
-		}if(command.equals("StoreList.do")) {
+		}if(command.equals("Store/StoreList.do")) {
 			controller = new StoreListController();
-		}if(command.equals("findByStoreName.do")) {
+		}if(command.equals("Store/findByStoreName.do")) {
 			controller = new FindByStoreNameController();
-		}if(command.equals("findByStoreArea.do")) {
+		}if(command.equals("Store/findByStoreArea.do")) {
 			controller = new FindByStoreAreaController();
-		}if(command.equals("storeDetail.do")) {
+		}if(command.equals("Store/storeDetail.do")) {
 			controller = new StoreDetailController();
 
 		}
