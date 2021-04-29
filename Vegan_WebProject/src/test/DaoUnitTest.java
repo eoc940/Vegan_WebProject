@@ -282,8 +282,6 @@ public class DaoUnitTest{
 		return list;
 	}
 	
-
-
 	public static void main(String[] args)throws Exception {
 		DaoUnitTest test = new DaoUnitTest();
 		ArrayList<AreaVO> list = new ArrayList<AreaVO>();
@@ -293,6 +291,7 @@ public class DaoUnitTest{
 		list2 = test.getClickHit("wky");
 		
 		for(StoreImageVO s : list2) System.out.println(s);
+	
 	}	
 }
 
