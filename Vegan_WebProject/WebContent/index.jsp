@@ -1611,7 +1611,7 @@ section {
           <li><a href="aboutus.jsp">About Us</a></li>
           <li><a href="./Board/boardList.do">Board</a></li>
           <li><a href="./Store/storeMain.jsp">Restautants</a></li>
-          <li><a href="./Member/updateForm.jsp">My Page</a></li>
+          <li><a href="./Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
  
           <li class="book-a-table text-center" ><a href="Member/loginForm.jsp">login</a></li>
         </ul>

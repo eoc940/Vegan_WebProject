@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import com.team1.vegan.board.model.BoardVO;
+import com.team1.vegan.store.model.AreaVO;
 import com.team1.vegan.store.model.MapVO;
 import com.team1.vegan.store.model.StoreImageVO;
 import com.team1.vegan.store.model.StoreVO;
@@ -229,45 +230,69 @@ public class DaoUnitTest{
 		
 		return image;
 	}
+	
+
+	public ArrayList<AreaVO> getInterestAreas(String memberId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<AreaVO> list = new ArrayList<AreaVO>();
+		try {
+			conn = getConnection();
+			String query = "SELECT a.area_id, a.name FROM interest_area i, area a WHERE i.member_id = ? AND i.area_id = a.area_id";
+			ps = conn.prepareStatement(query);
+			
+			ps.setString(1, memberId);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				list.add(new AreaVO(rs.getInt("a.area_id"),
+									rs.getString("a.name")));
+			}
+			
+		}finally {
+			closeAll(rs, ps, conn); 
+		}
+		return list;
+	}
+
+
+	public ArrayList<StoreImageVO> getClickHit(String memberId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<StoreImageVO> list = new ArrayList<StoreImageVO>();
+		try {
+			conn = getConnection();
+			String query = "select si.store_id, si.image_url, s.name FROM click_hit c, store_image si, store s WHERE c.member_id = ? AND si.image_url like '%-1%' AND c.store_id = si.store_id AND si.store_id = s.store_id;";
+			ps = conn.prepareStatement(query);
+			
+			ps.setString(1, memberId);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				list.add(new StoreImageVO(rs.getString("si.image_url"),
+										  rs.getInt("si.store_id"),
+										  rs.getString("s.name")));
+			}
+			
+		}finally {
+			closeAll(rs, ps, conn); 
+		}
+		return list;
+	}
+	
 
 
 	public static void main(String[] args)throws Exception {
 		DaoUnitTest test = new DaoUnitTest();
-		ArrayList<StoreVO> list = new ArrayList<StoreVO>();
-		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
-		StoreVO svo = new StoreVO();
-		MapVO mvo = new MapVO();
-		StoreImageVO ivo = new StoreImageVO();
-		list=test.findByName("플랜");
-		for(StoreVO s: list) {
-			System.out.println(s);
-		}
-		System.out.println("=====================");
-		list = test.getAllStore();
-		for(StoreVO s: list) {
-			System.out.println(s);
-		}
-		System.out.println("=====================");
-		svo = test.getStoreDetail(25);
-		System.out.println(svo);
-		System.out.println("=====================");
-		test.addHitCount(25);
-		System.out.println(svo);
-		System.out.println("=====================");
-		imageList = test.getBestNine();
-		for(StoreImageVO s: imageList) {
-			System.out.println(s);
-		}
-		System.out.println("=====================");
-		mvo = test.findStoreMap(25);
-		System.out.println(mvo);
-		System.out.println("=====================");
-		ivo = test.findStoreImage(31);
-		System.out.println(ivo);
+		ArrayList<AreaVO> list = new ArrayList<AreaVO>();
+		ArrayList<StoreImageVO> list2 = new ArrayList<StoreImageVO>();
 		
-		System.out.println("=====================");
 		
-	
+		list2 = test.getClickHit("wky");
+		
+		for(StoreImageVO s : list2) System.out.println(s);
 	}	
 }
 
