@@ -259,5 +259,29 @@ public class StoreDAOImpl implements StoreDAO {
 		System.out.println(list);
 	}
 
+	@Override
+	public AreaVO findStoreArea(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		AreaVO area = null;
+		try {
+			conn = getConnection();
+			String query = "select a.area_id, a.name from store s, area a where a.area_id=s.area_id and s.store_id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				area = new AreaVO(
+						rs.getInt("a.area_id"),
+						rs.getString("a.name")
+						); 
+			}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return area;
+	}
+
 	
 }
