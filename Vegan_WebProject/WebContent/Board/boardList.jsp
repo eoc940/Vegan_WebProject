@@ -1069,18 +1069,13 @@ table>thead>tr>th{
 	
 	
 	<div class="search">
-		<form action = "findByTitle.do">
-			제목으로 검색<input type="text" name="title">
-			<input type="submit" value="검색">
-		</form>
-		<form action = "findByContent.do">
-			내용으로 검색<input type="text" name="content">
-			<input type="submit" value="검색">
-		</form>
-		<form action = "findByMemberId.do">
-			SEARCH    <input type="text" name="memberId" id="searchContext">
+		<select>
+			<option>제목</option>
+			<option>내용</option>
+			<option>작성자</option>
+		</select> 
+		<input type="text" name="title" id="searchContext">
 		<input type="submit" value="검색" id="searchButton">
-		</form>
 	</div>
 </body>
 </html>

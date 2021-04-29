@@ -1671,11 +1671,11 @@ section {
           <div class="carousel-item active" style="background: url(./assets/img/slide/slide-1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> Restaurant</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown">For<span> Veganism</span></h2>
+                <p class="animate__animated animate__fadeInUp"> Veganism, the natural extension of vegetarianism, is an integral component of a true cruelty-free lifestyle. Living vegan provides numerous benefits to animals’ lives, to the environment, and to our own health–through a healthy diet and lifestyle.</p>
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                  <a href="#recommend_menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#bestNine" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
                 </div>
               </div>
             </div>
@@ -1685,11 +1685,11 @@ section {
           <div class="carousel-item" style="background: url(./assets/img/slide/slide-2.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                <h2 class="animate__animated animate__fadeInDown">Try <span>Vegan</span> Diet</h2>
+                <p class="animate__animated animate__fadeInUp">The Academy of Nutrition and Dietetics states that an appropriately planned vegan diet is healthful for all stages of life. They further advise that plant-based diets may provide a variety of preventative health benefits. Of course, as with any diet, a poorly planned vegan diet could be dangerous or unhealthful. </p>
+             	<div>
+                  <a href="#recommend_menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#bestNine" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
                 </div>
               </div>
             </div>
@@ -1700,11 +1700,11 @@ section {
             <div class="carousel-background"><img src="./assets/img/slide/slide-3.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                <h2 class="animate__animated animate__fadeInDown">What Do <span>Vegans</span> Eat?</h2>
+                <p class="animate__animated animate__fadeInUp">This is perhaps the most common question about veganism. A vegan diet includes all grains, beans, legumes, vegetables, fruits, and the nearly infinite number of foods made by combining them. In addition, many vegan versions of familiar foods are available, so vegans can eat vegan hot dogs, ice cream, cheese, non-dairy yogurt, and vegan mayonnaise along with the more familiar veggie burgers.</p>
+                 <div>
+                  <a href="#recommend_menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#bestNine" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
                 </div>
               </div>
             </div>
@@ -1804,8 +1804,8 @@ $(document).ready(function(){
 </script>
 
   <!--RESERVE STORE-->
-  <section class="reserve-store">
-    <div class="inner">
+  <section class="reserve-store" id="recommend_menu">
+    <div class="inner" >
 
       <div class="medal">
         <div class="front">
@@ -1828,7 +1828,7 @@ $(document).ready(function(){
    
   </section>
   
-    <section class="notice">
+    <section class="notice" id="#bestNine">
     <div class="promotion">
 
       <div class="swiper-container">

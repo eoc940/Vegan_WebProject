@@ -287,13 +287,14 @@ public class BoardDAOImpl implements BoardDAO{
 			System.out.println("PreparedStatement...maxId()..");
 			rs = ps.executeQuery();
 			
-			if(!rs.next()) {
+			if(rs.next()) {
 				num = rs.getInt(1);
 			}
 			
 		}finally {
 			closeAll(rs, ps, conn);
 		}
+		
 		return num;
 	}
 
