@@ -881,6 +881,7 @@ user-select: none;
 
 
 body {
+	margin-top: 50px;
 	 font-family: 'Montserrat', sans-serif;
 	 font-size: 25px;
 	  line-height: 1.8;
@@ -929,7 +930,7 @@ body {
 }
 
 table{
-size:150px;
+size:100%;
 
 margin-left: 30px;
 margin-right: 30px;
@@ -1005,14 +1006,13 @@ hr{
 
 
     <div class="section">
-        <div class="container">
-            <div class="row">
+       
                 <div class="title-area"><br/>
              		<h2>Our Services</h2>
                     <table class="description">
                     	<tr>
                     		<td>
-                    			<img alt="" src="bg_img/bgimg (3).png" width=750px height= 500px; >
+                    			<img alt="" src="bg_img/bgimg (3).png" width=750px height= 500px; object-fit=cover;>
                     		</td>
                     		<td id ="index">
                     			Our journalistic focus is on the following issues: animal rights, the plant-based, cruelty-free lifestyle, climate change, food justice, health and associated issues like human world hunger and workers’ rights.
@@ -1020,8 +1020,6 @@ hr{
                     	 	</td>
                     	</tr>
                     </table>
-                </div>
-            </div>
            
         </div>
     </div>
