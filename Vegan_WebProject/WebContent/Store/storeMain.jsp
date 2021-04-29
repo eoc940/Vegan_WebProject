@@ -1147,8 +1147,8 @@ a:focus{
 	              <div class="work-info">
 					<h3>${store.area}</h3>
 	                <span>${store.area} &nbsp; ${store.name}</span>
-	          </div>
-	              <img class="img-fluid" src="../store_img/${store.imageUrl}">
+	         		<img class="img-fluid" src="../store_img/${store.imageUrl}">
+	               </div>
 				</a>
 	      </div>
 	      </c:forEach>
