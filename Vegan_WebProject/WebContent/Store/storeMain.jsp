@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 
+=======
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +41,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
 !(function($) {
   "use strict";
 
@@ -1100,36 +1107,47 @@ a:focus{
         </div>
         
         	
-		    <div  data-aos="fade-up" data-aos-delay="100">
-		        
-		            <div id="filters" class="filters">
-		              	<a href="#" data-filter="*" class="active" >All</a>
-		              		
-		              			<c:forEach items="${areaList}" var="a">
-		              	<a href="#" data-filter="${a.areaId}" >${a.name}</a>
-								</c:forEach>
-							
+
+		        <div  data-aos="fade-up" data-aos-delay="100">
+		            <div id="filters" class="filters" >
+		              <a href="#" data-filter="*" class="active" >All</a>
+		              <c:forEach items="${areaList}" var="a">
+		              	<a href="#" data-filter=".${a.areaId}" >${a.name}</a>
+		              </c:forEach>
+
 		            </div>
+
 		         
 		       </div>
 		     
 		     
-        
-        
-        
-         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 
-	       <div class="item 300">
-	            <a href="storeDetail.do/" class="item-wrap fancybox">
-	              	<div class="work-info">
-	                	<h3>${a.name}</h3>
-	                	<span>${s.name}</span>
-	              	</div>
+		          </div>
+		     
+		       
+
+        
+        
+        
+
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+	        <c:forEach items="${storeList}" var="store">
+	          <div class="item 300 ">
+	            <a href="storeDetail.jsp" class="item-wrap fancybox">
+	              <div class="work-info">
+	    	</c:forEach>
+	                <span>${store.name}</span>
+	              </div>
+
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
 
 	           <%-- <%-- <div class="item 300 ">
+=======
+	        </c:forEach>
+	           <div class="item 300 ">
+>>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
 	              <div class="work-info">
 	                <h3>종로구</h3>
@@ -1138,6 +1156,7 @@ a:focus{
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div>
+<<<<<<< HEAD
 	           <div class="item 300 ">
 	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
 	              <div class="work-info">
@@ -1426,6 +1445,7 @@ a:focus{
 	              <img class="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
 	          </div> --%> 
+
           
         </div>
         
