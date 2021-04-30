@@ -25,7 +25,6 @@ public class BoardUpdateController implements Controller{
 		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date time = new Date();
 		String date = format1.format(time);
-		System.out.println(boardId);
 		BoardVO vo = new BoardVO(title, content, date, 0, boardId, memberId);
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
