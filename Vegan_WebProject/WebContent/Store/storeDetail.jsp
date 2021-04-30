@@ -788,7 +788,7 @@
 							<h2>${svo.name}</h2>
 							
 							<!-- <h2>${storeVO.name}</h2> -->	
-								<span>${hit}</span>
+								<span>${svo.hit}</span>
 							</header>
 							<img src="${ivo.imageUrl}" alt="" /></a>
 						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
