@@ -21,18 +21,21 @@ public class StoreDetailController implements Controller {
 		int storeId = Integer.parseInt(request.getParameter("storeId"));
 		String path = "storeDetail.jsp";
 		StoreVO svo = null;
-		StoreImageVO ivo = null;
+		StoreImageVO foodvo = null;
+		StoreImageVO menuvo = null;
 		MapVO mvo = null;
 		try {
 			svo = StoreDAOImpl.getInstance().getStoreDetail(storeId);
-			ivo = StoreDAOImpl.getInstance().findStoreImage(storeId);
+			foodvo = StoreDAOImpl.getInstance().findMainFoodImage(storeId);
+			menuvo = StoreDAOImpl.getInstance().findMenuImage(storeId);
 			mvo = StoreDAOImpl.getInstance().findStoreMap(storeId);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		request.setAttribute("svo", svo);
-		request.setAttribute("ivo", ivo);
+		request.setAttribute("foodvo", foodvo);
+		request.setAttribute("menuvo", menuvo);
 		request.setAttribute("mvo", mvo);
 		
 		return new ModelAndView(path);

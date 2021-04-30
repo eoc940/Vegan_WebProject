@@ -790,7 +790,7 @@
 							<!-- <h2>${storeVO.name}</h2> -->	
 								<span>${svo.hit}</span>
 							</header>
-							<img src="../store_img/${ivo.imageUrl}" alt="" height = "500" width = "780"/></a>
+							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
 							<p>${svo.description}</p>
 							<div id="map" style="width:780px; height:350px;"></div>
@@ -829,7 +829,7 @@ window.onload = initialize;
 							<ul class="style">
 								<li>
 									<p>메뉴사진 들어갈자리</p>
-									<img src="../store_img/${ivo.imageUrl}" alt="" width="416.66" height="416.66"/>
+									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
 						
 							</ul>
