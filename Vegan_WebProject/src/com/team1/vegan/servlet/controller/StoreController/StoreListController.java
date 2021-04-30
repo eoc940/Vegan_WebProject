@@ -18,10 +18,14 @@ public class StoreListController implements Controller{
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
-		ArrayList<StoreVO> storeList = null;
-		ArrayList<AreaVO> areaList = null;
+
+
+		ArrayList<StoreVO> storeList = new ArrayList<StoreVO>();
+		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
+		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
 		ArrayList<StoreShowVO> storeShowList = new ArrayList<StoreShowVO>();
 		String path = "storeList.jsp";
+
 		
 		try {
 			storeList = StoreDAOImpl.getInstance().getAllStore();
@@ -29,11 +33,12 @@ public class StoreListController implements Controller{
 			for(StoreVO svo : storeList) {
 				String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
 				String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
-				
+				int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
 				storeShowList.add(new StoreShowVO(
-						area, svo.getName(), imageUrl
+						area, svo.getName(), imageUrl, storeId
 						));
 			}
+			
 			
 			request.setAttribute("storeShowList", storeShowList);
 			request.setAttribute("areaList", areaList);
