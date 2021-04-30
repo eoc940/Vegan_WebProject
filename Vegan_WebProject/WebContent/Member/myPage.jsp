@@ -61,7 +61,7 @@
         <li><a href="../aboutus.jsp">About Us</a></li>
        <li><a href="../Board/boardList.do">Board</a></li>
         <li><a href="../Store/storeList.do">Restautants</a></li>
-        <li><a href="updateForm.jsp">My Page</a></li>
+        <li><a href="myPage.jsp">My Page</a></li>
 
         <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
       </ul>
@@ -76,12 +76,10 @@
  
  <section class="section">
       <div class="container">
-          <div class="col-md-6" data-aos="fade-up">
+          <div class="col-md-12">
             <h2>My Page</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.</p>
           </div>
-      </div>
-  </section>
+    
 
 <div>
 NAME : ${vo.name}<br/>
@@ -127,7 +125,8 @@ Preference Location<br/>
 </table>
 </div>
 <input type="button" value="회원 탈퇴" onClick="location.href='deleteForm.jsp'">
-
+  </div>
+  </section>
 </form>
 </body>
 </html>
