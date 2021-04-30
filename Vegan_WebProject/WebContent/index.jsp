@@ -22,6 +22,7 @@
   <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
   <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
 
@@ -115,7 +116,7 @@
       var randomNum=Math.floor(Math.random() * arr.length);
       var img_url=arr[randomNum][0];
       var name=arr[randomNum][1];
-      document.getElementById("menu_img").innerHTML="<img src="+img_url+" height=300px>  "+name;
+      document.getElementById("menu_img").innerHTML="<img src="+img_url+" width =400px height=300px>  "+name;
       
     }
     var xhr;
@@ -134,7 +135,7 @@
           var resultView=document.getElementById("bestNine");
           if(list!=null)
           for(var i=0;i<9;i++)
-          {resultView.innerHTML+=list[i].name+" <img src=store_img/"+list[i].imageUrl+" height=300px > <br/> ";}		
+          {resultView.innerHTML+=list[i].name+" <img src=store_img/"+list[i].imageUrl+" width =400px height=300px > <br/> ";}		
         }
       }
     }
@@ -171,7 +172,7 @@
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="aboutus.jsp">About Us</a></li>
           <li><a href="./Board/boardList.do">Board</a></li>
-          <li><a href="./Store/storeList.do">Restautants</a></li>
+          <li><a href="./Store/storeList.do">Restaurants</a></li>
           <li><a href="./Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
           <li class="book-a-table text-center" ><a href="Member/loginForm.jsp">login</a></li>
 
@@ -205,12 +206,12 @@
           <div class="carousel-item active" style="background: url(./assets/img/slide/slide-1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> Restaurant</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
+                <h2 class="animate__animated animate__fadeInDown">For<span> Veganism</span></h2>
+                <p class="animate__animated animate__fadeInUp">Veganism, the natural extension of vegetarianism, is an integral component of a true cruelty-free lifestyle. Living vegan provides numerous benefits to animals’ lives, to the environment, and to our own health–through a healthy diet and lifestyle.</p>
+                <!-- <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
+                </div> -->
               </div>
             </div>
           </div>
@@ -219,12 +220,12 @@
           <div class="carousel-item" style="background: url(./assets/img/slide/slide-2.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
+                <h2 class="animate__animated animate__fadeInDown">Try <span>Vegan</span> Diet</h2>
+                <p class="animate__animated animate__fadeInUp">The Academy of Nutrition and Dietetics states that an appropriately planned vegan diet is healthful for all stages of life. They further advise that plant-based diets may provide a variety of preventative health benefits. Of course, as with any diet, a poorly planned vegan diet could be dangerous or unhealthful. </p>
+                <!-- <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
+                </div> -->
               </div>
             </div>
           </div>
@@ -234,12 +235,12 @@
             <div class="carousel-background"><img src="./assets/img/slide/slide-3.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
+                <h2 class="animate__animated animate__fadeInDown">Try <span>Vegan</span> Diet</h2>
+                <p class="animate__animated animate__fadeInUp">The Academy of Nutrition and Dietetics states that an appropriately planned vegan diet is healthful for all stages of life. They further advise that plant-based diets may provide a variety of preventative health benefits. Of course, as with any diet, a poorly planned vegan diet could be dangerous or unhealthful. </p>
+             	<!-- <div>
+                  <a href="#recommend_menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
+                  <a href="#bestNine" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
+              </div> -->
               </div>
             </div>
           </div>
@@ -260,7 +261,8 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
+
+
 
 	<!--RESERVE STORE-->
   <section class="reserve-store">
@@ -279,10 +281,13 @@
       <a class="btn" onclick="showMenu()">
         <br>
         <br>
+          <h2>▶   오늘은 무엇을 먹을까?? 클릭후 마우스를 위로!! </h2>
       </a>
       </div>
       
     </div>
+
+
    
   </section>
   
@@ -292,24 +297,24 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="./store_img/2-1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!" />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <img src="./store_img/2-1.jpg" width="819" height ="819" alt="맛있는 식당1" />
+            <a href="javascript:void(0)" class="btn"> - 자세히 보기 - </a>
           </div>
           <div class="swiper-slide">
-            <img src="./store_img/3-1.jpg" alt="기간 내 스타벅스 카드 e-Gift를 3만원 이상 선물 시, 아메리카노 e-쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <img src="./store_img/3-1.jpg" width="819" height ="819" alt="맛있는 식당2" />
+            <a href="javascript:void(0)" class="btn"> - 자세히 보기 - </a>
           </div>
           <div class="swiper-slide">
-            <img src="./store_img/4-1.jpg" alt="뉴이어 푸드와 제조 음료를 세트로 구매 시, 뉴이어 음료 BOGO(1+1) 쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <img src="./store_img/4-1.jpg" width="819" height ="819" alt="맛있는 식당3" />
+            <a href="javascript:void(0)" class="btn"> - 자세히 보기 - </a>
           </div>
           <div class="swiper-slide">
-            <img src="./store_img/5-1.jpg" alt="신년 MD 상품 포함 3만원 이상 구매 고객께 아메리카노(톨사이즈) 쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <img src="./store_img/5-1.jpg" width="819" height ="819" alt="맛있는 식당4" />
+            <a href="javascript:void(0)" class="btn"> - 자세히 보기 - </a>
           </div>
           <div class="swiper-slide">
-            <img src="./store_img/6-1.jpg" alt="2017 DIGITAL LUCKY DRAW 100% 당첨의 행운을 드립니다!" />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            <img src="./store_img/6-1.jpg" width="819" height ="819" alt="맛있는 식당5" />
+            <a href="javascript:void(0)" class="btn"> - 자세히 보기 - </a>
           </div>
         </div>
       </div>
@@ -327,14 +332,17 @@
       </section><!-- End PROMOTION Section -->
 
 
-    <!--YOUTUBE VIDEO-->
-    <section class="youtube">
-      <div class="youtube__area">
-        <div id="player"></div>
-      </div>
-      <div class="youtube__cover"></div>
+      
+  <!--YOUTUBE VIDEO-->
+  <section class="youtube">
+    <div class="youtube__area">
+      <div id="player"></div>
+    </div>
+    <div class="youtube__cover"></div>
 
-    </section>
+  </section>
+
+
 
   <!-- ======= Footer ======= -->
   <center>

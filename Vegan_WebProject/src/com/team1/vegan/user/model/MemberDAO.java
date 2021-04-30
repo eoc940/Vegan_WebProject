@@ -10,7 +10,7 @@ import com.team1.vegan.store.model.AreaVO;
 import com.team1.vegan.store.model.StoreImageVO;
 
 
-
+//
 public interface MemberDAO {
 	
 	Connection getConnection() throws SQLException ;
