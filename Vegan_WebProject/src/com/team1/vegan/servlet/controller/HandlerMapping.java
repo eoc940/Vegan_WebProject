@@ -8,9 +8,7 @@ import com.team1.vegan.servlet.controller.BoardController.CommentWriteController
 import com.team1.vegan.servlet.controller.BoardController.BoardRegisterController;
 import com.team1.vegan.servlet.controller.BoardController.BoardUpdateController;
 
-import com.team1.vegan.servlet.controller.BoardController.FindByContentController;
-import com.team1.vegan.servlet.controller.BoardController.FindByMemberIdController;
-import com.team1.vegan.servlet.controller.BoardController.FindByTitleController;
+import com.team1.vegan.servlet.controller.BoardController.searchBoardController;
 
 import com.team1.vegan.servlet.controller.MemberController.DeleteController;
 import com.team1.vegan.servlet.controller.MemberController.IdCheckController;
@@ -67,12 +65,8 @@ public class HandlerMapping {
 			controller = new BoardUpdateController();
 		}if(command.equals("Board/boardDelete.do")) {
 			controller = new BoardDeleteController();
-		}if(command.equals("Board/findByTitle.do")) {
-			controller = new FindByTitleController();
-		}if(command.equals("Board/findByContent.do")) {
-			controller = new FindByContentController();
-		}if(command.equals("Board/findByMemberId.do")) {
-			controller = new FindByMemberIdController();
+		}if(command.equals("Board/searchBoard.do")) {
+			controller = new searchBoardController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
 		}if(command.equals("Store/storeList.do")) {
