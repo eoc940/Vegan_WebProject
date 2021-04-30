@@ -3,23 +3,6 @@
 /**
  * 검색창 제어
  */
-// 검색창 요소(.search) 찾기.
-const searchEl = document.querySelector('.search')
-const searchInputEl = searchEl.querySelector('input')
-// 검색창 요소를 클릭하면 실행.
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus()
-})
-// 검색창 요소 내부 실제 input 요소에 포커스되면 실행.
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused')
-  searchInputEl.setAttribute('placeholder', '통합검색')
-})
-// 검색창 요소 내부 실제 input 요소에서 포커스가 해제(블러)되면 실행.
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused')
-  searchInputEl.setAttribute('placeholder', '')
-})
 
 
 /**
@@ -56,13 +39,14 @@ window.addEventListener('scroll', _.throttle(function () {
     })
   }
 }, 300))
+
 // 상단으로 스크롤 버튼을 클릭하면,
-toTopEl.addEventListener('click', function () {
+/* toTopEl.addEventListener('click', function () {
   // 페이지 위치를 최상단으로 부드럽게(0.7초 동안) 이동.
   gsap.to(window, .7, {
     scrollTo: 0
   })
-})
+}) */
 
 
 /**
@@ -130,7 +114,7 @@ const promotionToggleBtn = document.querySelector('.toggle-promotion')
 // 슬라이드 영역 숨김 여부 기본값!
 let isHidePromotion = false
 // 토글 버튼을 클릭하면,
-promotionToggleBtn.addEventListener('click', function () {
+/* promotionToggleBtn.addEventListener('click', function () {
   // 슬라이드 영역 숨김 여부를 반댓값으로 할당!
   isHidePromotion = !isHidePromotion
   // 요소를 숨겨야 하면,
@@ -140,7 +124,7 @@ promotionToggleBtn.addEventListener('click', function () {
   } else {
     promotionEl.classList.remove('hide')
   }
-})
+}) */
 
 
 /**
@@ -191,5 +175,5 @@ spyEls.forEach(function (spyEl) {
 /**
  * 올해가 몇 년도인지 계산
  */
-const thisYear = document.querySelector('.this-year')
-thisYear.textContent = new Date().getFullYear()
+/* const thisYear = document.querySelector('.this-year')
+thisYear.textContent = new Date().getFullYear() */
