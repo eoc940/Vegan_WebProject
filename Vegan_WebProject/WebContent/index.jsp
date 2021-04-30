@@ -279,7 +279,7 @@
           <img  src="./assets/img/reserve_store_medal_back.png" height="300" alt="R">
         </div>
         <div class="back" id="menu_img">
-          <img src="./assets/img/reserve_store_medal_back.png" height="300" alt="돌려돌려 음식판">
+          <img src="bgimg/bg img(8).jpg" height="300" alt="돌려돌려 음식판">
         </div>
         
       </div>
