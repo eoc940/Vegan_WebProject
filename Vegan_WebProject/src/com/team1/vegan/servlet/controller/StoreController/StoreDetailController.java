@@ -1,6 +1,7 @@
 package com.team1.vegan.servlet.controller.StoreController;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,11 +25,32 @@ public class StoreDetailController implements Controller {
 		StoreImageVO foodvo = null;
 		StoreImageVO menuvo = null;
 		MapVO mvo = null;
+		//closestStore는 가장 가까운 음식점 객체
+		StoreVO closestStore = null;
+		
 		try {
 			svo = StoreDAOImpl.getInstance().getStoreDetail(storeId);
 			foodvo = StoreDAOImpl.getInstance().findMainFoodImage(storeId);
 			menuvo = StoreDAOImpl.getInstance().findMenuImage(storeId);
 			mvo = StoreDAOImpl.getInstance().findStoreMap(storeId);
+			
+			//알고리즘(해당 음식점에서 가장 가까운 거리의 음식점 찾기)
+			ArrayList<StoreVO> storeList = StoreDAOImpl.getInstance().getAllStore();
+			float latitude = mvo.getLatitude();
+			float longitude = mvo.getLongitude();
+			float minimum = Float.MAX_VALUE;
+			
+			for(StoreVO vo : storeList) {
+				float anotherLati = StoreDAOImpl.getInstance().findStoreMap(vo.getStoreId()).getLatitude();
+				float anotherLongi = StoreDAOImpl.getInstance().findStoreMap(vo.getStoreId()).getLongitude();
+				float latiDistance = Math.abs(latitude-anotherLati);
+				float longiDistance = Math.abs(longitude-anotherLongi);
+				if(svo.getStoreId()!=vo.getStoreId() && minimum > latiDistance*latiDistance + longiDistance*longiDistance) {
+					minimum = latiDistance*latiDistance + longiDistance*longiDistance;
+					closestStore = vo;
+				}
+			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -37,6 +59,7 @@ public class StoreDetailController implements Controller {
 		request.setAttribute("foodvo", foodvo);
 		request.setAttribute("menuvo", menuvo);
 		request.setAttribute("mvo", mvo);
+		request.setAttribute("closestStore", closestStore);
 		
 		return new ModelAndView(path);
 	}

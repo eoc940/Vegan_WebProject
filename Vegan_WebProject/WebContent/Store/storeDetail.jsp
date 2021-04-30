@@ -763,11 +763,11 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="index.jsp">Home</a></li>
-						<li><a href="aboutus.jsp">About Us</a></li>
-						<li><a href="./Board/boardList.do">Board</a></li>
-						<li><a href="./Member/myPage.do?memberId=${vo.memberId}">Restaurants</a></li>
-						<li><a href="aboutus.jsp">My Page</a></li>
+						<li><a href="../index.jsp">Home</a></li>
+						<li><a href="../aboutus.jsp">About Us</a></li>
+						<li><a href="../Board/boardList.do">Board</a></li>
+						<li><a href="../Store/storeList.do">Restaurants</a></li>
+						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 						
 					</ul>
 				</nav>
@@ -831,6 +831,12 @@ window.onload = initialize;
 									<p>메뉴사진 들어갈자리</p>
 									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
+								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
+								<p>
+								가장 가까운 음식점 정보<br>
+								이름:${closestStore.name}<br>
+								주소:${closestStore.address}
+								</p>
 						
 							</ul>
 						</section>
