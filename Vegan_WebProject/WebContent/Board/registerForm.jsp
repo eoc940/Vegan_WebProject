@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Insert title here</title>
+<title>Register</title>
 <script>
 	function check_register(){
 		if(confirm('게시글을 작성하시겠습니까?')){
@@ -42,11 +42,6 @@
 <link href="css/registerForm.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 
-
-<title>Register</title>
-<style>
-
-</style>
 </head>
 <body>
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -68,12 +63,58 @@
    </div>
 
 </header><!-- End Header -->
+
+<div class = "header">
+			<div id="boardTitle">
+			   <h3>Board Register</h3>
+			</div>
+</div>
 	
 <form action = "boardRegister.do" method="post" name="boardRegisterForm">
-	제목 : <input type="text" name="title">
-	내용 : <input type="text" name="content">
-	작성자 : ${vo.memberId} <input type="hidden" name="memberId" value="${vo.memberId}">
-	<input type="button" value="Regiser" onclick="check_register()">
+	<div class = "boardContainer">
+		<table>
+			<thead>
+				<tr>
+					<th width="10%">Title</th>
+					<th width="70%">
+						<input type="text" name="title" id="ttl">
+					</th>
+					<th width="10%">Writer</th>
+					<th width="10%" id="mid">${vo.memberId}</th>
+				</tr>
+				<tr>
+					<th colspan="4"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="tbodyrow">
+					<td colspan="4"> <input type="text" name="content" placeholder="Context..."></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="postRegister">
+			<input type="hidden" name="memberId" value="${vo.memberId}">
+			<input type="button" value="Register" onclick="check_register()" id="registerBtn">
+		</div>
+	</div>
 </form>
+
+
+ <!-- ======= Footer ======= -->
+
+	<footer class="boardfooter">
+		    <div id="container">
+		      <h2>VEGAN PROJECT</h2>
+		      <p>All life deserves respect, dignity, and compassion. All life.</p>
+		    
+		      <div class="copyright">
+		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
+		     
+		      <div class="credits">
+		        Designed by Enocore 1 Team</a>
+		      </div>
+		    </div>
+	 </footer><!-- End Footer -->
+
 </body>
 </html>

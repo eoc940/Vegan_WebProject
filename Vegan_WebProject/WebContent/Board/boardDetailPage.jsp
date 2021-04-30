@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Board-${board.title}</title>
 <script>
 function check_delete(){
 	if(confirm('게시글을 삭제하시겠습니까?')){
@@ -45,7 +45,7 @@ function check_delete(){
 <link href="css/style.css" rel="stylesheet">
 
 
-<title>Board-${board.title}</title>
+
 
 
 </head>
@@ -58,13 +58,19 @@ function check_delete(){
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="../index.jsp">Home</a></li>
+        <li><a href="../index.jsp">Home</a></li>
         <li><a href="../aboutus.jsp">About Us</a></li>
-       <li><a href="boardList.do">Board</a></li>
-        <li><a href="../Store/storeList.do">Restautants</a></li>
-        <li><a href="../Member/myPage.jsp">My Page</a></li>
-
+        <li class="active"><a href="boardList.do">Board</a></li>
+        <li><a href="../Store/storeList.do">Restaurants</a></li>
+        <c:if test="${!empty vo}">
+        <li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+        </c:if>
+		<c:if test="${!empty vo}">
+        <li class="book-a-table text-center" ><a href="../Member/logout.do">logout</a></li>
+		</c:if>
+		<c:if test="${empty vo}">
         <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+        </c:if>
       </ul>
      </nav><!-- .nav-menu -->
     
@@ -130,7 +136,7 @@ function check_delete(){
 						</thead>
 						<tbody>
 							<tr>
-								<td width=90%><textarea cols="100" row="20"  name="content" placehorder="Comments.."></textarea></td>
+								<td width=90%><textarea name="content" placeholder="Comments.."></textarea></td>
 								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
 								<input type="hidden" name="boardId" value="${board.boardId}">
 								<input type="hidden" name="memberId" value="${vo.memberId}">
