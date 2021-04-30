@@ -766,7 +766,7 @@
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="aboutus.jsp">About Us</a></li>
 						<li><a href="./Board/boardList.do">Board</a></li>
-						<li><a href="./Store/storeList.do">Restaurants</a></li>
+						<li><a href="./Member/myPage.do?memberId=${vo.memberId}">Restaurants</a></li>
 						<li><a href="aboutus.jsp">My Page</a></li>
 						
 					</ul>
@@ -810,7 +810,7 @@ var myLatlng = new google.maps.LatLng(37.2915450, 127.0430790); // 좌표값
   var marker = new google.maps.Marker({ 
 position: myLatlng, 
 map: map, 
-title: "회사명" // 마커에 마우스를 올렸을때 간략하게 표기될 설명글
+title: 
 }); 
   } 
 window.onload = initialize;
