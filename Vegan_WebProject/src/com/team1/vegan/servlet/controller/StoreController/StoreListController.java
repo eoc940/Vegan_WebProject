@@ -24,8 +24,8 @@ public class StoreListController implements Controller{
 		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
 		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
 		ArrayList<StoreShowVO> storeShowList = new ArrayList<StoreShowVO>();
+		String path = "storeList.jsp";
 
-		String path = "storeMain.jsp";
 		
 		try {
 			storeList = StoreDAOImpl.getInstance().getAllStore();
