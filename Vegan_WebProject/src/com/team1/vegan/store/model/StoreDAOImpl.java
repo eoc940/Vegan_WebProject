@@ -233,8 +233,63 @@ public class StoreDAOImpl implements StoreDAO {
 		try {	
 			conn = getConnection();
 
+			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id and image_url like '%-1%'";
 
-			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				image = new StoreImageVO(
+						rs.getString("i.image_url"),
+						rs.getInt("i.store_id"),
+						rs.getString("s.name"));
+			}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		
+		return image;
+	}
+	@Override
+	public StoreImageVO findMainFoodImage(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		StoreImageVO image = null;
+		
+		try {	
+			conn = getConnection();
+
+			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id and image_url like '%-3%'";
+
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				image = new StoreImageVO(
+						rs.getString("i.image_url"),
+						rs.getInt("i.store_id"),
+						rs.getString("s.name"));
+			}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		
+		return image;
+	}
+
+	@Override
+	public StoreImageVO findMenuImage(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		StoreImageVO image = null;
+		
+		try {	
+			conn = getConnection();
+
+
+			String query = "select s.name, i.store_id, i.image_url from store s, store_image i where s.store_id=? and s.store_id=i.store_id and image_url like '%-2%'";
 
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
@@ -253,11 +308,7 @@ public class StoreDAOImpl implements StoreDAO {
 		return image;
 	}
 
-	public static void main(String[] args) throws Exception {
-		StoreDAOImpl dao = StoreDAOImpl.getInstance();
-		ArrayList<StoreVO> list = dao.getAllStore();
-		System.out.println(list);
-	}
+	
 
 	@Override
 	public AreaVO findStoreArea(int storeId) throws SQLException {
@@ -306,6 +357,12 @@ public class StoreDAOImpl implements StoreDAO {
 		}
 		return areaList;
 	}
+	public static void main(String[] args) throws Exception {
+		StoreDAOImpl dao = StoreDAOImpl.getInstance();
+		ArrayList<StoreVO> list = dao.getAllStore();
+		System.out.println(list);
+	}
 
+	
 	
 }

@@ -77,7 +77,6 @@ public class HandlerMapping {
 			controller = new FindByStoreAreaController();
 		}if(command.equals("Store/storeDetail.do")) {
 			controller = new StoreDetailController();
-
 		}
 		
 		return controller;

@@ -19,7 +19,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-
+		
 	
 	
 	
@@ -763,11 +763,11 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="index.jsp">Home</a></li>
-						<li><a href="aboutus.jsp">About Us</a></li>
-						<li><a href="./Board/boardList.do">Board</a></li>
-						<li><a href="storeMain.jsp">Restaurants</a></li>
-						<li><a href="aboutus.jsp">My Page</a></li>
+						<li><a href="../index.jsp">Home</a></li>
+						<li><a href="../aboutus.jsp">About Us</a></li>
+						<li><a href="../Board/boardList.do">Board</a></li>
+						<li><a href="../Store/storeList.do">Restaurants</a></li>
+						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 						
 					</ul>
 				</nav>
@@ -782,32 +782,62 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
+						
 							<header>
-							<h2>식당이름</h2>
+							
+							<h2>${svo.name}</h2>
+							<br>
 							<!-- <h2>${storeVO.name}</h2> -->	
-								<span>좋아요버튼 들어갈자리</span>
+								<span>${svo.hit}</span>
 							</header>
-							<img src="store_img/10-1.jpg" alt="" /></a>
+							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor.</p>
-							<p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec nonummy magna quis risus. Quisque eleifend. Phasellus tempor vehicula justo. Aliquam lacinia metus ut elit.</p>
-							<p>Donec nonummy magna quis risus. Quisque eleifend. Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Phasellus tempor vehicula justo. Aliquam lacinia metus ut elit.</p>
-						</section>
-					</div>
-					
-					<!-- Sidebar -->
+							<p>${svo.description}</p>
+							<div id="map" style="width:780px; height:350px;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=en"></script>
+<script> 
+
+
+  function initialize() { 
+var myLatlng = new google.maps.LatLng(37.2915450, 127.0430790); // 좌표값
+  var mapOptions = { 
+        zoom: 14, // 지도 확대레벨 조정
+        center: myLatlng, 
+        mapTypeId: google.maps.MapTypeId.ROADMAP 
+  } 
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions); 
+  var marker = new google.maps.Marker({ 
+position: myLatlng, 
+map: map, 
+title: 
+}); 
+  } 
+window.onload = initialize;
+</script>
+
+
+</section>
+						
+</div>					<!-- Sidebar -->
 					<div id="sidebar" class="4u">
 						<section>
 							<header>
 								<h2>매장정보</h2>
-								<p>"${storeVO.address}"</p>
+								<p>"${svo.address}"</p>
 							</header>
 							<ul class="style">
 								<li>
 									<p>메뉴사진 들어갈자리</p>
-									<img src="store_img/10-1.jpg" alt="" />
+									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
-								
+								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
+								<p>
+								가장 가까운 음식점 정보<br>
+								이름:${closestStore.name}<br>
+								주소:${closestStore.address}
+								</p>
+						
 							</ul>
 						</section>
 					</div>

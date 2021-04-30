@@ -52,13 +52,19 @@
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="../index.jsp">Home</a></li>
+        <li><a href="../index.jsp">Home</a></li>
         <li><a href="../aboutus.jsp">About Us</a></li>
-       <li><a href="../Board/boardList.do">Board</a></li>
-        <li><a href="storeList.do">Restaurants</a></li>
-        <li><a href="../Member/myPage.jsp">My Page</a></li>
-
-        <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+        <li><a href="../Board/boardList.do">Board</a></li>
+        <li class="active"><a href="storeList.do">Restaurants</a></li>
+        <c:if test="${!empty vo}">
+        <li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+        </c:if>
+		<c:if test="${!empty vo}">
+          <li class="book-a-table text-center" ><a href="../Member/logout.do">logout</a></li>
+		  </c:if>
+		  <c:if test="${empty vo}">
+          <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+          </c:if>
       </ul>
      </nav><!-- .nav-menu -->
     
@@ -96,7 +102,7 @@
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 	        <c:forEach items="${storeShowList}" var="store">
 	          <div class="item ${store.area} ">
-	            <a href="storeDetail.jsp" class="item-wrap fancybox">
+	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}" class="item-wrap fancybox">
 	              <div class="work-info">
 	    			 <h3>${store.area}</h3>
 	                <span>${store.area} &nbsp; ${store.name}</span>
