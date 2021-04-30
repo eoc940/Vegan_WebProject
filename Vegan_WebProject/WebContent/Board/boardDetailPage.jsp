@@ -114,7 +114,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td width=90%><textarea cols="100" row="20"  name="content" placehorder="Comments.."></textarea></td>
+								<td width=90%><textarea name="content" placeholder="Comments.."></textarea></td>
 								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
 								<input type="hidden" name="boardId" value="${board.boardId}">
 								<input type="hidden" name="memberId" value="${vo.memberId}">
