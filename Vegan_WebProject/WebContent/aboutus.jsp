@@ -1070,7 +1070,7 @@ hr{	width:85%;
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="aboutus.jsp">About Us</a></li>
          <li><a href="./Board/boardList.do">Board</a></li>
-          <li><a href="./Store/storeMain.jsp">Restautants</a></li>
+          <li><a href="./Store/storeList.do">Restautants</a></li>
           <li><a href="./Member/updateForm.jsp">My Page</a></li>
  
           <li class="book-a-table text-center" ><a href="Member/loginForm.jsp">login</a></li>
