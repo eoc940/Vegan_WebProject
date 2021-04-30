@@ -43,6 +43,7 @@ body {
     position: absolute;
     width: 170px;
 }
+
 .writerArea{
 	text-align:right;
 	padding:0px 0px 5px 5px;
@@ -221,8 +222,9 @@ footer{
 	padding: 30px;
 	margin: 20px;
 	vertical-align: middle;
+	border:3px solid rgba(254,183,1,0.3);
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	
+
 }
 
 tbody>tr>td{
@@ -242,22 +244,23 @@ tbody>tr>td{
 	border-collapse: collapse;
 	vertical-align: middle;
 	text-align:center;
-	
+	border-radius: 40px;
 }
 
 .commenterArea #commentWrt tbody>tr{
-	border: 1px solid ;
-	border-color: #fdb801;
+	border: transparent;
+	border-collapse: collapse;
 	border-radius: 40px;
 	height: 50px;
 	text-align: left;
 	padding: 60px 30px 30px 30px;
 	margin: 20px;
 	vertical-align: middle;
-	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color:rgba(352,184,1,0.3);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	
 }
+
+
 
 textarea{
 	resize:none;

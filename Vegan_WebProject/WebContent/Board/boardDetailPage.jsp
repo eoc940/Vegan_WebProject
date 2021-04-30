@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Board-${board.title}</title>
 <script>
 function check_delete(){
 	if(confirm('게시글을 삭제하시겠습니까?')){
@@ -45,7 +45,7 @@ function check_delete(){
 <link href="css/style.css" rel="stylesheet">
 
 
-<title>Board-${board.title}</title>
+
 
 
 </head>
