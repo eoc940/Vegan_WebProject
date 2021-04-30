@@ -7,6 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function check_delete(){
+	if(confirm('게시글을 삭제하시겠습니까?')){
+		location.href='boardDelete.do?boardId=${board.boardId}';
+	}
+	else{
+		location.href='boardDetailPage.do?boardId=${board.boardId}';
+	}
+}
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -34,6 +46,7 @@
 
 
 <title>Board-${board.title}</title>
+
 
 </head>
 <body>
@@ -65,6 +78,7 @@
 			   <h3>${board.title}</h3>
 			</div>
 	</div>
+
 			
 	<div class="boardContainer">
 		<div id="boardBar">	
@@ -76,7 +90,9 @@
 			
 		<div class="writerArea">
 			<c:if test="${board.memberId eq vo.memberId}">			
-				<input type="button" value="Revise" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'" id="reviseBtn"> <input type="button" value="Delete" onClick="location.href='boardDelete.do?boardId=${board.boardId}'" id="deleteBtn">					
+				<input type="button" value="Revise" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'" id="reviseBtn"> 
+				<input type="button" value="Delete" onClick="check_delete()" id="deleteBtn">					
+
 			</c:if>
 		</div>
 		<div class="commentContainer">
@@ -146,7 +162,6 @@
 		      </div>
 		    </div>
 	 </footer><!-- End Footer -->
-
 
 </body>
 </html>

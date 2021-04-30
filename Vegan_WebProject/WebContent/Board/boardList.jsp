@@ -26,12 +26,34 @@
 <!--Lodash-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
 
-<script src="js/main.js"> </script>
+
+   
+
+
+
+
+
+
+
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& css 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
+<script src="js/main.js"></script>
 <link href="css/boardList.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 
-<title>Board</title>
 
+<title>Board</title>
+<script>
+function check_write(){
+	if("${vo}" != ""){
+		location.href='registerForm.jsp';
+	}
+	else{
+		alert("로그인 하시기 바랍니다.")
+		location.href='../Member/loginForm.jsp';
+	}
+}
+</script>
 </head>
 <body>
 
@@ -43,13 +65,19 @@
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="../index.jsp">Home</a></li>
+        <li><a href="../index.jsp">Home</a></li>
         <li><a href="../aboutus.jsp">About Us</a></li>
-       <li><a href="boardList.do">Board</a></li>
-        <li><a href="../Store/storeList.do">Restautants</a></li>
-        <li><a href="../Member/myPage.jsp">My Page</a></li>
-
+        <li class="active"><a href="boardList.do">Board</a></li>
+        <li><a href="../Store/storeList.do">Restaurants</a></li>
+        <c:if test="${!empty vo}">
+        <li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+        </c:if>
+		<c:if test="${!empty vo}">
+        <li class="book-a-table text-center" ><a href="../Member/logout.do">logout</a></li>
+		</c:if>
+		<c:if test="${empty vo}">
         <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+        </c:if>
       </ul>
      </nav><!-- .nav-menu -->
     
@@ -65,10 +93,12 @@
 	
 	
 	<div id="write">
-		<input type="button" value="Write" onClick="location.href='registerForm.jsp'" id="writeButton">
-	
-	</div>	
+
+		<input type="button" value="Write" onClick="check_write()" id="writeButton">
+	</div>
+
 	<table>	
+
 		<thead>
 			<tr >
 				<th width="10%" >No.</th>
@@ -101,8 +131,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
+
 </div>	
-	
+
 
 <div class="search">
 	<form action="searchBoard.do">
