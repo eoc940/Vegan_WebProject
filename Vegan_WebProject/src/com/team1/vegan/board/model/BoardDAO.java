@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public interface BoardDAO {
 	
@@ -19,9 +20,7 @@ public interface BoardDAO {
 	void deletePost(int boardId) throws SQLException ;
 	void addViewCount(int boardId) throws SQLException ;
 	int maxId() throws SQLException;
-	ArrayList<BoardVO> findByTitle(String title) throws SQLException ;
-	ArrayList<BoardVO> findByContent(String content) throws SQLException ;
-	ArrayList<BoardVO> findByWriter(String writer) throws SQLException ;
+	ArrayList<BoardVO> searchBoard(HashMap<String, Object> listOpt) throws SQLException ;
 	ArrayList<BoardVO> getAllPost() throws SQLException ;
 	
 

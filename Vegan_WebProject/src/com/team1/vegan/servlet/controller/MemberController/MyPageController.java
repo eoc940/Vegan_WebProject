@@ -25,11 +25,15 @@ public class MyPageController implements Controller {
 		ArrayList<AreaVO> listA = new ArrayList<AreaVO>();
 		ArrayList<BoardVO> listB = new ArrayList<BoardVO>();
 		ArrayList<StoreImageVO> listSI = new ArrayList<StoreImageVO>();
-
+		
+		HashMap<String, Object> listOpt = new HashMap<String, Object>();
+        listOpt.put("opt", "2");
+        listOpt.put("contents", memberId);
+        
 		String path = "myPage.jsp";
 		try {
 			listA = MemberDAOImpl.getInstance().getInterestAreas(memberId);
-			listB = BoardDAOImpl.getInstance().findByWriter(memberId);
+			listB = BoardDAOImpl.getInstance().searchBoard(listOpt);
 			listSI = MemberDAOImpl.getInstance().getClickHit(memberId);
 						
 			request.setAttribute("listA", listA);
