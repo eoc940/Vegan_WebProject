@@ -178,6 +178,21 @@ public class StoreDAOImpl implements StoreDAO {
 		}
 
 	}
+	
+	@Override
+	public void minusHitCount(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = getConnection();
+			String query = "UPDATE store SET hit=hit-1 WHERE store_id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			System.out.println(ps.executeUpdate() + "row update OK!!");
+		} finally {
+			closeAll(ps, conn);
+		}
+	}
 
 	@Override
 	public ArrayList<StoreImageVO> getBestNine() throws SQLException {
@@ -357,12 +372,5 @@ public class StoreDAOImpl implements StoreDAO {
 		}
 		return areaList;
 	}
-	public static void main(String[] args) throws Exception {
-		StoreDAOImpl dao = StoreDAOImpl.getInstance();
-		ArrayList<StoreVO> list = dao.getAllStore();
-		System.out.println(list);
-	}
-
-	
 	
 }
