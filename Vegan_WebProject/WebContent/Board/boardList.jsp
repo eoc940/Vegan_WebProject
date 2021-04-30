@@ -28,7 +28,7 @@
 
 <script src="js/main.js"> </script>
 <link href="css/boardList.css" rel="stylesheet">
-
+<link href="css/style.css" rel="stylesheet">
 
 <title>Board</title>
 
@@ -61,16 +61,14 @@
     	<h3>Board</h3>
 	 </div>
 <div id="container">
-	<div align ="right">
-		<%-- <c:if test=${ }>	
-		</c:if>
-		<c:if test=${ }>
-		</c:if> --%>
-	</div>
+
+	
+	
 	<div id="write">
 		<input type="button" value="Write" onClick="location.href='registerForm.jsp'" id="writeButton">
-	</div>
-	<table>
+	
+	</div>	
+	<table>	
 		<thead>
 			<tr >
 				<th width="10%" >No.</th>
@@ -105,20 +103,35 @@
 	</table>
 </div>	
 	
-<div>
-	<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
-</div>
 
-<div>
+<div class="search">
 	<form action="searchBoard.do">
-    	<select name="opt">
+    	<select name="opt" >
             <option value="0">제목</option>
             <option value="1">내용</option>
             <option value="2">작성자</option>
         </select>
-        <input type="text" size="20" name="contents"/>
-        <input type="submit" value="검색"/>
+        <input type="text" size="20" name="contents" id="searchContext"/>
+        <input type="submit" value="검색" id="searchButton"/>
     </form> 
 </div>
+
+   <!-- ======= Footer ======= -->
+
+	<footer class="boardfooter">
+		    <div id="container">
+		      <h2>VEGAN PROJECT</h2>
+		      <p>All life deserves respect, dignity, and compassion. All life.</p>
+		    
+		      <div class="copyright">
+		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
+		      </div>
+		      <div class="credits">
+		        Designed by Enocore 1 Team</a>
+		      </div>
+		    </div>
+	 </footer><!-- End Footer -->
+
+   
 </body>
 </html>

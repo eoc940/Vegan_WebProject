@@ -30,6 +30,8 @@
 
 <script src="js/main.js"> </script>
 <link href="css/boardDetail.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
 
 <title>Board-${board.title}</title>
 
@@ -56,59 +58,95 @@
    </div>
 
 </header><!-- End Header -->
-	
-	<div>
-		<h2>${board.title}</h2>
-		작성자 : ${board.memberId} 작성일시 : ${board.date}
+
+
+	<div class = "header">
+			<div id="boardTitle">
+			   <h3>${board.title}</h3>
+			</div>
 	</div>
-	<div>내용 : ${board.content}</div>
-	
-<div>
-	<c:if test="${board.memberId eq vo.memberId}">			
-		<input type="button" value="수정" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do?boardId=${board.boardId}'">					
-	</c:if>
-</div>
-
-	<div>
-		<!-- 댓글리스트 출력테이블 -->
-		<table bgcolor='lightgray' >
-			<c:if test="${!empty commentList}">
-				<c:forEach var="comment" items="${commentList}">
-					<tr>
-						<td>작성자: ${comment.memberId}</td>
-						<td>작성일시: ${comment.date}</td>
-					</tr>
-					<tr>
-						<td>내 용: ${comment.content}</td>
-						<c:if test="${comment.memberId eq vo.memberId}">
-							<td>
-								<input type="button" value="delete" onClick="location.href='deleteComment.do?boardId=${board.boardId}&&commentId=${comment.commentId}'">
-							</td>
-						</c:if>
-					</tr>
-				</c:forEach>
-
+			
+	<div class="boardContainer">
+		<div id="boardBar">	
+			<h3>작성자 : ${board.memberId} 작성일시 : ${board.date}</h3>
+		</div>
+		<div id="boardCnt">
+			<p>${board.content}</p>
+		</div>
+			
+		<div class="writerArea">
+			<c:if test="${board.memberId eq vo.memberId}">			
+				<input type="button" value="Revise" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'" id="reviseBtn"> <input type="button" value="Delete" onClick="location.href='boardDelete.do?boardId=${board.boardId}'" id="deleteBtn">					
 			</c:if>
-		</table>
+		</div>
+		<div class="commentContainer">
+			<div class="commenterArea">
+				<!-- 댓글리스트 출력테이블 -->
+				<c:if test="${!empty commentList}">
+				<table id ="commentList">
+						<c:forEach var="comment" items="${commentList}">
+							<thead>
+								<th colspan="2">작성자: ${comment.memberId} &nbsp&nbsp&nbsp 작성일시: ${comment.date}</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="90%"> ${comment.content}
+									</td>
+									<td width="10%">
+										<c:if test="${comment.memberId eq vo.memberId}">
+												<input type="button" value="Delete" onClick="location.href='deleteComment.do?boardId=${board.boardId}&&commentId=${comment.commentId}'" id="deleteBtn">
+										</c:if>
+									</td>
+									
+								</tr>
+							</tbody>
+						</c:forEach>
+				</table>
+			</c:if>	
+			</div>
+			
+			<div class="commenterArea">
+				<!-- 댓글 입력창 -->
+				<form action="writeComment.do" method="post">
+					<table id = "commentWrt">
+						<thead>
+							<th colspan="2">작성자 : ${vo.memberId}</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td width=90%><textarea cols="100" row="20"  name="content" placehorder="Comments.."></textarea></td>
+								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
+								<input type="hidden" name="boardId" value="${board.boardId}">
+								<input type="hidden" name="memberId" value="${vo.memberId}">
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+		
+		
+			<div class="list">
+				<input type="button" value="List" onClick="location.href='boardList.do'" id="listBtn">
+			</div>
 	</div>
-	<div>
-		<!-- 댓글 입력창 -->
-		<form action="writeComment.do" method="post">
-			<table>
-			<tr >
-				<td>작성자: ${vo.memberId}</td>
-				<td>내 용: <textarea  name="content"></textarea></td>
-				<td><input type="submit" value = "Write"></td>
-				<input type="hidden" name="boardId" value="${board.boardId}">
-				<input type="hidden" name="memberId" value="${vo.memberId}">
-			</tr>
-			</table>
-		</form>
-	</div>
+	
+   <!-- ======= Footer ======= -->
 
-	<div>
-		<input type="button" value="목록" onClick="location.href='boardList.do'">
-	</div>
+	<footer class="boardfooter">
+		    <div id="container">
+		      <h2>VEGAN PROJECT</h2>
+		      <p>All life deserves respect, dignity, and compassion. All life.</p>
+		    
+		      <div class="copyright">
+		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
+		     
+		      <div class="credits">
+		        Designed by Enocore 1 Team</a>
+		      </div>
+		    </div>
+	 </footer><!-- End Footer -->
+
 
 </body>
 </html>
