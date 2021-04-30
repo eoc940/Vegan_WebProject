@@ -69,7 +69,7 @@ public class HandlerMapping {
 			controller = new searchBoardController();
 		}if(command.equals("bestNine.do")) {
 			controller = new BestNineController();
-		}if(command.equals("Store/StoreList.do")) {
+		}if(command.equals("Store/storeList.do")) {
 			controller = new StoreListController();
 		}if(command.equals("Store/findByStoreName.do")) {
 			controller = new FindByStoreNameController();
