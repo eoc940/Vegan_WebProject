@@ -33,11 +33,12 @@ public class StoreListController implements Controller{
 			for(StoreVO svo : storeList) {
 				String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
 				String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
-				
+				int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
 				storeShowList.add(new StoreShowVO(
-						area, svo.getName(), imageUrl
+						area, svo.getName(), imageUrl, storeId
 						));
 			}
+			
 			
 			request.setAttribute("storeShowList", storeShowList);
 			request.setAttribute("areaList", areaList);

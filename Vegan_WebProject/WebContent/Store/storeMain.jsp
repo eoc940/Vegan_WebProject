@@ -1138,26 +1138,29 @@ a:focus{
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 	        <c:forEach items="${storeShowList}" var="store">
 	          <div class="item ${store.area} ">
-	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do" class="item-wrap fancybox">
+	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}" class="item-wrap fancybox">
 	              <div class="work-info">
 					<h3>${store.area}</h3>
 	                <span>${store.area} &nbsp; ${store.name}</span>
+	                </div>
 	         		<img class="img-fluid" src="../store_img/${store.imageUrl}">
-	               </div>
+	               
 				</a>
 	      </div>
 	      </c:forEach>
 
-	        <div class="item 300 ">
-	            <a href="${pageContext.request.contextPath}/Store/storeDetail.do?storenumber=${store.storeId}" class="item-wrap fancybox">
+<!--  ${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId} -->
+
+	        <!--  <div class="item 300 ">
+	            <a href="${pageContext.request.contextPath}/" class="item-wrap fancybox">
 	              <div class="work-info">
 	                <h3>종로구</h3>
 	                <span>종로구 식당이름1</span>
 	              </div>
 	              <img class ="img-fluid" src="../bg_img/bgimg (10).jpg">
 	            </a>
-	         </div>
-	         
+	         </div> -->
+	          
 	         </div>
 	         </div>
 	        </section>
