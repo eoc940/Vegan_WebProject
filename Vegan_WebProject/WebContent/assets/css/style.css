@@ -4,12 +4,12 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #444444;
 }
 
 a {
-  color: #ffb03b;
+  color: #fff;
 }
 
 a:hover {
@@ -18,7 +18,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Satisfy', sans-serif;
+  font-family: nanumgothic, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -46,7 +46,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+
 /*RESERVE STORE*/
+
 .reserve-store {
   background-image: url("../img/reserve_store_bg.jpg");
   background-repeat: no-repeat;
@@ -55,24 +58,57 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 .reserve-store .inner {
-  height: 150px;
+  height: 1000px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  
 }
 .reserve-store .medal {
-  width: 200px;
-  height: 200px;
-  perspective: 600px;
+  width: 300px ;
+  height: 300px;
+  perspective: 300px;
+
 }
-.reserve-store .medal .front,
-.reserve-store .medal .back {
-  width: inherit;
-  height: inherit;
+.reserve-store .medal .front
+{
+  width: 300px ;
+  height: 300px;
   position: absolute;
   transition: 1.5s;
   backface-visibility: hidden;
 }
+.reserve-store .medal .back {
+  
+
+  width: 300px ;
+  height: 300px;
+
+  border-radius: 70%;
+  overflow: hidden;
+  
+  position: absolute;
+  transition: 1.5s;
+  backface-visibility: hidden;
+
+}
+
+.reserve-store .btn {
+
+  text-shadow: 0 0 3px rgb(0, 0, 0); 
+  color: #ffffff; 
+
+}
+
+.reserve-store .btn:hover {
+
+  text-shadow: 0 0 3px rgb(0, 0, 0); 
+  color: #5EC75E; 
+
+}
+
+
 .reserve-store .medal .front {
   transform: rotateY(0deg);
 }
@@ -84,13 +120,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .reserve-store .medal:hover .back {
   transform: rotateY(0deg);
-}
-.reserve-store .medal .back .btn {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
 
 
@@ -202,7 +231,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 15px;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -477,20 +506,21 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h2 {
   color: #fff;
-  margin-bottom: 30px;
-  font-size: 48px;
+  margin-bottom: 50px;
+  font-size: 80px;
   font-weight: 700;
 }
 
 #hero h2 span {
-  color: #ffb03b;
+  color: #5EC75E;
 }
 
 #hero p {
   width: 80%;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 50px auto;
+  font-size: 23px;
   color: #fff;
 }
 
@@ -561,11 +591,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   color: #fff;
-  border: 2px solid #ffb03b;
+  border: 2px solid #5EC75E;
 }
 
 #hero .btn-menu:hover, #hero .btn-book:hover {
-  background: #ffb03b;
+  background: #5EC75E;
   color: #fff;
 }
 
@@ -588,7 +618,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+
 }
 
 .section-bg {
@@ -639,7 +669,7 @@ section {
 .notice .promotion {
   /*width: auto;*/
   height: 693px;
-  background-color: #f6f5ef;
+  background-color: rgba(0, 0, 0, 0.7);
   position: relative;
   overflow: hidden;
   transition: height .4s;
@@ -710,6 +740,24 @@ section {
   align-items: center;
   transition: .4s;
 }
+
+.notice .promotion .swiper-slide .btn {
+
+  color: #fff;
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+  font-size: 40px;
+
+}
+
+.notice .promotion .swiper-slide .btn:hover {
+
+  color: #5EC75E;
+  text-shadow: 0 0 3px rgb(0, 0, 0); 
+  font-size: 40px;
+
+}
+
+
 .notice .promotion .swiper-prev {
   left: 50%;
   margin-left: -480px;
@@ -725,54 +773,12 @@ section {
 }
 
 
-/*FIND STORE====================================================*/
-.find-store {
-  background-image: url("../img/find_store_bg.jpg");
-}
-.find-store .inner {
-  height: 400px;
-}
-.find-store .texture1 {
-  position: absolute;
-  top: 0;
-  left: 400px;
-}
-.find-store .texture2 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.find-store .picture {
-  border-radius: 50%;
-  box-shadow: 2px 2px 8px 0 rgba(0,0,0,.5);
-  position: absolute;
-}
-.find-store .picture1 {
-  top: -60px;
-  left: 0;
-}
-.find-store .picture2 {
-  top: 150px;
-  left: 250px;
-}
-.find-store .text-group {
-  position: absolute;
-  top: 120px;
-  left: 550px;
-}
-.find-store .text-group .title {
-  margin-bottom: 20px;
-}
-.find-store .text-group .description {
-  margin-bottom: 20px;
-}
-
 
 
 /*YOUTUBE VIDEO----------------------------------------------------------*/
 .youtube {
   position: relative;
-  height: 700px;
+  height: 1000px;
   background-color: #333;
   overflow: hidden;
 }
@@ -831,7 +837,7 @@ section {
 #footer{
 	background: rgba(0, 0, 0, 0.7);
 	font-size:15px;
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	color: rgba(255, 255, 255, 0.7);
