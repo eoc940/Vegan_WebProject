@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebInitParam;
  * 인코딩 작업을 필터링으로 연결한다
  * 이후 필터 뒷부분에 나오는 모든 컴포넌트들은 여기서 작업한 필터링 작업의 효과를 얻게된다.
  */
-@WebFilter(value= {"/*"})//모든 요청,응답 가로챈다
+@WebFilter(value= {"*.do"})//모든 요청,응답 가로챈다
 public class EncodingFilter implements Filter {
 
     public EncodingFilter() {
