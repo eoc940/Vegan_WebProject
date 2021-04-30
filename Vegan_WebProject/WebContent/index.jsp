@@ -171,9 +171,8 @@
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="aboutus.jsp">About Us</a></li>
           <li><a href="./Board/boardList.do">Board</a></li>
-          <li><a href="./Store/storeList.do">Restaurants</a></li>
-          <li><a href="./Member/myPage.jsp">My Page</a></li>
- 
+          <li><a href="./Store/storeList.do">Restautants</a></li>
+          <li><a href="./Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
           <li class="book-a-table text-center" ><a href="Member/loginForm.jsp">login</a></li>
 
         </ul>
@@ -280,7 +279,6 @@
       <a class="btn" onclick="showMenu()">
         <br>
         <br>
-          <h2>▶   누르고 마우스를 가져가면 ?!! </h2>
       </a>
       </div>
       

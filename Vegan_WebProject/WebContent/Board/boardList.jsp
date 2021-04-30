@@ -105,15 +105,20 @@
 	</table>
 </div>	
 	
-	
-	<div class="search">
-		<select>
-			<option>제목</option>
-			<option>내용</option>
-			<option>작성자</option>
-		</select> 
-		<input type="text" name="title" id="searchContext">
-		<input type="submit" value="검색" id="searchButton">
-	</div>
+<div>
+	<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
+</div>
+
+<div>
+	<form action="searchBoard.do">
+    	<select name="opt">
+            <option value="0">제목</option>
+            <option value="1">내용</option>
+            <option value="2">작성자</option>
+        </select>
+        <input type="text" size="20" name="contents"/>
+        <input type="submit" value="검색"/>
+    </form> 
+</div>
 </body>
 </html>

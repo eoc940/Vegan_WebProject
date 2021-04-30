@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.sql.DataSource;
 import util.DataSourceManager;
 
@@ -152,93 +154,73 @@ public class BoardDAOImpl implements BoardDAO{
 
 	
 	@Override
-	public ArrayList<BoardVO> findByTitle(String title) throws SQLException {
+	 public ArrayList<BoardVO> searchBoard(HashMap<String, Object> listOpt) throws SQLException{
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<BoardVO> list = new ArrayList<>();
+		
+		String opt = (String)listOpt.get("opt");
+        String contents = (String)listOpt.get("contents");
+        
 		try{
 			conn = getConnection();
-			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title = ?";
-			
-			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement...findByTitle()..");
-			
-			ps.setString(1, title);
-			rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				list.add(new BoardVO(
-						title,
-						rs.getString("content"),
-						rs.getString("date"),
-						rs.getInt("view_count"),
-						rs.getInt("board_id"),
-						rs.getString("member_id")));
+			if(opt.equals("0")){
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title = ?";
+				
+				ps = conn.prepareStatement(query);
+				System.out.println("PreparedStatement...findByTitle()..");
+				
+				ps.setString(1, contents);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					list.add(new BoardVO(
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getString("date"),
+							rs.getInt("view_count"),
+							rs.getInt("board_id"),
+							rs.getString("member_id")));
+				}
+			}else if(opt.equals("1")) {
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE content LIKE concat ('%', ?, '%')";
+				
+				ps = conn.prepareStatement(query);
+				System.out.println("PreparedStatement...findByContent()..");
+				
+				ps.setString(1, contents);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					list.add(new BoardVO(
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getString("date"),
+							rs.getInt("view_count"),
+							rs.getInt("board_id"),
+							rs.getString("member_id")));
+				}
+			}else if(opt.equals("2")) {
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id = ?";
+				
+				ps = conn.prepareStatement(query);
+				System.out.println("PreparedStatement...findByWriter()..");
+				
+				ps.setString(1, contents);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					list.add(new BoardVO(
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getString("date"),
+							rs.getInt("view_count"),
+							rs.getInt("board_id"),
+							rs.getString("member_id")));
+				}
 			}
-		}finally{
-			closeAll(rs, ps, conn);
-		}
-		return list;
-	}
 
-	@Override
-	public ArrayList<BoardVO> findByContent(String content) throws SQLException {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		ArrayList<BoardVO> list = new ArrayList<>();
-		try{
-			conn = getConnection();
-			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE content LIKE concat ('%', ?, '%')";
-			
-			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement...findByContent()..");
-			
-			ps.setString(1, content);
-			rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				list.add(new BoardVO(
-						rs.getString("title"),
-						rs.getString("content"),
-						rs.getString("date"),
-						rs.getInt("view_count"),
-						rs.getInt("board_id"),
-						rs.getString("member_id")));
-			}
-		}finally{
-			closeAll(rs, ps, conn);
-		}
-		return list;
-	}
-	
-
-	@Override
-	public ArrayList<BoardVO> findByWriter(String writer) throws SQLException {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		ArrayList<BoardVO> list = new ArrayList<>();
-		try{
-			conn = getConnection();
-			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id = ?";
-			
-			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement...findByWriter()..");
-			
-			ps.setString(1, writer);
-			rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				list.add(new BoardVO(
-						rs.getString("title"),
-						rs.getString("content"),
-						rs.getString("date"),
-						rs.getInt("view_count"),
-						rs.getInt("board_id"),
-						writer));
-			}
 		}finally{
 			closeAll(rs, ps, conn);
 		}
