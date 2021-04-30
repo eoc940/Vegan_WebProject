@@ -14,24 +14,18 @@ public class DeleteController implements Controller {
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 		String memberId =request.getParameter("memberId");
-		String password = request.getParameter("password");
 		String name = request.getParameter("name");
-		String address = request.getParameter("address");
 		
-		
-		MemberVO mvo = new MemberVO(memberId, password, name, address);
-		
-		String path="index.jsp";
+		String path = "deleteSuccess.jsp";
 		try{			
 			MemberDAOImpl.getInstance().deleteMember(memberId);
 		
 			HttpSession session  = request.getSession();
 			
 			if(session.getAttribute("vo")!=null) {
-				session.setAttribute("vo", mvo);
-				System.out.println(mvo);
-				path = "deleteSuccess.jsp";
+				session.invalidate();
 			}
+			request.setAttribute("name", name);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

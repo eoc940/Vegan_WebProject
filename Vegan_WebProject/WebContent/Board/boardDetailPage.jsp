@@ -8,6 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+function check_delete(){
+	if(confirm('게시글을 삭제하시겠습니까?')){
+		location.href='boardDelete.do?boardId=${board.boardId}';
+	}
+	else{
+		location.href='boardDetailPage.do?boardId=${board.boardId}';
+	}
+}
+</script>
 
 </head>
 <body>
@@ -19,7 +29,8 @@
 	
 <div>
 	<c:if test="${board.memberId eq vo.memberId}">			
-		<input type="button" value="수정" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'"> <input type="button" value="삭제" onClick="location.href='boardDelete.do?boardId=${board.boardId}'">					
+		<input type="button" value="수정" onClick="location.href='updateForm.jsp?boardId=${board.boardId}'">
+		<input type="button" value="삭제" onClick="check_delete()">
 	</c:if>
 </div>
 
@@ -45,8 +56,10 @@
 			</c:if>
 		</table>
 	</div>
+<c:if test="${!empty vo}">
 	<div>
 		<!-- 댓글 입력창 -->
+
 		<form action="writeComment.do" method="post">
 			<table>
 			<tr >
@@ -59,7 +72,7 @@
 			</table>
 		</form>
 	</div>
-
+</c:if>
 	<div>
 		<input type="button" value="목록" onClick="location.href='boardList.do'">
 	</div>

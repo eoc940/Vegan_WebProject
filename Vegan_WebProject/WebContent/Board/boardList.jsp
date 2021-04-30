@@ -240,7 +240,15 @@ $( function() {
 	
 })(jQuery);
 
-
+function check_write(){
+	if("${vo}" != ""){
+		location.href='registerForm.jsp';
+	}
+	else{
+		alert("로그인 하시기 바랍니다.")
+		location.href='../Member/loginForm.jsp';
+	}
+}
 
 </script>
 
@@ -1005,13 +1013,19 @@ table>thead>tr>th{
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="../index.jsp">Home</a></li>
+        <li><a href="../index.jsp">Home</a></li>
         <li><a href="../aboutus.jsp">About Us</a></li>
-       <li><a href="boardList.do">Board</a></li>
-        <li><a href="../Store/storeList.do">Restautants</a></li>
-        <li><a href="../Member/myPage.jsp">My Page</a></li>
-
+        <li class="active"><a href="boardList.do">Board</a></li>
+        <li><a href="../Store/storeList.do">Restaurants</a></li>
+        <c:if test="${!empty vo}">
+        <li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+        </c:if>
+		<c:if test="${!empty vo}">
+        <li class="book-a-table text-center" ><a href="../Member/logout.do">logout</a></li>
+		</c:if>
+		<c:if test="${empty vo}">
         <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+        </c:if>
       </ul>
      </nav><!-- .nav-menu -->
     
@@ -1030,7 +1044,7 @@ table>thead>tr>th{
 		</c:if> --%>
 	</div>
 	<div id="write">
-		<input type="button" value="Write" onClick="location.href='registerForm.jsp'" id="writeButton">
+		<input type="button" value="Write" onClick="check_write()" id="writeButton">
 	</div>
 	<table>
 		<thead>
@@ -1065,10 +1079,6 @@ table>thead>tr>th{
 			</c:forEach>
 		</tbody>
 	</table>
-</div>	
-	
-<div>
-	<input type="button" value="글 작성" onClick="location.href='registerForm.jsp'">
 </div>
 
 <div>

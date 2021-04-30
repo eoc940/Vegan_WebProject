@@ -5,7 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script>
+	function check_update(){
+		if(confirm('게시글을 수정하시겠습니까?')){
+			boardUpdateForm.submit();
+		}
+		else{
+			location.href='updateForm.jsp';
+		}
+	}
+</script>
 </head>
 <body>
 <form action = "boardUpdate.do" method="post" name="boardUpdateForm">
@@ -13,7 +22,7 @@
 	내용 : <input type="text" name="content">
 	작성자 : ${vo.memberId} <input type="hidden" name="memberId" value="${vo.memberId}">
 	<input type="hidden" name="boardId" value="${param.boardId}">
-	<input type="submit" value="Update">
+	<input type="button" value="Update" onclick="check_update()">
 </form>
 </body>
 </html>
