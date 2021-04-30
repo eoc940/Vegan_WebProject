@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Board-${board.title}</title>
 <script>
 function check_delete(){
 	if(confirm('게시글을 삭제하시겠습니까?')){
@@ -45,7 +45,7 @@ function check_delete(){
 <link href="css/style.css" rel="stylesheet">
 
 
-<title>Board-${board.title}</title>
+
 
 
 </head>
@@ -130,7 +130,7 @@ function check_delete(){
 						</thead>
 						<tbody>
 							<tr>
-								<td width=90%><textarea cols="100" row="20"  name="content" placehorder="Comments.."></textarea></td>
+								<td width=90%><textarea name="content" placeholder="Comments.."></textarea></td>
 								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
 								<input type="hidden" name="boardId" value="${board.boardId}">
 								<input type="hidden" name="memberId" value="${vo.memberId}">
