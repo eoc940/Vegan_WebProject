@@ -5,14 +5,16 @@ public class StoreShowVO {
 	private String area;
 	private String name;
 	private String imageUrl;
-	public StoreShowVO(String area, String name, String imageUrl) {
+	private int storeId;
+	public StoreShowVO() {
+		super();
+	}
+	public StoreShowVO(String area, String name, String imageUrl, int storeId) {
 		super();
 		this.area = area;
 		this.name = name;
 		this.imageUrl = imageUrl;
-	}
-	public StoreShowVO() {
-		super();
+		this.storeId = storeId;
 	}
 	public String getArea() {
 		return area;
@@ -32,9 +34,15 @@ public class StoreShowVO {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	public int getStoreId() {
+		return storeId;
+	}
+	public void setStoreId(int storeId) {
+		this.storeId = storeId;
+	}
 	@Override
 	public String toString() {
-		return "StoreShowVO [area=" + area + ", name=" + name + ", imageUrl=" + imageUrl + "]";
+		return "StoreShowVO [area=" + area + ", name=" + name + ", imageUrl=" + imageUrl + ", storeId=" + storeId + "]";
 	}
 	
 	
