@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -744,7 +745,19 @@
 
 </style>
 	
+<!-- 좋아요 토글 스크립트 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	$(function() {
+		alert("??");
+		$("#btn_like").click(function() {
+			
+			$(this).toggleClass("done");
+			
+		});
+	});
 	
+	</script>
 	
 	
 	</head>
@@ -786,6 +799,11 @@
 							<header>
 							
 							<h2>${svo.name}</h2>
+							<!-- 좋아요 버튼 -->
+							<c:if test="${!empty vo}">
+								<input type="button" id="btn_like" value="좋아요?">
+							</c:if>
+							
 							<br>
 							<!-- <h2>${storeVO.name}</h2> -->	
 								<span>${svo.hit}</span>
@@ -815,8 +833,9 @@
 		
 		marker.setMap(map);
 	</script>
+	
 
-
+	
 
 </section>
 						
