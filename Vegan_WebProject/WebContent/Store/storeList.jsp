@@ -76,7 +76,10 @@
  <!-- ======= Works Section ======= -->
     <section class="section site-portfolio">
       <div>
-            
+     <!--  chart.jsp가져와서 출력 --> 
+ 		<div style="height:30vh; width:50vw" align="center">
+		<%@ include file="chart.jsp" %>
+ 		</div>
       	<div class = "header">
             <h3>Restaurants for VEGAN</h3>
             	<div class="container-1">
