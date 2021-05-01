@@ -1,0 +1,606 @@
+@charset "UTF-8";
+
+	/*
+	Iridium by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body {
+	  line-height: 1.8;
+	  font-weight: normal;
+	  color: gray;
+	  position: relative;
+	  z-index: 0;
+	  padding: 0; 
+	}
+
+	textarea,button
+	{
+		
+		font-size: 11pt;
+		line-height: 1.75em;
+		color: #4c4c4c;
+	}
+	#main{
+		
+		font-size: 11pt;
+		line-height: 1.75em;
+		color: #4c4c4c;
+	}
+	
+
+	h1
+	{
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	#content{
+	font-family: 'Nanum Gothic', sans-serif;
+	
+	}
+	#content.h2{
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+		h1 
+		{
+			color: inherit;
+			text-decoration: none;
+		}
+		
+	/* Change this to whatever font weight/color pairing is most suitable */
+
+
+
+	/* Don't forget to set this to something that matches the design */
+	a
+	{
+		text-decoration: underline;
+		color: #272727;
+	}
+
+	a:hover
+	{
+		text-decoration: none;
+	}
+	
+	sub
+	{
+		position: relative;
+		top: 0.5em;
+		font-size: 0.8em;
+	}
+	
+	sup
+	{
+		position: relative;
+		top: -0.5em;
+		font-size: 0.8em;
+	}
+	
+	hr
+	{
+		border: 0;
+		border-top: solid 1px #ddd;
+	}
+	
+	blockquote
+	{
+		border-left: solid 0.5em #ddd;
+		padding: 1em 0 1em 2em;
+		font-style: italic;
+	}
+	
+	p, ul, ol, dl, table
+	{
+		margin-bottom: 1em;
+	}
+
+	header
+	{
+		margin-bottom: 1em;
+	}
+	
+
+	
+		header .byline
+		{
+			display: block;
+			margin: 0.5em 0 0 0;
+			padding: 0 0 0.5em 0;
+		}
+		
+
+
+	br.clear
+	{
+		clear: both;
+	}
+
+	/* Sections/Articles */
+	
+		section,
+		article
+		{
+			margin-bottom: 3em;
+		}
+		
+		section > :last-child,
+		article > :last-child
+		{
+			margin-bottom: 0;
+		}
+
+		section:last-child,
+		article:last-child
+		{
+			margin-bottom: 0;
+		}
+
+		.row > section,
+		.row > article
+		{
+			margin-bottom: 0;
+		}
+
+	/* Images */
+
+	
+	/* Lists */
+
+		ul.default
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+			ul.default li
+			{
+				padding: 0.60em 0em;
+				border-top: 1px solid;
+				border-color: rgba(255,255,255,.1);
+			}
+			
+			ul.default li:first-child
+			{
+				padding-top: 0;
+				border-top: none;
+			}
+			
+			ul.default a
+			{
+				text-decoration: none;
+				color: rgba(255,255,255,.5);
+			}
+			
+			ul.default a:hover
+			{
+				text-decoration: underline;
+			}
+			
+
+		
+		ul.style li {
+			margin: 0;
+			padding: 2em 0em 1.5em 0em;
+			border-top: 1px solid #ECECEC;
+		}
+		
+		ul.style li:first-child
+		{
+			padding-top: 0;
+			border-top: none;
+		}
+		
+		ul.style img {
+			float: left;
+			margin-right: 20px;
+		}
+		
+
+		
+		ul.style .posted {
+			padding: 0em 0em 1em 0em;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-size: 8pt;
+			color: #A2A2A2;
+		}
+		
+		ul.style .first {
+			padding-top: 0px;
+			border-top: none;
+		}
+							
+
+	/* Buttons */
+		
+		.button
+		{
+			position: relative;
+			display: inline-block;
+			margin-top: 2em;
+			padding: 0.45em 0.5em;
+			background: #5EC75E;
+			border-radius: 40px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1.1em;
+			color: #FFF;
+			-moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+			-webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+			-o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+			-ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+			transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+			cursor: pointer;
+			font-family: 'Montserrat', sans-serif;
+			
+		}
+
+			.button:hover
+			{
+				background: #de3d27;
+				color: #FFF !important;
+			}
+			
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header
+	{
+		position: relative;
+		background-image: url("../bg_img/bgimg (25).jpg");
+		background-size: cover;
+		font-family:'Montserrat', sans-serif;
+		
+		
+	}
+	  
+  #header:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(0, 0, 0, 0.7);
+    background-size: 100%;
+    opacity: .5;
+    z-index: -1;
+    }
+
+	#logo
+	{
+		 font-family: 'Montserrat', sans-serif;
+	
+	}
+	
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+	#main
+	{
+		position: relative;
+		background: #fff;
+	}
+
+
+	
+
+/* Box Model */
+
+	*, *:before, *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+/* Container */
+
+	body {
+		min-width: 1200px;
+		
+	}
+
+	.container {
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Modifiers */
+	
+		.container.small {
+			width: 900px;
+		}
+
+		.container.big {
+			width: 100%;
+			max-width: 1500px;
+			min-width: 1200px;
+		}
+
+/* Grid */
+
+	/* Cells */
+
+		.\31 2u { width: 100% }
+		.\31 1u { width: 91.6666666667% }
+		.\31 0u { width: 83.3333333333% }
+		.\39 u { width: 75% }
+		.\38 u { width: 66.6666666667% }
+		.\37 u { width: 58.3333333333% }
+		.\36 u { width: 50% }
+		.\35 u { width: 41.6666666667% }
+		.\34 u { width: 33.3333333333% }
+		.\33 u { width: 25% }
+		.\32 u { width: 16.6666666667% }
+		.\31 u { width: 8.3333333333% }
+		.\-11u { margin-left: 91.6666666667% }
+		.\-10u { margin-left: 83.3333333333% }
+		.\-9u { margin-left: 75% }
+		.\-8u { margin-left: 66.6666666667% }
+		.\-7u { margin-left: 58.3333333333% }
+		.\-6u { margin-left: 50% }
+		.\-5u { margin-left: 41.6666666667% }
+		.\-4u { margin-left: 33.3333333333% }
+		.\-3u { margin-left: 25% }
+		.\-2u { margin-left: 16.6666666667% }
+		.\-1u { margin-left: 8.3333333333% }
+
+		.row > * {
+			padding: 50px 0 0 50px;
+			float: left;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		.row + .row > * {
+			padding-top: 50px;
+		}
+
+		.row {
+			margin-left: -50px;
+		}
+
+	/* Rows */
+
+		.row:after {
+			content: '';
+			display: block;
+			clear: both;
+			height: 0;
+		}
+
+		.row:first-child > * {
+			padding-top: 0;
+		}
+
+		.row > * {
+			padding-top: 0;
+		}
+
+		/* Modifiers */
+
+			/* Flush */
+
+				.row.flush {
+					margin-left: 0;
+				}
+
+				.row.flush > * {
+					padding: 0 !important;
+				}
+
+			/* Quarter */
+
+				.row.quarter > * {
+					padding: 12.5px 0 0 12.5px;
+				}
+
+				.row.quarter + .row.quarter > * {
+					padding-top: 12.5px;
+				}
+
+				.row.quarter {
+					margin-left: -12.5px;
+				}
+
+			/* Half */
+
+				.row.half > * {
+					padding: 25px 0 0 25px;
+				}
+
+				.row.half + .row.half > * {
+					padding-top: 25px;
+				}
+
+				.row.half {
+					margin-left: -25px;
+				}
+
+			/* One and (a) Half */
+
+				.row.oneandhalf > * {
+					padding: 75px 0 0 75px;
+				}
+
+				.row.oneandhalf + .row.oneandhalf > * {
+					padding-top: 75px;
+				}
+
+				.row.oneandhalf {
+					margin-left: -75px;
+				}
+
+			/* Double */
+
+				.row.double > * {
+					padding: 100px 0 0 100px;
+				}
+
+				.row.double + .row.double > * {
+					padding-top: 100px;
+				}
+
+				.row.double {
+					margin-left: -100px;
+				}
+				
+			
+			
+
+
+
+
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header
+	{
+		position: relative;
+		padding: 5em 0em;
+		text-align: center;
+	}
+	
+		.homepage #header
+		{
+			padding: 15em 0em;
+		}
+
+		#header .container
+		{
+		
+
+
+
+
+		
+		}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo
+	{
+		margin-bottom: 3em;
+	}
+	
+		#logo h1
+		{
+			color: #FFF;
+		}
+	
+		#logo h1 a
+		{
+			display: block;
+			letter-spacing: 1px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 5em;
+			font-weight: 900;
+			color: #FFF;
+		}
+
+		#logo span
+		{
+			display: block;
+			padding-top: 1em;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-size: 1.2em;
+			color: rgba(255,255,255,.5);
+		}			
+			
+
+
+/*********************************************************************************/
+/* nav                                                                          */
+/*********************************************************************************/
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+	#main
+	{
+		padding: 6em 0em 4em 0em;
+	}
+	
+	#content img
+	{
+  		max-width:100%;
+		height:auto;
+	}
+	
+	#content header
+	{
+		margin-bottom: 2em;
+	}
+	
+	#content header h2
+	{
+		font-size: 3em;
+	}
+	
+	#content header .byline
+	{
+		font-size: 1.40em;
+	}
+	
+	#sidebar h2
+	{
+		display: block;
+		padding-bottom: 2em;
+		font-size: 1.4em;
+	}
+	#sidebar img
+	{
+		max-width:100%;
+		height:auto;
+	}
+	.form-row {
+ 	 margin: 0 -15px; }
+
+
+
+#footer{
+	background: rgba(0, 0, 0, 0.7);
+	font-size:15px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: 'Montserrat', sans-serif;
+	
+	
+}
+
+#footer .container h2{
+	color: #5EC75E;
+	font-size: 1.7em;
+	
+}
+#footer .container strong{
+	font-weight: bold
+	
+}
+
