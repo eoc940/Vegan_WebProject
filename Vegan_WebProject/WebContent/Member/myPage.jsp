@@ -7,36 +7,42 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
 
 
-<!--Google Material Icons-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<!--GSAP & ScrollToPlugin-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
-<!--Swiper-->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<!--ScrollMagic-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-<!--Lodash-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+  <!--Google Material Icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!--GSAP & ScrollToPlugin-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+    integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"
+    integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q=="
+    crossorigin="anonymous"></script>
+  <!--Swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!--ScrollMagic-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  <!--Lodash-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+    integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+    crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/s 	/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="../Store/storeAssets/js/main.js"> </script>
-<script src="../Store/storeAssets/js/storeList.js"> </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/s 	/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../Store/storeAssets/js/main.js"> </script>
+  <script src="../Store/storeAssets/js/storeList.js"> </script>
 
-<link href="css/myPage.css" rel="stylesheet">
+  <link href="css/myPage.css" rel="stylesheet">
 
 
 
@@ -61,38 +67,38 @@
 <body>
 
   <form action="myPage.do">
-  
-	<header id="header" class="fixed-top d-flex align-items-center header-transparent">
 
-		<div class="container d-flex align-items-center">
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
 
-		  <nav class="nav-menu d-none d-lg-block">
-			<ul>
-			  <li><a href="../index.jsp">Home</a></li>
-			  <li><a href="../aboutus.jsp">About Us</a></li>
-			  <li><a href="../Board/boardList.do">Board</a></li>
-			  <li><a href="../Store/storeList.do">Restaurants</a></li>
-			  <li class="active"><a href="myPage.jsp">My Page</a></li>
-			  <c:if test="${!empty vo}">
-				<li class="book-a-table text-center"><a href="logout.do">logout</a></li>
-			  </c:if>
-			  <c:if test="${empty vo}">
-				<li class="book-a-table text-center"><a href="loginForm.jsp">login</a></li>
-			  </c:if>
-			</ul>
-		  </nav><!-- .nav-menu -->
+      <div class="container d-flex align-items-center">
 
-		</div>
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="../index.jsp">Home</a></li>
+            <li><a href="../aboutus.jsp">About Us</a></li>
+            <li><a href="../Board/boardList.do">Board</a></li>
+            <li><a href="../Store/storeList.do">Restaurants</a></li>
+            <li class="active"><a href="myPage.jsp">My Page</a></li>
+            <c:if test="${!empty vo}">
+              <li class="book-a-table text-center"><a href="logout.do">logout</a></li>
+            </c:if>
+            <c:if test="${empty vo}">
+              <li class="book-a-table text-center"><a href="loginForm.jsp">login</a></li>
+            </c:if>
+          </ul>
+        </nav><!-- .nav-menu -->
 
-	</header><!-- End Header -->
-  
-  
+      </div>
+
+    </header><!-- End Header -->
+
+
 
     <!-- ======= Works Section ======= -->
 
-    <section class="section"></section>
-    
-	<div class="container">
+    <section class="section">
+
+    <div class="container">
 
       <div class="col-md-12">
 
