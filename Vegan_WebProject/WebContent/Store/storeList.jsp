@@ -77,11 +77,8 @@
  <!-- ======= Works Section ======= -->
     <section class="section site-portfolio">
       <div>
-     <!--  chart.jsp가져와서 출력 --> 
- 		<div style="height:30vh; width:50vw" align="center">
-		<%@ include file="chart.jsp" %>
- 		</div>
-      	<div class = "header">
+
+		<div class = "header">
             <h3>Restaurants for VEGAN</h3>
             	<div class="container-1">
             		<span class="icon"><i class="fa fa-search"></i></span>
@@ -133,6 +130,13 @@
 	</div>
    </div>	
    
+
+
+        <!--  chart.jsp가져와서 출력 --> 
+	 <div style="height:30vh; width:50vw" align="center">
+		<%@ include file="chart.jsp" %>
+ 		</div>
+		 
     
     	     <!-- ======= Footer ======= -->
 		 <center>
@@ -151,6 +155,8 @@
 		  </footer><!-- End Footer -->
 		</center>  
     
+
+
      <!-- Vendor JS Files -->
   <script src="storeAssets/vendor/jquery/jquery.min.js"></script><!-- 레이아웃 -->
    <script src="storeAssets/vendor/aos/aos.js"></script> <!-- 이름 덧씌우기 -->
@@ -159,5 +165,6 @@
 
   <!-- Template Main JS File -->
   <script src="storeAssets/js/storeMain.js"></script> <!-- 레이아웃 -->
+
 </body>
 </html>
