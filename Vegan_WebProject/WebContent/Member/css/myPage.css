@@ -307,15 +307,43 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+
   font-size: 25px;
   color: #0d1e2d;
 
   
 }
 
-
-
-
+table{
+	  font-family: 'Nanum Gothic', sans-serif;
+	
+}
+/*-------------------------------------------------------------
+#button
+--------------------------------------------------------------*/
+input[type=button]
+		{
+			position: relative;
+			display: inline-block;
+			margin-top: 2em;
+			padding: 0.45em 0.5em;
+			background: #5EC75E;
+			border-radius: 40px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 15px;
+			color: #FFF;
+			font-family: 'Montserrat', sans-serif;
+			border-color: #5EC75E;
+			margin-top: 15px;
+			-webkit-appearance: none;
+ 		    -moz-appearance: none;
+  			appearance: none;
+  			font-family: 'Nanum Gothic', sans-serif;
+  			
+  			
+			
+		}
 
 
 
