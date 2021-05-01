@@ -815,28 +815,7 @@
 		
 		marker.setMap(map);
 	</script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=en"></script>
-<script> 
 
-
-  function initialize() { 
-  var lat = ${mvo.latitude};
-  var lon = ${mvo.longitude};
-  var myLatlng = new google.maps.LatLng(lat, lon); // 좌표값
-  var mapOptions = { 
-        zoom: 14, // 지도 확대레벨 조정
-        center: myLatlng, 
-        mapTypeId: google.maps.MapTypeId.ROADMAP 
-  } 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions); 
-  var marker = new google.maps.Marker({ 
-position: myLatlng, 
-map: map, 
-title: "주소"
-}); 
-  } 
-window.onload = initialize;
-</script> -->
 
 
 </section>
