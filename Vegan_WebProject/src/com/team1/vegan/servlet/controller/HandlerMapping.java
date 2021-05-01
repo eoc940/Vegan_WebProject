@@ -17,6 +17,7 @@ import com.team1.vegan.servlet.controller.MemberController.LogoutController;
 import com.team1.vegan.servlet.controller.MemberController.MyPageController;
 import com.team1.vegan.servlet.controller.MemberController.RegisterController;
 import com.team1.vegan.servlet.controller.MemberController.UpdateController;
+import com.team1.vegan.servlet.controller.StoreController.AreaGraphController;
 import com.team1.vegan.servlet.controller.StoreController.BestNineController;
 
 import com.team1.vegan.servlet.controller.StoreController.FindByStoreAreaController;
@@ -77,7 +78,9 @@ public class HandlerMapping {
 			controller = new FindByStoreAreaController();
 		}if(command.equals("Store/storeDetail.do")) {
 			controller = new StoreDetailController();
-		}
+		}if(command.equals("Store/areaGraph.do")) {
+		controller = new AreaGraphController();
+	}
 		
 		return controller;
 	}

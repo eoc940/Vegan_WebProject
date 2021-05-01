@@ -372,5 +372,29 @@ public class StoreDAOImpl implements StoreDAO {
 		}
 		return areaList;
 	}
+
+	@Override
+	public ArrayList<AreaGraphVO> getStoreCountByArea() throws SQLException {
+		ArrayList<AreaGraphVO> list = new ArrayList<AreaGraphVO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			conn = getConnection();
+			String query = "select count(s.name), a.name from store s, area a where a.area_id=s.area_id group by a.name order by count(s.name) desc limit 5";
+			System.out.println("preparedstatement...getStoreCountByArea()...");
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				list.add(new AreaGraphVO(rs.getInt("count(s.name)"),rs.getString("a.name")));
+			}
+			
+		} finally {
+			closeAll(rs, ps, conn);
+		}
+		return list;
+	}
 	
 }
