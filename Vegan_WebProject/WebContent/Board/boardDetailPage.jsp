@@ -88,7 +88,7 @@ function check_delete(){
 			
 	<div class="boardContainer">
 		<div id="boardBar">	
-			<h3>작성자 : ${board.memberId} 작성일시 : ${board.date}</h3>
+			<h3>작성자 : ${board.memberId} &nbsp;&nbsp; 작성일시 : ${board.date}</h3>
 		</div>
 		<div id="boardCnt">
 			<p>${board.content}</p>
@@ -108,7 +108,7 @@ function check_delete(){
 				<table id ="commentList">
 						<c:forEach var="comment" items="${commentList}">
 							<thead>
-								<th colspan="2">작성자: ${comment.memberId} &nbsp&nbsp&nbsp 작성일시: ${comment.date}</th>
+								<th colspan="2">작성자: ${comment.memberId} &nbsp;&nbsp; 작성일시: ${comment.date}</th>
 							</thead>
 							<tbody>
 								<tr>
