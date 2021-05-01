@@ -1,8 +1,5 @@
 package com.team1.vegan.store.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,4 +17,5 @@ public interface StoreDAO {
 	StoreImageVO findMenuImage(int storeId) throws SQLException;
 	AreaVO findStoreArea(int storeId) throws SQLException;
 	ArrayList<AreaVO> getAllArea() throws SQLException;
+	ArrayList<AreaGraphVO> getStoreCountByArea() throws SQLException;
 }
