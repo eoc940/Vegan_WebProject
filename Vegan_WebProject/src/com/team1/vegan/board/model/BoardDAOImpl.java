@@ -166,12 +166,12 @@ public class BoardDAOImpl implements BoardDAO{
 		try{
 			conn = getConnection();
 			if(opt.equals("0")){
-				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title = ?";
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title like ?";
 				
 				ps = conn.prepareStatement(query);
 				System.out.println("PreparedStatement...findByTitle()..");
-				
-				ps.setString(1, contents);
+				String tempContent = "%"+contents+"%";
+				ps.setString(1, tempContent);
 				rs = ps.executeQuery();
 				
 				while(rs.next()) {
@@ -202,12 +202,12 @@ public class BoardDAOImpl implements BoardDAO{
 							rs.getString("member_id")));
 				}
 			}else if(opt.equals("2")) {
-				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id = ?";
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id like ?";
 				
 				ps = conn.prepareStatement(query);
 				System.out.println("PreparedStatement...findByWriter()..");
-				
-				ps.setString(1, contents);
+				String tempContent = "%"+contents+"%";
+				ps.setString(1, tempContent);
 				rs = ps.executeQuery();
 				
 				while(rs.next()) {
