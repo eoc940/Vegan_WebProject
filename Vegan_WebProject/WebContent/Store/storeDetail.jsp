@@ -106,7 +106,6 @@
 			center: new kakao.maps.LatLng(lat, lon),
 			level: 3
 		};
-
 		var map = new kakao.maps.Map(container, options);
 		
 		var markerPosition = new kakao.maps.LatLng(lat,lon);
