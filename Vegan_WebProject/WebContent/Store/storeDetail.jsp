@@ -43,6 +43,47 @@
 	<link href="storeAssets/css/storeDetail.css" rel="stylesheet">
 
 	<title>StoreDetail Main</title>
+	
+	<!-- 좋아요 토글 스크립트 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	$(function() {
+		$("#btn_like").click(function() {
+			$.ajax({
+				url:"updateHit.do",
+				type:"POST",
+				data:{
+					member:'${vo.memberId}',
+					store:'${svo.storeId}'
+				},
+				success: function() {
+					recCount();
+				},
+				error:function() {
+				}
+			})//ajax
+			
+			
+		});//click
+		function recCount() {
+			$.ajax({
+				url: "recordCount.do",
+                type: "POST",
+                data: {
+                	"store":${svo.storeId}
+                },
+                success: function (count) {
+                	$(".rec_count").html(count);
+                },
+                error:function() {
+				}
+			})
+	    };
+	    recCount();
+	    
+	});//ready
+	
+	</script>
 
 </head>
 
@@ -87,9 +128,16 @@
 							<header>
 							
 							<h2>${svo.name}</h2>
+							<!-- 좋아요 버튼 -->
+							<c:if test="${!empty vo}">
+								<input type="button" id="btn_like" value="좋아요">
+							</c:if>
+							<!-- 좋아요 총 개수 들어옴 -->
+								좋아요 수 :&nbsp;<span class="rec_count"></span>
+							
 							<br>
 							<!-- <h2>${storeVO.name}</h2> -->	
-								<span>${svo.hit}</span>
+							
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
