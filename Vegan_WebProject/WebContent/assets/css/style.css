@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   
   position: absolute;
-  transition: 1.5s;
+  transition: 1.0s;
   backface-visibility: hidden;
 
 }
