@@ -66,6 +66,7 @@
 			
 		});//click
 		function recCount() {
+			
 			$.ajax({
 				url: "recordCount.do",
                 type: "POST",
@@ -76,6 +77,7 @@
                 	$(".rec_count").html(count);
                 },
                 error:function() {
+           
 				}
 			})
 	    };
