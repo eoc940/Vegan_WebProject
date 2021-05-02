@@ -201,8 +201,9 @@
 						<div>${area.name}</div>
 					</c:forEach>
 				</div>
-				<br /> <input type="button" value="Modify"
-					onClick="location.href='updateForm.jsp'" id="modifyButton">
+				<br /> <input type="button" value="Modify"	onClick="location.href='updateForm.jsp'" id="modifyButton">
+				<br /><br /> <input type="button" value="Delete Account" onClick="check_delete()"  id="withdraw">
+					
 			</div>
 
 			<!-- =================== contents ================================== -->
@@ -229,7 +230,8 @@
   <!-- ===================== like pic ============================== -->
 
 
-  <section class="notice">
+<!--   <section class="notice">
+  
     <div class="promotion">
 
 
@@ -247,9 +249,8 @@
       </div>
 
     </div>
-  </section>
-  <br /> <input type="button" value="회원 탈퇴" onClick="check_delete()"
-  id="withdraw">
+   
+  </section> -->
 
 
 

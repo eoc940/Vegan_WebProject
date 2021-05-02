@@ -342,7 +342,7 @@ form .main
   font-size: 20px;
   font-weight: bold;
   width: 250px;
-  padding : 50px;
+  padding : 35px;
   text-align: center;
   background-color:   rgb(66, 149, 242);
   color: rgb(0, 0, 0);
@@ -369,18 +369,34 @@ form .main
   /* background-color: rgb(255, 143, 143); */
 }
 
-#modifyButton, #withdraw {
-	font-weight: bold;
+#modifyButton {
+	
+  font-weight: bold;
   color: rgb(50, 191, 166);
   border-radius: 40px;
   border: 1.5px solid rgb(50, 191, 166);
   background-color: white;
-  width:100px;
+  width:180px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  
+  font-size: 15px;
 		
 }
+
+#withdraw {
+	
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+  border-radius: 40px;
+  border: 1.5px solid rgb(255, 0, 0);
+  background-color:   rgb(255, 143, 143);
+  ;
+  width:180px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+		
+}
+
+
 
 #modifyButton:hover, #withdraw:hover {
 	background-color: #fdb801;
@@ -406,8 +422,9 @@ form .main
 
 }
 
-
+/*-------------------------------------------------------------*/
 /*PROMOTION----------------------------------------------------*/
+/*-------------------------------------------------------------*/
 .notice .notice-line .inner__right .toggle-promotion {
   width: 62px;
   height: 62px;
