@@ -22,8 +22,8 @@
 <script src="../assets/vendor/jquery/jquery.min.js"></script>
 </head>
 <body>
-	<h2>myChart.js</h2>
-	<canvas id="myChart" width="400" height="400"></canvas>
+
+	<canvas id="myChart" width="300" height="200"></canvas>
 	<script>
 		var resultLabel = new Array();
 		var resultData = new Array();
