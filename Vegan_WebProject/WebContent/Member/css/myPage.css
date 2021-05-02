@@ -400,7 +400,7 @@ form .main
 
 #modifyButton:hover, #withdraw:hover {
 	background-color: #fdb801;
-	border: 1px solid #fdb801 !important;
+	border: 1.5px solid #fdb801 !important;
 	color:white;
 
 }
