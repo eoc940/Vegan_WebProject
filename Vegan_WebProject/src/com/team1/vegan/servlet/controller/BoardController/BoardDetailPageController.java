@@ -30,10 +30,10 @@ public class BoardDetailPageController implements Controller {
 		mvo=(MemberVO) session.getAttribute("vo");
 		
 		try {
+			BoardDAOImpl.getInstance().addViewCount(boardId);
 			board = BoardDAOImpl.getInstance().getPost(boardId);
 			commentList=CommentDAOImpl.getInstance().getAllComment(boardId);
-			BoardDAOImpl.getInstance().addViewCount(boardId);
-
+			
 		} catch (SQLException e) {
 			
 		}
