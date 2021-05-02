@@ -79,10 +79,12 @@
             
       	<div class = "header">
             <h3>Restaurants for VEGAN</h3>
-            	<div class="container-1">
-            		<span class="icon"><i class="fa fa-search"></i></span>
-      				<input type="search" id="search" placeholder="Search..." />
-        		</div>
+            	<div class="search">
+					<form action="findByStoreName.do">
+					<input type="text" size="20" name="storename" id="searchContext"/>
+        			<input type="submit" value="검색" id="searchButton"/>
+    				</form> 
+				</div>
         </div>
         
         	
