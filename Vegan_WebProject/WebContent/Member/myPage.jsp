@@ -149,7 +149,7 @@
 			
 				<c:forEach items="${listSI}" var="storeIamge">
 					
-						<a href="../Store/storeDetail.jsp?storeId=${storeIamge.storeId}">
+						<a href="../Store/storeDetail.do?storeId=${storeIamge.storeId}">
 							<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" width="200px"
 								height="200px">
 						</a>

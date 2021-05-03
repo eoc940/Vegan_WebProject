@@ -34,7 +34,7 @@
       filter: '*'
     });
 
-    
+   }
   $(window).on('load', function() {
     siteIstotope();
   });
