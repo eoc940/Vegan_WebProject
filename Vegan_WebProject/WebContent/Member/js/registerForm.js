@@ -13,6 +13,8 @@
 	function inputIdChk(){
 		document.registerForm.idDuplication.value="ID중복확인!!!!"
 	}
+	
+	
 
 	function passCheck() {
 		//비밀번호가 일치하지 않으면 페이지 이동 안되도록...

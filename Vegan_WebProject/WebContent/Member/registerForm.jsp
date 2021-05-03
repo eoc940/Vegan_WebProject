@@ -36,7 +36,7 @@
 
 						<div class="form-group">
                             <label for="memberId">ID :</label>
-                            <input type="text" name ="memberId" required="required" onkeydown="inputUdChk()"/>
+                            <input type="text" name ="memberId" required="required" onkeydown="inputIdChk()"/>
 							<input type="button" value="중복확인" onclick="startRequest()">
 							<input type ="hidden" name="idDuplication" value="idUncheck">
 							<span id="idCheckResult"> </span>

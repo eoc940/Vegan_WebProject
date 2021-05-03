@@ -21,7 +21,12 @@ public class IdCheckController implements Controller {
 		try {
 			PrintWriter out = response.getWriter();
 			String memberId = request.getParameter("memberId");
+			System.out.println(memberId.length() + "???");
 			boolean flag = MemberDAOImpl.getInstance().isExist(memberId);
+			//입력 안했을때
+			if(memberId.length()==0) flag=true;
+			//아이디에 빈칸이 포함되어 있을때
+			if(memberId.contains(" ")) flag=true;
 			out.print(flag);
 		} catch (Exception e) {
 			e.printStackTrace();
