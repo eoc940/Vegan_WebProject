@@ -32,10 +32,8 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="storeAssets/js/main.js">
-
 	</script>
 	<script src="storeAssets/js/storeList.js">
-
 	</script>
 	<link href="storeAssets/css/storeList.css" rel="stylesheet">
 
@@ -63,8 +61,7 @@
 					<li><a href="../Board/boardList.do">Board</a></li>
 					<li class="active"><a href="storeList.do">Restaurants</a></li>
 					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My
-								Page</a></li>
+						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 					</c:if>
 					<c:if test="${!empty vo}">
 						<li class="book-a-table text-center"><a href="../Member/logout.do">logout</a></li>
@@ -81,7 +78,6 @@
 	</header>
 	<!-- End Header -->
 
-
 	<!-- ======= Works Section ======= -->
 	<section class="section site-portfolio">
 
@@ -95,22 +91,36 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
-
-				<div class="container-1">
-					<span class="icon"><i class="fa fa-search"></i></span> 
-					<input type="search" id="search" placeholder="Search..." />
-				</div>
+				
 			</div>
 
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
-					<a href="#" data-filter="*" class="active">All</a>
+					<!-- 
+					<a href="#" onclick="location.href='storeList.do'" data-filter="*" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+					 -->
+					<a href="storeList.do" class="active">All</a>
+					<c:forEach items="${areaList}" var="a">
+						<a href="storeList.do?area=${a.areaId}" class="active">${a.name}</a>
+					</c:forEach>
+
+					<div class="search">
+						<form action="storeList.do">
+							<div class="search_bar">
+								<input type="text" id="store" name = "storename" placeholder="Search..." />
+								<input type="submit" value="검색" id="searchButton"/>
+							</div>
+						</form> 
+					</div>
+
 				</div>
+
+ 
 			</div>
-		
+
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
 					<div class="item ${store.area} ">

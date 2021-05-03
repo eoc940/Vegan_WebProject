@@ -15,7 +15,6 @@
 	top: 0;
 	background: rgba(26, 24, 22, 0.85);
 }
-
 #header .logo h1 {
 	font-size: 28px;
 	margin: 0;
@@ -415,48 +414,63 @@ a:focus {
 #portfolio-grid {
 	padding: 20px;
 	margin: 30px;
+	margin-top: 50px;
 	center: center;
 }
 
-.container-1 {
-	width: 300px;
-	position: absolute;
-	right: 100px;
-	vertical-align: right;
-	float: right;
-	padding-right: 10px;
-	padding-bottom: 10px;
+
+
+
+#filters .search{
+	text-align: right;
+	margin-right: 80px;
+	float:right;
+	margin-top: 20px;
 }
 
-.container-1 input#search {
+
+#filters .search #store{
 	width: 250px;
-	height: 40px;
+	height: 30px;
 	background: white;
 	font-size: 12pt;
-	float: right;
-	padding-right: 45px;
 	padding-left: 45px;
 	border-radius: 38px;
+	border: 0.5px solid #ddd;
 	background-color: rgba(255, 255, 255, 0.7);
 	outline: none;
 	box-shadow: none;
+	margin-top:0x;
+	margin-right:-15px;
+	
 }
-
-.container-1 input#search::-webkit-input-placeholder {
-	color: gray;
-}
-
-.container-1 .icon {
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	margin-left: 250px;
-	z-index: 990;
+#filters .search #searchButton{
+	font-weight: bold;
+	height:30px;
+    border: 1px solid #5EC75E !important;
+    background-color: white;
+    width:70px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 	color: #5EC75E;
+	border-radius: 40px;
+	
+	
+	
 }
+
+
+#filters .search #searchButton:hover{
+	background-color: #fdb801;
+	border: 1px solid #fdb801 !important;
+	color:white;
+}
+
 
 .filters {
-	padding: 20px 50px 50px;
+
+	padding: 20px 50px 10px 60px;
+
 	word-spacing: 1em;
 	align-content: space-around;
 	margin: 30px;
@@ -494,20 +508,23 @@ a:focus {
 	margin-top: 100px;
 	padding: 10px 100px;
 	width: 100%;
-	display: flex;
+	
 	align-items: center;
 }
 
 .chart{
-	
-	width: 300px;
-	height: 200px;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	width: 600px;
+	height: 300px;
 	
 }
 
 .title{
+	font-size: 30px;
 	min-width: 30%;
 }
+
 
 
 

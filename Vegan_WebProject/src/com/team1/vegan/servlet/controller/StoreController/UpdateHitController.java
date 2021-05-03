@@ -1,5 +1,6 @@
 package com.team1.vegan.servlet.controller.StoreController;
 
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,18 +17,21 @@ public class UpdateHitController implements Controller {
 		
 		
 		String memberId = request.getParameter("member");
-		int storeId = Integer.parseInt(request.getParameter("store"));
+		int storeId = Integer.parseInt(request.getParameter("store"));		
+		
 		System.out.println(memberId);
 		System.out.println(storeId);
 		try {
 			boolean isCheckedHit = StoreDAOImpl.getInstance().ischeckedHit(storeId, memberId);
-			if(isCheckedHit) {
+			if(isCheckedHit) {				
 				StoreDAOImpl.getInstance().minusHitCount(storeId, memberId);
+			
 			}else {
 				StoreDAOImpl.getInstance().plusHitCount(storeId, memberId);
+
 			}
 			
-		}catch (SQLException e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		

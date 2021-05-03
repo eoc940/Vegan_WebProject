@@ -154,36 +154,87 @@ label {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 2px;
   display: block; }
+  
+.form-submit{
+	margin-top: 20px;
+ 	
+  	padding-top:27px; 
+   }
+   
 
+ .form-submit .index{
+	margin-top:20px; 
+  	text-align:left;
+  
+  	 
+   }
+   .form-submit .index a{
+	width:30%;
+	font-weight: bold;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+	color: #fdb801;
+  	text-decoration: none;
+  	 
+   }
+      .form-submit .index a:hover{
 
-.form-submit {
-  text-align: right;
-  padding-top: 27px; }
+	color: #5EC75E;
+  	text-decoration: none;
+  	 
+   }
+ 
+ 
+ .form-submit .btn{
+	text-align: right;
+	margin-top: -35px;
+	
+  
+  	 
+   }
 
-.submit {
-  width: 140px;
+.submit {	
+  text-align: center;
+  weight: 100%;
   height: 40px;
   display: inline-block;
-  font-family: 'Poppins';
+  font-family:  'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 13px;
-  padding: 10px;
+  padding-top: 10px;
   border: none;
   cursor: pointer; }
 
 #reset {
-  background: #f8f8f8;
-  color: #999;
-  margin-right: 8px; }
+	font-weight: bold;
+    border: 1px solid #5EC75E !important;
+    background-color: white;
+    width:30%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+	color: #5EC75E;
+	border-radius: 40px;}
+  
   #reset:hover {
-    background: #5EC75E;
-    color: #fff; }
+   	background-color: white;
+	border: 1px solid #fdb801 !important;
+	color: #fdb801; }
 
 #submit {
   background: #5EC75E;
-  color: #fff; }
+  color: #fff;
+   width:30%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px; }
+    
+    
   #submit:hover {
-    background-color: #5EC75E; }
+   	background-color: #fdb801;
+	border: 1px solid #fdb801 !important;
+	color: white; }
 
 @media screen and (max-width: 992px) {
   .container {
@@ -215,7 +266,6 @@ label {
     width: 100%;
     padding: 0px; }
 
- 
 
   .submit {
     width: 100%; }
