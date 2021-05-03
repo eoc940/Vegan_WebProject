@@ -394,21 +394,7 @@
 		margin-bottom: 1em;
 	}
 
-	header
-	{
-		margin-bottom: 1em;
-	}
 	
-
-	
-		header .byline
-		{
-			display: block;
-			margin: 0.5em 0 0 0;
-			padding: 0 0 0.5em 0;
-		}
-		
-
 
 	br.clear
 	{
@@ -542,39 +528,8 @@
 				color: #FFF !important;
 			}
 			
-/*********************************************************************************/
-/* Header                                                                        */
-/*********************************************************************************/
 
-	#header
-	{
-		position: relative;
-		background-image: url("../bg_img/bgimg (25).jpg");
-		background-size: cover;
-		font-family:'Montserrat', sans-serif;
-		
-		
-	}
-	  
-  #header:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    background: rgba(0, 0, 0, 0.7);
-    background-size: 100%;
-    opacity: .5;
-    z-index: -1;
-    }
 
-	#logo
-	{
-		 font-family: 'Montserrat', sans-serif;
-	
-	}
-	
 
 /*********************************************************************************/
 /* Main                                                                          */
@@ -762,72 +717,6 @@
 
 
 
-/*********************************************************************************/
-/* Header                                                                        */
-/*********************************************************************************/
-
-	#header
-	{
-		position: relative;
-		padding: 5em 0em;
-		text-align: center;
-	}
-	
-		.homepage #header
-		{
-			padding: 15em 0em;
-		}
-
-		#header .container
-		{
-		
-
-
-
-
-		
-		}
-
-/*********************************************************************************/
-/* Logo                                                                          */
-/*********************************************************************************/
-
-	#logo
-	{
-		margin-bottom: 3em;
-	}
-	
-		#logo h1
-		{
-			color: #FFF;
-		}
-	
-		#logo h1 a
-		{
-			display: block;
-			letter-spacing: 1px;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 5em;
-			font-weight: 900;
-			color: #FFF;
-		}
-
-		#logo span
-		{
-			display: block;
-			padding-top: 1em;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			font-size: 1.2em;
-			color: rgba(255,255,255,.5);
-		}			
-			
-
-
-/*********************************************************************************/
-/* nav                                                                          */
-/*********************************************************************************/
 
 /*********************************************************************************/
 /* Main                                                                          */
@@ -842,21 +731,6 @@
 	{
   		max-width:100%;
 		height:auto;
-	}
-	
-	#content header
-	{
-		margin-bottom: 2em;
-	}
-	
-	#content header h2
-	{
-		font-size: 3em;
-	}
-	
-	#content header .byline
-	{
-		font-size: 1.40em;
 	}
 	
 	#sidebar h2

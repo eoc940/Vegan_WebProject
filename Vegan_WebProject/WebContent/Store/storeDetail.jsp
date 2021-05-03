@@ -142,33 +142,36 @@
 							
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
-						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
 							<p>${svo.description}</p>
 							<div id="map" style="width:780px; height:350px;"></div>
 
+		<!-- ======= Map ======= -->
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
-	<script>
-		var lat = ${mvo.latitude};
-	  	var lon = ${mvo.longitude};
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(lat, lon),
-			level: 3
-		};
-		var map = new kakao.maps.Map(container, options);
-		
-		var markerPosition = new kakao.maps.LatLng(lat,lon);
-		var marker = new kakao.maps.Marker({
-			position: markerPosition
-		});
-		
-		marker.setMap(map);
-	</script>
+						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
+							<script>
+								var lat = ${mvo.latitude};
+							  	var lon = ${mvo.longitude};
+								var container = document.getElementById('map');
+								var options = {
+									center: new kakao.maps.LatLng(lat, lon),
+									level: 3
+								};
+								var map = new kakao.maps.Map(container, options);
+								
+								var markerPosition = new kakao.maps.LatLng(lat,lon);
+								var marker = new kakao.maps.Marker({
+									position: markerPosition
+								});
+								
+								marker.setMap(map);
+							</script>
 
 
 
 </section>
+					<div class="button">
+								 <a href="storeMain.jsp" >List</a>
+						</div>
 						
 </div>					<!-- Sidebar -->
 					<div id="sidebar" class="4u">
