@@ -84,8 +84,6 @@
 	<!-- End Header -->
 
 
-
-
 	<form action="myPage.do">
 		<!-- ======= top ======= -->
 
@@ -160,8 +158,8 @@
 		</div>
 
 	</section>
-
-
+   
+    <!-- ======= 오타지움 ======= -->
 	<!-- ======= Footer ======= -->
 
 	<footer id="footer">
