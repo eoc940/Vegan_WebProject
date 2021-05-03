@@ -4,3 +4,4 @@ Context.xml
 .settings/
 
 /bin/
+/.classpath
