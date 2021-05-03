@@ -77,6 +77,8 @@
 	    };
 	    recCount();
 	    
+		
+	    
 	});//ready
 	
 	</script>
@@ -122,63 +124,124 @@
 						<section>
 						
 							<header>
+
 							
 							<h2>${svo.name}</h2>
-							<!-- 좋아요 버튼 -->
+		<!-- ======= 좋아요 ======= -->
+					<div style=" float:left; margin-right:10px;">
+						
 							<c:if test="${!empty vo}">
-								<input type="button" id="btn_like" value="좋아요">
+							<div id="main-content">
+							  <div >
+							    <input type="checkbox" id="btn_like" />
+							    <label for="btn_like">
+							      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+								      <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+									      <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+									      <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+									      <g id="grp7" opacity="0" transform="translate(7 6)">
+										      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+										      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+									      </g>
+									      <g id="grp6" opacity="0" transform="translate(0 28)">
+										      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+										      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+									      </g>
+									      <g id="grp3" opacity="0" transform="translate(52 28)">
+										      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+										      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+									      </g>
+									      <g id="grp2" opacity="0" transform="translate(44 6)" fill="#CC8EF5">
+										      <circle id="oval2" transform="matrix(-1 0 0 1 10 0)" cx="5" cy="6" r="2"/>
+										      <circle id="oval1" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+									      </g>
+									      <g id="grp5" opacity="0" transform="translate(14 50)" fill="#91D2FA">
+										      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
+										      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+									      </g>
+									      <g id="grp4" opacity="0" transform="translate(35 50)" fill="#F48EA7">
+										      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
+										      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+									      </g>
+									      <g id="grp1" opacity="0" transform="translate(24)" fill="#9FC7FA">
+										      <circle id="oval1" cx="2.5" cy="3" r="2"/>
+										      <circle id="oval2" cx="7.5" cy="2" r="2"/>
+									      </g>
+								      </g>
+							      </svg>
+							    </label>
+							  </div>
+							</div>
+						</div>
+						
+						
+	         			<div style=" float:left; margin-top:15px; font-family: 'Montserrat', sans-serif; font-weight: 500; color:#DD4688">	
 							</c:if>
 							<!-- 좋아요 총 개수 들어옴 -->
-								좋아요 수 :&nbsp;<span class="rec_count"></span>
+								LIKE!!&nbsp;<span class="rec_count"></span>
+								</div>
+	
+							
+		<!-- ======= 음식점 ======= -->
 							
 							<br>
 							<!-- <h2>${storeVO.name}</h2> -->	
 							
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
-						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
-							<p>${svo.description}</p>
+
+							<div class="description"><br><p>${svo.description}</p><br></div>
+							
+		<!-- ======= Map ======= -->
+							
+
+
 							<div id="map" style="width:740px; height:350px;"></div>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
-	<script>
-		var lat = ${mvo.latitude};
-	  	var lon = ${mvo.longitude};
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(lat, lon),
-			level: 3
-		};
-		var map = new kakao.maps.Map(container, options);
-		
-		var markerPosition = new kakao.maps.LatLng(lat,lon);
-		var marker = new kakao.maps.Marker({
-			position: markerPosition
-		});
-		
-		marker.setMap(map);
-	</script>
+						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
+							<script>
+								var lat = ${mvo.latitude};
+							  	var lon = ${mvo.longitude};
+								var container = document.getElementById('map');
+								var options = {
+									center: new kakao.maps.LatLng(lat, lon),
+									level: 3
+								};
+								var map = new kakao.maps.Map(container, options);
+								
+								var markerPosition = new kakao.maps.LatLng(lat,lon);
+								var marker = new kakao.maps.Marker({
+									position: markerPosition
+								});
+								
+								marker.setMap(map);
+							</script>
 
 
 
 </section>
+
+					<div class="Listbutton">					
+							 <a href="storeList.do">LIST</a>
+						</div>
 						
 </div>					<!-- Sidebar -->
 					<div id="sidebar" class="4u">
 						<section>
 							<header>
-								<h2>매장정보</h2>
+								<h2>Information</h2>
 								<p>"${svo.address}"</p>
 							</header>
 							<ul class="style">
 								<li>
-									<p>메뉴사진 들어갈자리</p>
+									<h2>Menu</h2>
 									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
 								<p>
-								가장 가까운 음식점 정보<br>
+								
+								<br><h2>가장 가까운 음식점 정보</h2><br>
 								이름:${closestStore.name}<br>
 								주소:${closestStore.address}
 								</p>

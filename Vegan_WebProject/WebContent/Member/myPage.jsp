@@ -45,7 +45,6 @@
 
 	<title>My Page</title>
 
-
 	<script>
 		function check_delete() {
 			if (confirm('정말 탈퇴 하시겠습니까?')) {
@@ -117,6 +116,9 @@
 
 		});
 	</script>
+
+
+	<!-- javascript 사용하려던거 일단 안써서 지움  -->
 
 
 </head>
@@ -210,48 +212,27 @@
 
 	<!-- ===================== like pic ============================== -->
 
+	<!-- js 슬라이드 사용하려던 주석 지움 -->
 
-	<!--   <section class="notice">
-  
-    <div class="promotion">
-
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper" id="bestNine"></div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-prev">
-        <span class="material-icons">arrow_back</span>
-      </div>
-      <div class="swiper-next">
-        <span class="material-icons">arrow_forward</span>
-      </div>
-
-    </div>
-   
-  </section> -->
-
-
-
+    
+	<!-- table div 요소로 변경 아래로 밀리게 -->
 	<section class="like">
-		<div>I LIKE♥</div>
+		<div class="L_title">I LIKE ♥</div>
 		<div>
-			<table>
-				<tr>
-					<c:forEach items="${listSI}" var="storeIamge">
-						<td>
-							<a href="../Store/storeDetail.jsp?storeId=${storeIamge.storeId}">
-								<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" width="200px"
-									height="200px">
-							</a>
-						</td>
-					</c:forEach>
-				</tr>
-			</table>
+			<div>
+			
+				<c:forEach items="${listSI}" var="storeIamge">
+					
+						<a href="../Store/storeDetail.jsp?storeId=${storeIamge.storeId}">
+							<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" width="200px"
+								height="200px">
+						</a>
+					
+				</c:forEach>
+				
+			</div>
 		</div>
-
+s
 	</section>
 
 
