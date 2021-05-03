@@ -96,25 +96,28 @@
 					<%@ include file="chart.jsp"%>
 				</div>
 
-				<div class="container-1">
-					<span class="icon"><i class="fa fa-search"></i></span> 
-					<input type="search" id="search" placeholder="Search..." />
-				</div>
+				
 			</div>
 
 
-
 			<div data-aos="fade-up" data-aos-delay="100">
+
 				<div id="filters" class="filters">
 					<a href="#" data-filter="*" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+					<div class="container-1">
+						<span class="icon"><i class="fa fa-search"></i></span> 
+						<input type="search" id="search" placeholder="Search..." />
+					</div>
 				</div>
+	
+
 			</div>
 
 
-
+			
 
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">

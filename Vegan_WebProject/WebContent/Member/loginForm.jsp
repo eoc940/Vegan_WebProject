@@ -20,7 +20,7 @@
 <body class="img js-fullheight">
 <form action="login.do" class="signin-form" method="post">
 
-<div class="ftco-section">
+<section class="ftco-section">
 <div class="container">
 	
 			<div class="login-wrap p-0">
@@ -42,7 +42,7 @@
 		 <span class = "registerForm">
 	 		<a href="registerForm.jsp" >REGISTER</a> 
 		 </span>
-	</div>
+	</section>
 </form>
 	
 	

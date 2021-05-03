@@ -419,18 +419,16 @@ a:focus {
 }
 
 .container-1 {
+	margin-top: 20px;
+	margin-right: 100px;
 	width: 300px;
-	position: absolute;
-	right: 100px;
-	vertical-align: right;
 	float: right;
-	padding-right: 10px;
-	padding-bottom: 10px;
+
 }
 
 .container-1 input#search {
-	width: 250px;
-	height: 40px;
+	width: 200px;
+	height: 30px;
 	background: white;
 	font-size: 12pt;
 	float: right;
@@ -456,8 +454,7 @@ a:focus {
 }
 
 .filters {
-	padding: 20px 50px 50px;
-	70 px;
+	padding: 20px 50px 50px 70px;
 	word-spacing: 1em;
 	align-content: space-around;
 	margin: 30px;
@@ -497,18 +494,19 @@ a:focus {
 	margin-top: 100px;
 	padding: 10px 100px;
 	width: 100%;
-	display: flex;
+	
 	align-items: center;
 }
 
 .chart{
-	
-	width: 300px;
-	height: 200px;
+	margin-top: 50px;
+	width: 600px;
+	height: 300px;
 	
 }
 
 .title{
+	font-size: 40px;
 	min-width: 30%;
 }
 
