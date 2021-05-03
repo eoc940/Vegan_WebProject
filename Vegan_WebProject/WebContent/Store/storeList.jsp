@@ -94,7 +94,6 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
-
 				
 				<div class="container-1">
 				<form action="findByStoreName.do">
@@ -115,10 +114,6 @@
 					</c:forEach>
 				</div>
 			</div>
-
-
-
-
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">

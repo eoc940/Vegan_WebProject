@@ -138,7 +138,7 @@
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 						<!--<img src="${storeVO.url}" alt="" /></a>  -->							
 							<p>${svo.description}</p>
-							<div id="map" style="width:780px; height:350px;"></div>
+							<div id="map" style="width:740px; height:350px;"></div>
 
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
