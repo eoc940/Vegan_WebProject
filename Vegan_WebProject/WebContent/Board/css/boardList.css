@@ -29,7 +29,7 @@ body {
 	font-weight: bold;
     border: 1px solid #5EC75E !important;
     background-color: white;
-    width:70px;
+    width:100px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
 	color: #5EC75E;
@@ -45,65 +45,112 @@ body {
 }
 
 #write{
-	text-align: right;
-	padding-bottom:10px;
+	text-align: left;
+	padding-bottom:0px;
 
 }
 
-table{
-	width:100%;
-	border-collapse: collapse;
 
+.icon-boxes h1 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #124265;
+  font-family: 'Montserrat', sans-serif;
 }
-table>thead{
-	background-color: rgba(0,0,0,0.15);
 	
-	
-	
-	
+.icon-boxes h2 {
+  color: #5e5e5e;
+  margin: 5px 0 0 0;
+  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
 }
-table>thead>tr{
-	text-align:center;
-	height: 30px;
-	align: center;
-	border-bottom: 3px solid;
-	border-bottom-color: rgba(0,0,0,0.2)
 	
-}
-table>thead>tr>th{
-	text-align:center;
-	font-size: 15px;
-	vertical-align : middle;
-	font-weight:bold;
+.icon-boxes h5 {
+  color: #5e5e5e;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
- table>tbody>tr>td{
- 	text-align: center;
- 	border: 1px solid;
- 	border-color:rgba(0,0,0,0.15);
- 	padding: 10px;
- 	font-size: 15px;
- 	vertical-align : middle;
- }
- 
- table>tbody>tr{
-  padding: 15px;
-  }
+
+
+.icon-boxes h6 {
+  color: #5e5e5e;
+  margin: 5px 0 0 0;
+  font-size: 13px;
+  text-align:right;
+  font-family: 'Montserrat', sans-serif;
   
- table>tbody>tr:nth-child(even) {
-	background-color: rgba(94,199,94,0.1);
-	}
-  table>tbody>tr>#title{
- 	text-align: left;
- }
- 
-.search{
-	margin: 25px 20px 0px 35px;
-	text-align: right;
-	
 }
 
-.search #searchButton{
+
+
+.icon-boxes{
+	padding: 10px;
+	margin-right:40px;
+
+}
+  .grid-container {
+    display: grid;
+  }
+
+.icon-boxes .icon-box {
+  padding: 50px 50px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  border-radius: 8px;
+  width: 105%;
+  height:85%;
+  margin-left:-20px;
+  margin-top:10px;
+}
+
+.icon-boxes .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.icon-boxes .icon-box .title a {
+  color: #5EC75E;
+  transition: 0.3s;
+}
+/**/
+
+.icon-boxes .icon-box .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.icon-boxes .icon-box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid;
+  border-color: #fdb801
+ 
+}
+
+.icon-boxes .icon-box:hover .title a {
+  color: #fdb801;
+}
+
+.boardMenu .search{
+	margin: -30px -10px 0px 35px;
+	text-align: right;
+	padding-right:30px;
+	font-size: 15px;
+
+}
+
+.boardMenu .search #searchButton{
 	font-weight: bold;
     border: 1px solid #5EC75E !important;
     background-color: white;
@@ -115,13 +162,13 @@ table>thead>tr>th{
 		
 }
 
-.search #searchButton:hover{
+.boardMenu .search #searchButton:hover{
 	background-color: #fdb801;
 	border: 1px solid #fdb801 !important;
 	color:white;
 
 }
- .search #searchContext{
+.boardMenu .search #searchContext{
  	width: 200px;
  	height: 26px;
  	outline: none;
@@ -132,27 +179,18 @@ table>thead>tr>th{
  	
  }
 
-.search{
-	text-align: right;
-	padding-right:30px;
-	font-size: 15px;
-	margin-right:10%;
-	
-
-}
 
 .boardfooter {
 	background: rgba(0, 0, 0, 0.7);
-	
 	padding-bottom: 30px;
 	color: rgba(255, 255, 255, 0.7);
 	font-family: 'Montserrat', sans-serif;
 	text-align:center;
-	
+	padding-top:30px;
 }
 .boardfooter #container h2{
 	color: #5EC75E;
-	font-size: 1.3em;
+	font-size: 1.7em;
 	padding-bottom:15px;
 }
 
@@ -167,6 +205,33 @@ footer{
 		margin:300px 0px 0px 0px;
 		
 		
+}
+
+.center {
+	margin-bottom: 100px;
+	text-align: center;
+}
+.paging {
+	display: inline-block;
+	center: center;
+}
+
+.paging a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.paging a.active {
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 5px;
+}
+
+.paging a:hover:not {
+	background-color: #ddd;
+	border-radius : 5 px;
 }
 
   

@@ -98,13 +98,19 @@
 
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
-					<a href="#" data-filter="*" class="active">All</a>
+					<!-- 
+					<a href="#" onclick="location.href='storeList.do'" data-filter="*" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+					 -->
+					<a href="storeList.do" class="active">All</a>
+					<c:forEach items="${areaList}" var="a">
+						<a href="storeList.do?area=${a.areaId}" class="active">${a.name}</a>
+					</c:forEach>
 
 					<div class="search">
-						<form action="findByStoreName.do">
+						<form action="storeList.do">
 							<div class="search_bar">
 								<input type="text" id="store" name = "storename" placeholder="Search..." />
 								<input type="submit" value="검색" id="searchButton"/>
@@ -114,14 +120,13 @@
 
 				</div>
 
-
+ 
 			</div>
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
 					<div class="item ${store.area} ">
-						<a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}"
-							class="item-wrap fancybox">
+						<a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}" class="item-wrap fancybox">
 							<div class="work-info">
 								<h3>${store.area}</h3>
 								<span>${store.area} &nbsp; ${store.name}</span>
@@ -163,7 +168,6 @@
 			</div>
 		</footer>
 		<!-- End Footer -->
-	</center>
 
 
 

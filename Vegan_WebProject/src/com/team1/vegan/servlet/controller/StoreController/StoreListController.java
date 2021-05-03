@@ -19,7 +19,8 @@ public class StoreListController implements Controller{
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 
-
+		String strAreaId = request.getParameter("area");
+		String storeName = request.getParameter("storename");
 		ArrayList<StoreVO> storeList = new ArrayList<StoreVO>();
 		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
 		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
@@ -28,16 +29,43 @@ public class StoreListController implements Controller{
 
 		
 		try {
-			storeList = StoreDAOImpl.getInstance().getAllStore();
-			areaList = StoreDAOImpl.getInstance().getAllArea();
-			for(StoreVO svo : storeList) {
-				String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
-				String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
-				int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
-				storeShowList.add(new StoreShowVO(
-						area, svo.getName(), imageUrl, storeId
-						));
+			if(strAreaId==null && storeName==null) {//레스토랑 배너 누른경우
+				storeList = StoreDAOImpl.getInstance().getAllStore();
+				areaList = StoreDAOImpl.getInstance().getAllArea();
+				for(StoreVO svo : storeList) {
+					String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
+					String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
+					int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
+					storeShowList.add(new StoreShowVO(
+							area, svo.getName(), imageUrl, storeId
+							));
+				}
+			}else if(strAreaId!=null && storeName==null){//마이페이지에서 지역 누른경우
+				int areaId = Integer.parseInt(strAreaId);
+				storeList = StoreDAOImpl.getInstance().findByArea(areaId);
+				areaList = StoreDAOImpl.getInstance().getAllArea();
+				for(StoreVO svo : storeList) {
+					String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
+					String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
+					int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
+					storeShowList.add(new StoreShowVO(
+							area, svo.getName(), imageUrl, storeId
+							));
+				}
+			}else if(strAreaId==null && storeName!=null){//음식점 이름검색한 경우
+
+				storeList = StoreDAOImpl.getInstance().findByName(storeName);
+				areaList = StoreDAOImpl.getInstance().getAllArea();
+				for(StoreVO svo : storeList) {
+					String area = StoreDAOImpl.getInstance().findStoreArea(svo.getStoreId()).getName();
+					String imageUrl = StoreDAOImpl.getInstance().findStoreImage(svo.getStoreId()).getImageUrl();
+					int storeId = StoreDAOImpl.getInstance().getStoreDetail(svo.getStoreId()).getStoreId();
+					storeShowList.add(new StoreShowVO(
+							area, svo.getName(), imageUrl, storeId
+							));
+				}
 			}
+			
 			
 			
 			request.setAttribute("storeShowList", storeShowList);
