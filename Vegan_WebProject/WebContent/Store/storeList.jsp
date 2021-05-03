@@ -95,10 +95,14 @@
 					<%@ include file="chart.jsp"%>
 				</div>
 
+				
 				<div class="container-1">
-					<span class="icon"><i class="fa fa-search"></i></span> 
-					<input type="search" id="search" placeholder="Search..." />
+				<form action="findByStoreName.do">
+					<input type="text" id="store" name = "storename" placeholder="Search..." />
+					<input type="submit" value="검색" id="searchButton"/>
+				</form> 
 				</div>
+				
 			</div>
 
 

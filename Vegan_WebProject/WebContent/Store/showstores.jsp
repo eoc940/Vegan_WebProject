@@ -77,11 +77,11 @@
             
       	<div class = "header">
             <h3>Restaurants for VEGAN</h3>
-            	<div class="search">
-					<form action="findByStoreName.do">
-					<input type="text" size="20" name="storename" id="searchContext"/>
-        			<input type="submit" value="검색" id="searchButton"/>
-    				</form> 
+            	<div class="container-1">
+				<form action="findByStoreName.do">
+					<input type="text" id="store" name = "storename" placeholder="Search..." />
+					<input type="submit" value="검색" id="searchButton"/>
+				</form> 
 				</div>
         </div>
 
@@ -111,13 +111,6 @@
         
       </div> 
 
-<%-- <c:forEach items="${storelist}" var="store">
-	${store.name}
-</c:forEach>
-<c:forEach items="${imagelist}" var="image">
-	<img class="img-fluid" src="../store_img/${image.imageUrl}">
-</c:forEach> --%>
-
  <!-- ======= Footer ======= -->
 		 <center>
 		  <footer id="footer">
@@ -145,10 +138,3 @@
   <script src="storeAssets/js/storeMain.js"></script> <!-- 레이아웃 -->
 </body>
 </html>
-
-<%-- <c:forEach items="${storelist}" var="store">
-	${store.name}
-</c:forEach>
-<c:forEach items="${imagelist}" var="image">
-	${image.imageUrl}
-</c:forEach> --%>
