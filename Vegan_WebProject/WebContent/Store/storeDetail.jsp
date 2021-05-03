@@ -41,6 +41,7 @@
 	<!-- 좋아요 토글 스크립트 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
+	
 	$(function() {
 		$("#btn_like").click(function() {
 			$.ajax({
@@ -51,8 +52,8 @@
 					store:'${svo.storeId}'
 				},
 				success: function() {
-					
 					recCount();
+					checkHit();
 				},
 				error:function() {
 				}
@@ -76,9 +77,40 @@
 				}
 			})
 	    };
-	    recCount();
 	    
-		
+		function checkHit() {
+			
+			$.ajax({
+				url: "checkHit.do",
+                type: "POST",
+                data: {
+                	member:'${vo.memberId}',
+					store:'${svo.storeId}'
+                },
+                success: function (check) {
+                	if(check==1) {
+                		alert("좋아요 되어있음");
+                		//여기에 좋아요 되어있는 표시
+                	}else if(check==0) {
+                		alert("좋아요 안되어있음");
+                		//여기에 좋아요 안되어있는 표시
+                	}
+                },
+                error:function() {
+           
+				}
+			})
+	    };
+	    function checkLogin() {
+			if ("${vo}" == "") {
+				alert("로그인 하시기 바랍니다.")
+				location.href = '../Member/loginForm.jsp';
+			}
+		}
+	    
+	    checkLogin();
+	    recCount();
+	    checkHit();
 	    
 	});//ready
 	
@@ -129,14 +161,7 @@
 							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
-		<!-- 좋아요 체크된 경우 -->
-		<c:if test="${checkHit eq true}">
-			
-		</c:if>
-		<!-- 좋아요 체크되지 않은 경우 -->
-		<c:if test="${checkHit eq false}">
 		
-		</c:if>
 					<div style=" float:left; margin-right:10px;">
 		
 							<c:if test="${!empty vo}">
@@ -199,7 +224,7 @@
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 
-							<div class="description"><br><p>${svo.description}</p><br></div>
+							<div class="description"><br><p>${svo.description}</p><br><p><a href="${svo.url}">${svo.url}</a></p></div>
 							
 		<!-- ======= Map ======= -->
 							
@@ -250,9 +275,10 @@
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
 								<p>
 								
-								<br><h2>가장 가까운 음식점 정보</h2><br>
-								이름:${closestStore.name}<br>
-								주소:${closestStore.address}
+								<br><br><br><h2>가장 가까운 음식점 정보</h2>
+								<h6>${closestStore.name}</h6><br>
+								${closestStore.address}<br>
+								<a href="${closestStore.url}">${closestStore.url}</a>
 								</p>
 						
 							</ul>
