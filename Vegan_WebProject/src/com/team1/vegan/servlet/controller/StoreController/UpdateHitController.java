@@ -17,6 +17,7 @@ public class UpdateHitController implements Controller {
 		
 		String memberId = request.getParameter("member");
 		int storeId = Integer.parseInt(request.getParameter("store"));		
+		
 		System.out.println(memberId);
 		System.out.println(storeId);
 		try {
