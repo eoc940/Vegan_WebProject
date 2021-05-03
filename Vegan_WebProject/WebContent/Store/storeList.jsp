@@ -32,10 +32,8 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="storeAssets/js/main.js">
-
 	</script>
 	<script src="storeAssets/js/storeList.js">
-
 	</script>
 	<link href="storeAssets/css/storeList.css" rel="stylesheet">
 
@@ -81,7 +79,6 @@
 	</header>
 	<!-- End Header -->
 
-
 	<!-- ======= Works Section ======= -->
 	<section class="section site-portfolio">
 
@@ -95,30 +92,26 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
-
+				
+				<div class="container-1">
+				<form action="findByStoreName.do">
+					<input type="text" id="store" name = "storename" placeholder="Search..." />
+					<input type="submit" value="검색" id="searchButton"/>
+				</form> 
+				</div>
 				
 			</div>
 
 
-			<div data-aos="fade-up" data-aos-delay="100">
 
+			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
 					<a href="#" data-filter="*" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
-					<div class="container-1">
-						<span class="icon"><i class="fa fa-search"></i></span> 
-						<input type="search" id="search" placeholder="Search..." />
-					</div>
 				</div>
-	
-
 			</div>
-
-
-			
-
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
