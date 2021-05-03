@@ -88,7 +88,7 @@ function check_delete(){
 			
 	<div class="boardContainer">
 		<div id="boardBar">	
-			<h3>작성자 : ${board.memberId} &nbsp;&nbsp; 작성일시 : ${board.date}</h3>
+			<h3>작성자 : ${board.memberId} &nbsp;&nbsp; 작성일시 : ${board.date} &nbsp;&nbsp; 조회수 : ${board.viewCount}</h3>
 		</div>
 		<div id="boardCnt">
 			<p>${board.content}</p>

@@ -22,7 +22,9 @@ import com.team1.vegan.servlet.controller.StoreController.BestNineController;
 
 import com.team1.vegan.servlet.controller.StoreController.FindByStoreAreaController;
 import com.team1.vegan.servlet.controller.StoreController.FindByStoreNameController;
+import com.team1.vegan.servlet.controller.StoreController.RecordCountController;
 import com.team1.vegan.servlet.controller.StoreController.StoreListController;
+import com.team1.vegan.servlet.controller.StoreController.UpdateHitController;
 import com.team1.vegan.servlet.controller.StoreController.StoreDetailController;
 
 
@@ -79,8 +81,12 @@ public class HandlerMapping {
 		}if(command.equals("Store/storeDetail.do")) {
 			controller = new StoreDetailController();
 		}if(command.equals("Store/areaGraph.do")) {
-		controller = new AreaGraphController();
-	}
+			controller = new AreaGraphController();
+		}if(command.equals("Store/updateHit.do")) {
+			controller = new UpdateHitController();
+		}if(command.equals("Store/recordCount.do")) {
+			controller = new RecordCountController();
+		}
 		
 		return controller;
 	}
