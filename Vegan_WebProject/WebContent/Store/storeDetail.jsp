@@ -224,7 +224,7 @@
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 
-							<div class="description"><br><p>${svo.description}</p><br></div>
+							<div class="description"><br><p>${svo.description}</p><br><p><a href="${svo.url}">${svo.url}</a></p></div>
 							
 		<!-- ======= Map ======= -->
 							
@@ -275,9 +275,10 @@
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
 								<p>
 								
-								<br><h2>가장 가까운 음식점 정보</h2><br>
-								이름:${closestStore.name}<br>
-								주소:${closestStore.address}
+								<br><br><br><h2>가장 가까운 음식점 정보</h2>
+								<h6>${closestStore.name}</h6><br>
+								${closestStore.address}<br>
+								<a href="${closestStore.url}">${closestStore.url}</a>
 								</p>
 						
 							</ul>
