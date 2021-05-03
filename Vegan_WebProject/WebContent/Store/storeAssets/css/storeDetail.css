@@ -729,6 +729,7 @@ a { text-decoration:none !important }
 #main-content {
   display: flex;
   background: white;
+  float: left;
   
 }
 

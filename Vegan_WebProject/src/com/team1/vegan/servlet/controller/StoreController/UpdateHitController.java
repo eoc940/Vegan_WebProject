@@ -1,5 +1,6 @@
 package com.team1.vegan.servlet.controller.StoreController;
 
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,8 +27,10 @@ public class UpdateHitController implements Controller {
 			}else {
 				StoreDAOImpl.getInstance().plusHitCount(storeId, memberId);
 			}
-			
-		}catch (SQLException e) {
+			PrintWriter out = response.getWriter();
+			out.print(3);
+			out.close();
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		

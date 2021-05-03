@@ -323,7 +323,7 @@ form {
   margin-top: 140px;
   margin-left: 100px;
   margin-right: 140px;
-  margin-bottom: 150px;
+  margin-bottom: 10px;
   min-width: 800px;
 }
 
@@ -369,12 +369,6 @@ form .main {
   width: 100%;
   background-color: rgb(101, 207, 255);
 
-}
-
-.like {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  /* background-color: rgb(255, 143, 143); */
 }
 
 #modifyButton {
@@ -550,7 +544,6 @@ form .main {
 
 }
 
-
 .notice .promotion .swiper-prev {
   left: 50%;
   margin-left: -480px;
@@ -567,6 +560,28 @@ form .main {
   color: #fff;
 }
 
+
+
+
+/*--------------------------------------------------------------
+# like     정렬을 위한 추가 css
+--------------------------------------------------------------*/
+
+.like {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  
+  padding: 0px 200px;
+  
+  
+}
+
+
+.L_title {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 10px;
+}
 
 
 

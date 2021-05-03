@@ -51,6 +51,7 @@
 					store:'${svo.storeId}'
 				},
 				success: function() {
+					
 					recCount();
 				},
 				error:function() {
@@ -77,8 +78,7 @@
 	    };
 	    recCount();	 
 	    
-	  
-	    
+	 
 	});//ready
 	
 	</script>
@@ -126,14 +126,26 @@
 							<header>
 
 							
+							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
-					
-					<div style=" float:left; margin-right:10px;">
-				     
-						<c:if test="${!empty vo}">
-							<div id="main-content">
-							  <div >
+
+						<p>${checkHit}</p>
+							<c:if test="${!empty vo}">
+							<c:if test="${checkHit eq true}">
+								<div id="main-content">
+							  <div>
+							    <input type="checkbox" id="btn_like" />
+							    <label for="btn_like">
+							      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" fill="E2264D">
+								</svg>
+								</label>
+								</div>
+								</div>
+								</c:if>
+								<c:if test="${checkHit eq false}">
+								<div id="main-content">
+							  <div>
 							    <input type="checkbox" id="btn_like" />
 							    <label for="btn_like">
 							      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
@@ -171,15 +183,18 @@
 								      </g>
 							      </svg>
 							    </label>
-							  </div>
-							</div>
-						</div>
-						
-						
-	         			<div style=" float:left; margin-top:15px; font-family: 'Montserrat', sans-serif; font-weight: 500; color:#DD4688">	
-							</c:if>
+							  
+	
+							  		</div>
+								</div>
+								
+								</c:if>
+								
+							
+						</c:if>
 							<!-- 좋아요 총 개수 들어옴 -->
-							<c:if test="${!empty vo}">							
+							<c:if test="${!empty vo}">	
+								<div style=" float:left; margin-top:15px; font-family: 'Montserrat', sans-serif; font-weight: 500; color:#DD4688">							
 								LIKE!!&nbsp;<span class="rec_count"></span>
 								</div>
 							</c:if>
