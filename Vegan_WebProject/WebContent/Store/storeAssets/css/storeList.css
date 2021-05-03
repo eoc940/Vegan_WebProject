@@ -414,14 +414,18 @@ a:focus {
 #portfolio-grid {
 	padding: 20px;
 	margin: 30px;
+	margin-top: 50px;
 	center: center;
 }
 
+
+
+
 #filters .search{
 	text-align: right;
-	margin-right: 30px;
+	margin-right: 80px;
 	float:right;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 
@@ -464,8 +468,7 @@ a:focus {
 
 
 .filters {
-	padding: 20px 50px 50px;
-	70 px;
+	padding: 20px 50px 10px 60px;
 	word-spacing: 1em;
 	align-content: space-around;
 	margin: 30px;
@@ -505,20 +508,23 @@ a:focus {
 	margin-top: 100px;
 	padding: 10px 100px;
 	width: 100%;
-	display: flex;
+	
 	align-items: center;
 }
 
 .chart{
-	
-	width: 300px;
-	height: 200px;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	width: 600px;
+	height: 300px;
 	
 }
 
 .title{
+	font-size: 30px;
 	min-width: 30%;
 }
+
 
 
 
