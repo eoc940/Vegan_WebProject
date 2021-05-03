@@ -420,7 +420,7 @@ a:focus {
 
 .container-1 {
 	margin-top: 20px;
-	margin-right: 100px;
+	margin-right: 80px;
 	width: 300px;
 	float: right;
 
@@ -509,6 +509,48 @@ a:focus {
 	font-size: 40px;
 	min-width: 30%;
 }
+
+.search_bar{
+	float: right;
+}
+
+.container-1 .search{
+	width: 200px;
+	height: 30px;
+	background: white;
+	font-size: 12pt;
+	padding-right: 20px;
+	padding-left: 20px;
+	border-radius: 38px;
+	background-color: rgba(255, 255, 255, 0.7);
+	outline: none;
+	box-shadow: none;
+}
+
+.container-1 .search::-webkit-input-placeholder {
+	color: gray;
+}
+
+.s_button{
+	height: 35px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color:white; 
+	background: #5EC75E;
+	border-color: white;
+	border-top-left-radius: 15px; 
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px; 
+	border-bottom-right-radius: 15px;
+	margin-right:-4px;
+}
+
+.s_button:hover{
+	color:#5EC75E; 
+	background-color: white;
+	border-color: #5EC75E;
+}
+
 
 
 

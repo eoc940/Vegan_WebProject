@@ -93,13 +93,6 @@
 					<%@ include file="chart.jsp"%>
 				</div>
 				
-				<div class="container-1">
-				<form action="findByStoreName.do">
-					<input type="text" id="store" name = "storename" placeholder="Search..." />
-					<input type="submit" value="검색" id="searchButton"/>
-				</form> 
-				</div>
-				
 			</div>
 
 
@@ -110,7 +103,19 @@
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+
+					<div class="container-1">
+						<form action="findByStoreName.do">
+							<div class="search_bar">
+								<input class="search" type="text" id="store" name = "storename" placeholder="예: 노원구..." />
+								<input class="s_button" type="submit" value="Search" id="searchButton"/>
+							</div>
+						</form> 
+					</div>
+
 				</div>
+
+
 			</div>
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
