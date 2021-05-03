@@ -316,8 +316,6 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-image: url(../../assets/img/myp_back.jpg);
-  background-size: cover;
 
 }
 
@@ -399,6 +397,7 @@ form .main {
   font-size: 15px;
 
 }
+
 
 
 
@@ -560,6 +559,7 @@ form .main {
   background-color: #333;
   color: #fff;
 }
+
 
 
 
