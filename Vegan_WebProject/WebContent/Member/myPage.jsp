@@ -107,11 +107,7 @@
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-<<<<<<< HEAD
-						<a href="../Store/findByStoreArea.do?areaId=${area.areaId}"><div>${area.name}</div></a>
-=======
 						<div><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
->>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
