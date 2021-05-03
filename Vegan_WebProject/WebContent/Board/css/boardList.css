@@ -169,4 +169,31 @@ footer{
 		
 }
 
+.center {
+	margin-bottom: 100px;
+	text-align: center;
+}
+.paging {
+	display: inline-block;
+	center: center;
+}
+
+.paging a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+.paging a.active {
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 5px;
+}
+
+.paging a:hover:not {
+	background-color: #ddd;
+	border-radius : 5 px;
+}
+
   
