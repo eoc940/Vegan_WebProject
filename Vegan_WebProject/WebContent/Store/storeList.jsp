@@ -81,7 +81,6 @@
 	</header>
 	<!-- End Header -->
 
-
 	<!-- ======= Works Section ======= -->
 	<section class="section site-portfolio">
 
@@ -95,11 +94,14 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
-
+				
 				<div class="container-1">
-					<span class="icon"><i class="fa fa-search"></i></span> 
-					<input type="search" id="search" placeholder="Search..." />
+				<form action="findByStoreName.do">
+					<input type="text" id="store" name = "storename" placeholder="Search..." />
+					<input type="submit" value="검색" id="searchButton"/>
+				</form> 
 				</div>
+				
 			</div>
 
 
@@ -112,10 +114,6 @@
 					</c:forEach>
 				</div>
 			</div>
-
-
-
-
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
