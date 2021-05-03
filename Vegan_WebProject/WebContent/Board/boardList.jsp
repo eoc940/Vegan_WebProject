@@ -82,63 +82,45 @@ function check_write(){
 <div id="container">
 
 	
+	<div class="boardMenu">
+		<div id="write">
 	
-	<div id="write">
-
-		<input type="button" value="Write" onClick="check_write()" id="writeButton">
+			<input type="button" value="Write" onClick="check_write()" id="writeButton">
+		</div>
+		<div class="search">
+			<form action="searchBoard.do">
+		    	<select name="opt">
+		            <option value="0">제목</option>
+		            <option value="1">내용</option>
+		            <option value="2">작성자</option>
+		        </select>
+		        <input type="text" size="20" name="contents" id="searchContext"/>
+		        <input type="submit" value="검색" id="searchButton"/>
+		    </form> 
+		</div>
 	</div>
 
-	<table>	
 
-		<thead>
-			<tr >
-				<th width="10%" >No.</th>
-				<th width="50%">Title</th>
-				<th width="10%">Writer</th>
-				<th width="20%">Date</th>
-				<th width="10%">Views</th>
-			</tr>
-		</thead>
-		<tbody>
 			<c:forEach items="${list}" var="board">
-				<tr>
-					<td>
-					${board.boardId}
-					</td>
-					<td id="title">
-					<a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a>
-					</td>
-					<td>
-					${board.memberId}
-					</td>
-					<td>
-					${board.date}
-					</td>
-					<td>
-					${board.viewCount}
-					</td>
-				
-				</tr>
+				<div class ="icon-boxes">
+					<div data-aos="zoom-in" data-aos-delay="200">
+						<div class="grid-container">
+							<div class="grid-item icon-box">
+					            <div class="icon"><a href="boardDetailPage.do?boardId=${board.boardId}"><h5>No. ${board.boardId}</h5></a><h6>DATE ${board.date}</h6></div>
+						            <h4 class="title"><a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a></h4><h6>Writer_ ${board.memberId}</h6>
+						            <p class="description">${board.content}</p>
+						            <h6>VIEWS_ ${board.viewCount}</h6>
+						    
+								</div>
+							</div>
+						</div>	
+				</div>
 			</c:forEach>
-		</tbody>
-	</table>
+		
 
 </div>	
 
-
-<div class="search">
-	<form action="searchBoard.do">
-    	<select name="opt">
-            <option value="0">제목</option>
-            <option value="1">내용</option>
-            <option value="2">작성자</option>
-        </select>
-        <input type="text" size="20" name="contents" id="searchContext"/>
-        <input type="submit" value="검색" id="searchButton"/>
-    </form> 
-</div>
-
-   <!-- ======= Footer ======= -->
+ <!-- ======= Footer ======= -->
 
 	<footer class="boardfooter">
 		    <div id="container">
@@ -147,12 +129,15 @@ function check_write(){
 		    
 		      <div class="copyright">
 		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
-		      </div>
+		     
 		      <div class="credits">
 		        Designed by Enocore 1 Team</a>
 		      </div>
 		    </div>
 	 </footer><!-- End Footer -->
+
+
+
 
    
 </body>
