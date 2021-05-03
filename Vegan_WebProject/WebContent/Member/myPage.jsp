@@ -158,7 +158,7 @@
 				
 			</div>
 		</div>
-s
+
 	</section>
 
 
