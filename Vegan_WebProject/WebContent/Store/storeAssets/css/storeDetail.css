@@ -301,61 +301,62 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-
-	body {
-	  line-height: 1.8;
-	  font-weight: normal;
-	  color: gray;
-	  position: relative;
-	  z-index: 0;
-	  padding: 0; 
-	}
-
-	textarea,button
-	{
-		
-		font-size: 11pt;
-		line-height: 1.75em;
-		color: #4c4c4c;
-	}
-	#main{
-		
-		font-size: 11pt;
-		line-height: 1.75em;
-		color: #4c4c4c;
-	}
+.Listbutton a {
+	position:relative;
+	background: #5EC75E;
+	color: #fff;
+	border-radius: 50px;
+	margin: 0 0 0 20px;
+	padding: 10px 25px;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	float:left;
 	
+}
 
-	h1
-	{
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-	#content{
+.Listbutton a:hover {
+	background: #ffa012;
+	color: #fff;
+}						
+
+
+
+	/* Buttons end*/				
+
+a { text-decoration:none !important }
+
+
+
+	.description{
+	font-size: 11pt;
+	line-height: 1.75em;
+	color: #4c4c4c;
 	font-family: 'Nanum Gothic', sans-serif;
 	
 	}
 	#content.h2{
 		text-transform: uppercase;
 		font-weight: bold;
+		color: #4c4c4c;
+		font-family: 'Nanum Gothic', sans-serif;
 	}
 	
-		h1 
-		{
-			color: inherit;
-			text-decoration: none;
-		}
+	#sidebar{
+	font-size: 11pt;
+	line-height: 1.75em;
+	color: #4c4c4c;
+	font-family: 'Nanum Gothic', sans-serif;
+	
+	}
 		
 	/* Change this to whatever font weight/color pairing is most suitable */
 
 
 
 	/* Don't forget to set this to something that matches the design */
-	a
-	{
-		text-decoration: underline;
-		color: #272727;
-	}
+
 
 	a:hover
 	{
@@ -389,12 +390,6 @@
 		font-style: italic;
 	}
 	
-	p, ul, ol, dl, table
-	{
-		margin-bottom: 1em;
-	}
-
-	
 
 	br.clear
 	{
@@ -426,65 +421,62 @@
 		{
 			margin-bottom: 0;
 		}
-
-	/* Images */
-
 	
 	/* Lists */
 
-		ul.default
+		#sidebar.ul.default
 		{
 			margin: 0;
 			padding: 0;
 			list-style: none;
 		}
 		
-			ul.default li
+			#sidebar.ul.default li
 			{
 				padding: 0.60em 0em;
 				border-top: 1px solid;
 				border-color: rgba(255,255,255,.1);
 			}
 			
-			ul.default li:first-child
+			#sidebar.ul.default li:first-child
 			{
 				padding-top: 0;
 				border-top: none;
 			}
 			
-			ul.default a
+			#sidebar.ul.default a
 			{
 				text-decoration: none;
 				color: rgba(255,255,255,.5);
 			}
 			
-			ul.default a:hover
+			#sidebar.ul.default a:hover
 			{
 				text-decoration: underline;
 			}
 			
 
 		
-		ul.style li {
+		#sidebar.ul.style li {
 			margin: 0;
 			padding: 2em 0em 1.5em 0em;
 			border-top: 1px solid #ECECEC;
 		}
 		
-		ul.style li:first-child
+		#sidebar.ul.style li:first-child
 		{
 			padding-top: 0;
 			border-top: none;
 		}
 		
-		ul.style img {
+		#sidebar.ul.style img {
 			float: left;
 			margin-right: 20px;
 		}
 		
 
 		
-		ul.style .posted {
+		#sidebar.ul.style .posted {
 			padding: 0em 0em 1em 0em;
 			letter-spacing: 1px;
 			text-transform: uppercase;
@@ -492,44 +484,11 @@
 			color: #A2A2A2;
 		}
 		
-		ul.style .first {
+		#sidebar.ul.style .first {
 			padding-top: 0px;
 			border-top: none;
 		}
-							
-
-	/* Buttons */
-		
-		.button
-		{
-			position: relative;
-			display: inline-block;
-			margin-top: 2em;
-			padding: 0.45em 0.5em;
-			background: #5EC75E;
-			border-radius: 40px;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 1.1em;
-			color: #FFF;
-			-moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-			-webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-			-o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-			-ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-			transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-			cursor: pointer;
-			font-family: 'Montserrat', sans-serif;
-			
-		}
-
-			.button:hover
-			{
-				background: #de3d27;
-				color: #FFF !important;
-			}
-			
-
-
+	
 
 /*********************************************************************************/
 /* Main                                                                          */
@@ -761,4 +720,229 @@
 #footer .container h2 {
 	color: #5EC75E;
 	font-size: 1.7em;
+}
+/*********************************************************************************/
+/* LikeButton                                                                          */
+/*********************************************************************************/
+
+
+#main-content {
+  display: flex;
+  background: white;
+  
+}
+
+svg {
+  cursor: pointer;
+  overflow: visible;
+  width: 60px;
+}
+svg #heart {
+  transform-origin: center;
+  animation: animateHeartOut .3s linear forwards;
+}
+svg #main-circ {
+  transform-origin: 29.5px 29.5px;
+}
+
+#btn_like {
+  display: none;
+}
+
+#btn_like:checked + label svg #heart {
+  transform: scale(0.2);
+  fill: #E2264D;
+  animation: animateHeart .3s linear forwards .25s;
+}
+#btn_like:checked + label svg #main-circ {
+  transition: all 2s;
+  animation: animateCircle .3s linear forwards;
+  opacity: 1;
+}
+#btn_like:checked + label svg #grp1 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp1 #oval1 {
+  transform: scale(0) translate(0, -30px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp1 #oval2 {
+  transform: scale(0) translate(10px, -50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp2 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp2 #oval1 {
+  transform: scale(0) translate(30px, -15px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp2 #oval2 {
+  transform: scale(0) translate(60px, -15px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp3 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp3 #oval1 {
+  transform: scale(0) translate(30px, 0px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp3 #oval2 {
+  transform: scale(0) translate(60px, 10px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp4 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp4 #oval1 {
+  transform: scale(0) translate(30px, 15px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp4 #oval2 {
+  transform: scale(0) translate(40px, 50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp5 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp5 #oval1 {
+  transform: scale(0) translate(-10px, 20px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp5 #oval2 {
+  transform: scale(0) translate(-60px, 30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp6 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp6 #oval1 {
+  transform: scale(0) translate(-30px, 0px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp6 #oval2 {
+  transform: scale(0) translate(-60px, -5px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp7 {
+  opacity: 1;
+  transition: .1s all .3s;
+}
+#btn_like:checked + label svg #grp7 #oval1 {
+  transform: scale(0) translate(-30px, -15px);
+  transform-origin: 0 0 0;
+  transition: .5s transform .3s;
+}
+#btn_like:checked + label svg #grp7 #oval2 {
+  transform: scale(0) translate(-55px, -30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform .3s;
+}
+#btn_like:checked + label svg #grp2 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+#btn_like:checked + label svg #grp3 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+#btn_like:checked + label svg #grp4 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+#btn_like:checked + label svg #grp5 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+#btn_like:checked + label svg #grp6 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+#btn_like:checked + label svg #grp7 {
+  opacity: 1;
+  transition: .1s opacity .3s;
+}
+
+@keyframes animateCircle {
+  40% {
+    transform: scale(10);
+    opacity: 1;
+    fill: #DD4688;
+  }
+  55% {
+    transform: scale(11);
+    opacity: 1;
+    fill: #D46ABF;
+  }
+  65% {
+    transform: scale(12);
+    opacity: 1;
+    fill: #CC8EF5;
+  }
+  75% {
+    transform: scale(13);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: .5;
+  }
+  85% {
+    transform: scale(17);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: .2;
+  }
+  95% {
+    transform: scale(18);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: .1;
+  }
+  100% {
+    transform: scale(19);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: 0;
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animateHeartOut {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
