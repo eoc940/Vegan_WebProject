@@ -124,8 +124,7 @@
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
 					<div class="item ${store.area} ">
-						<a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}"
-							class="item-wrap fancybox">
+						<a href="${pageContext.request.contextPath}/Store/storeDetail.do?storeId=${store.storeId}" class="item-wrap fancybox">
 							<div class="work-info">
 								<h3>${store.area}</h3>
 								<span>${store.area} &nbsp; ${store.name}</span>
@@ -167,7 +166,6 @@
 			</div>
 		</footer>
 		<!-- End Footer -->
-	</center>
 
 
 
