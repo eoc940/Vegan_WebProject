@@ -96,10 +96,7 @@
 					<%@ include file="chart.jsp"%>
 				</div>
 
-				<div class="container-1">
-					<span class="icon"><i class="fa fa-search"></i></span> 
-					<input type="search" id="search" placeholder="Search..." />
-				</div>
+				
 			</div>
 
 
@@ -110,7 +107,9 @@
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+					<input type="search" id="search" placeholder="Search..." />
 				</div>
+			
 			</div>
 
 
@@ -137,11 +136,7 @@
 
 	</section>
 
-	<div class="center">
-		<div class="pagination">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">&raquo;</a>
-		</div>
-	</div>
+
 
 
 

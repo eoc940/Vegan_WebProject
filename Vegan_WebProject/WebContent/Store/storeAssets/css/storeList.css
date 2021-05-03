@@ -15,7 +15,6 @@
 	top: 0;
 	background: rgba(26, 24, 22, 0.85);
 }
-
 #header .logo h1 {
 	font-size: 28px;
 	margin: 0;
@@ -428,7 +427,7 @@ a:focus {
 	padding-bottom: 10px;
 }
 
-.container-1 input#search {
+input#search {
 	width: 250px;
 	height: 40px;
 	background: white;
@@ -440,6 +439,8 @@ a:focus {
 	background-color: rgba(255, 255, 255, 0.7);
 	outline: none;
 	box-shadow: none;
+	margin-top:10px;
+	margin-right: 20px;
 }
 
 .container-1 input#search::-webkit-input-placeholder {
