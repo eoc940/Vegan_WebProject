@@ -166,19 +166,19 @@
 						  	<img src="assets/icon/avocado.png"><br/>강수진<br>ksujin98@gmail.com
 						  </div>
 						  <div class="grid-item">
-						  	<img src="assets/icon/carrot.png"><br/>김진철
+						  	<img src="assets/icon/carrot.png"><br/>김진철<br>k7and3@gmail.com
 						  </div>
 						  <div class="grid-item">
 						  	<img src="assets/icon/tomato.png"><br/>박재영<br>jak994@naver.com
 						  </div>  
 						  <div class="grid-item">
-						  	<img src="assets/icon/apple.png"><br/>원광연
+						  	<img src="assets/icon/apple.png"><br/><br>원광연dnjs2rhkddus@naver.com
 						  </div>
 						  <div class="grid-item">
 						  	<img src="assets/icon/broccoli.png"><br/>임해리<br>haeri.lim.lhe@gmail.com
 						  </div>
 						  <div class="grid-item">
-						  	<img src="assets/icon/pumpkin.png"><br/>정다솜
+						  	<img src="assets/icon/pumpkin.png"><br/>정다솜<br>jeongdasom1@gmail.com
 						  	
 						  </div>  
 						  

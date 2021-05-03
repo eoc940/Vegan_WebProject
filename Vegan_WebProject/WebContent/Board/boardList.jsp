@@ -78,84 +78,78 @@
 </head>
 <body>
 
-	<form action="storeList.do"></form>
+<form action="storeList.do"></form>
 
-	<header id="header"
-		class="fixed-top d-flex align-items-center header-transparent"
-	>
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
 
-		<div class="container d-flex align-items-center">
+  <div class="container d-flex align-items-center">
 
-			<nav class="nav-menu d-none d-lg-block">
-				<ul>
-					<li><a href="../index.jsp">Home</a></li>
-					<li><a href="../aboutus.jsp">About Us</a></li>
-					<li class="active"><a href="boardList.do">Board</a></li>
-					<li><a href="../Store/storeList.do">Restaurants</a></li>
-					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My
-								Page</a></li>
-					</c:if>
-					<c:if test="${!empty vo}">
-						<li class="book-a-table text-center"><a
-							href="../Member/logout.do"
-						>logout</a></li>
-					</c:if>
-					<c:if test="${empty vo}">
-						<li class="book-a-table text-center"><a
-							href="../Member/loginForm.jsp"
-						>login</a></li>
-					</c:if>
-				</ul>
-			</nav>
-			<!-- .nav-menu -->
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li><a href="../index.jsp">Home</a></li>
+        <li><a href="../aboutus.jsp">About Us</a></li>
+        <li class="active"><a href="boardList.do">Board</a></li>
+        <li><a href="../Store/storeList.do">Restaurants</a></li>
+        <c:if test="${!empty vo}">
+        <li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+        </c:if>
+		<c:if test="${!empty vo}">
+        <li class="book-a-table text-center" ><a href="../Member/logout.do">logout</a></li>
+		</c:if>
+		<c:if test="${empty vo}">
+        <li class="book-a-table text-center" ><a href="../Member/loginForm.jsp">login</a></li>
+        </c:if>
+      </ul>
+     </nav><!-- .nav-menu -->
+    
+   </div>
 
+</header><!-- End Header -->
+	
+	<div class = "header">
+    	<h3>Board</h3>
+	 </div>
+<div id="container">
+
+	
+	<div class="boardMenu">
+		<div id="write">
+	
+			<input type="button" value="Write" onClick="check_write()" id="writeButton">
+		</div>
+		<div class="search">
+			<form action="searchBoard.do">
+		    	<select name="opt">
+		            <option value="0">제목</option>
+		            <option value="1">내용</option>
+		            <option value="2">작성자</option>
+		        </select>
+		        <input type="text" size="20" name="contents" id="searchContext"/>
+		        <input type="submit" value="검색" id="searchButton"/>
+		    </form> 
 		</div>
 
-	</header>
-	<!-- End Header -->
-
-	<div class="header">
-		<h3>Board</h3>
 	</div>
 	<div id="container">
 
 
 
-		<div id="write">
-
-			<input type="button" value="Write" onClick="check_write()"
-				id="writeButton"
-			>
-		</div>
-
-		<table>
-
-			<thead>
-				<tr>
-					<th width="10%">No.</th>
-					<th width="50%">Title</th>
-					<th width="10%">Writer</th>
-					<th width="20%">Date</th>
-					<th width="10%">Views</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${list}" var="board">
-					<tr>
-						<td>${board.boardId}</td>
-						<td id="title">
-							<a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a>
-						</td>
-						<td>${board.memberId}</td>
-						<td>${board.date}</td>
-						<td>${board.viewCount}</td>
-
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-
+			<c:forEach items="${list}" var="board">
+				<div class ="icon-boxes">
+					<div data-aos="zoom-in" data-aos-delay="200">
+						<div class="grid-container">
+							<div class="grid-item icon-box">
+					            <div class="icon"><a href="boardDetailPage.do?boardId=${board.boardId}"><h5>No. ${board.boardId}</h5></a><h6>DATE ${board.date}</h6></div>
+						            <h4 class="title"><a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a></h4><h6>Writer_ ${board.memberId}</h6>
+						            <p class="description">${board.content}</p>
+						            <h6>VIEWS_ ${board.viewCount}</h6>
+						    
+								</div>
+							</div>
+						</div>	
+				</div>
+			</c:forEach>
+		
 	</div>
 	<div class="center">
 		<div class="paging">
@@ -199,35 +193,22 @@
 	</div>
 
 
-	<div class="search">
-		<form action="searchBoard.do">
-			<select name="opt">
-				<option value="0">제목</option>
-				<option value="1">내용</option>
-				<option value="2">작성자</option>
-			</select>
-			<input type="text" size="20" name="contents" id="searchContext" />
-			<input type="submit" value="검색" id="searchButton" />
-		</form>
-	</div>
-
-	<!-- ======= Footer ======= -->
+ <!-- ======= Footer ======= -->
 
 	<footer class="boardfooter">
-		<div id="container">
-			<h2>VEGAN PROJECT</h2>
-			<p>All life deserves respect, dignity, and compassion. All life.</p>
+		    <div id="container">
+		      <h2>VEGAN PROJECT</h2>
+		      <p>All life deserves respect, dignity, and compassion. All life.</p>
+		    
+		      <div class="copyright">
+		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
+		     
+		      <div class="credits">
+		        Designed by Enocore 1 Team</a>
+		      </div>
+		    </div>
+	 </footer><!-- End Footer -->
 
-			<div class="copyright">
-				&copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All
-				Rights Reserved
-			</div>
-			<div class="credits">
-				Designed by Enocore 1 Team</a>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer -->
 
 
 </body>
