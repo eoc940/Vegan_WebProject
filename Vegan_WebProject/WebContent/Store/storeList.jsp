@@ -92,6 +92,11 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 25d9e1cabd06a17566b891127a87157c1f3a1822
 				
 			</div>
 
@@ -103,6 +108,7 @@
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+<<<<<<< HEAD
 
 					<div class="container-1">
 						<form action="findByStoreName.do">
@@ -116,6 +122,16 @@
 				</div>
 
 
+=======
+					<form action="findByStoreName.do">
+					<div class="search">
+						<input type="text" id="store" name = "storename" placeholder="Search..." />
+						<input type="submit" value="검색" id="searchButton"/>
+					</div>
+				</form> 
+				</div>
+			
+>>>>>>> 25d9e1cabd06a17566b891127a87157c1f3a1822
 			</div>
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
@@ -138,11 +154,7 @@
 
 	</section>
 
-	<div class="center">
-		<div class="pagination">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">&raquo;</a>
-		</div>
-	</div>
+
 
 
 
