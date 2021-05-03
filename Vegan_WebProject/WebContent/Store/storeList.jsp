@@ -102,8 +102,6 @@
 				</div>
 			</div>
 
-
-
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
 					<a href="#" data-filter="*" class="active">All</a>
@@ -112,11 +110,7 @@
 					</c:forEach>
 				</div>
 			</div>
-
-
-
-
-
+		
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">
 					<div class="item ${store.area} ">

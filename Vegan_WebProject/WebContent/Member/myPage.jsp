@@ -138,7 +138,7 @@
 					<li><a href="../Board/boardList.do">Board</a></li>
 					<li><a href="../Store/storeList.do">Restaurants</a></li>
 					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+						<li class="active"><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 					</c:if>
 					<c:if test="${!empty vo}">
 						<li class="book-a-table text-center"><a href="logout.do">logout</a></li>
@@ -179,7 +179,7 @@
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-						<div>${area.name}</div>
+						<a href="../Store/findByStoreArea.do?areaId=${area.areaId}"><div>${area.name}</div></a>
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
@@ -242,7 +242,7 @@
 				<tr>
 					<c:forEach items="${listSI}" var="storeIamge">
 						<td>
-							<a href="../Store/storeDetail.jsp?storeId=${storeIamge.storeId}">
+							<a href="../Store/storeDetail.do?storeId=${storeIamge.storeId}">
 								<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" width="200px"
 									height="200px">
 							</a>

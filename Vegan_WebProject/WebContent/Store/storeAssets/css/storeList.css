@@ -457,7 +457,6 @@ a:focus {
 
 .filters {
 	padding: 20px 50px 50px;
-	70 px;
 	word-spacing: 1em;
 	align-content: space-around;
 	margin: 30px;
@@ -485,9 +484,7 @@ a:focus {
 
 .pagination a:hover:not (.active) {
 	background-color: #ddd;
-	border-radius : 5 px;
-
-
+	border-radius: 5px;
 }
 
 

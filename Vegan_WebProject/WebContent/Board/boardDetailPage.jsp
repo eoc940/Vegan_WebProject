@@ -126,7 +126,7 @@ function check_delete(){
 				</table>
 			</c:if>	
 			</div>
-			
+			<c:if test="${!empty vo}">
 			<div class="commenterArea">
 				<!-- 댓글 입력창 -->
 				<form action="writeComment.do" method="post">
@@ -145,6 +145,8 @@ function check_delete(){
 					</table>
 				</form>
 			</div>
+			</c:if>
+			
 		</div>
 		
 		
