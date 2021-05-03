@@ -204,7 +204,7 @@
 		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
 		      </div>
 		      <div class="credits">
-		        Designed by Enocore 1 Team</a>
+		        <a>Designed by Enocore 1 Team</a>
 		      </div>
 		    </div>
 		  </footer><!-- End Footer -->
