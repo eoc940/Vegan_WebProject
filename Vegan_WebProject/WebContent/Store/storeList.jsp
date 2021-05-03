@@ -95,10 +95,6 @@
 					<%@ include file="chart.jsp"%>
 				</div>
 
-				
-				<div class="container-1">
-				
-				</div>
 
 				
 			</div>
@@ -112,8 +108,10 @@
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
 					<form action="findByStoreName.do">
-					<input type="text" id="store" name = "storename" placeholder="Search..." />
-					<input type="submit" value="검색" id="searchButton"/>
+					<div class="search">
+						<input type="text" id="store" name = "storename" placeholder="Search..." />
+						<input type="submit" value="검색" id="searchButton"/>
+					</div>
 				</form> 
 				</div>
 			
