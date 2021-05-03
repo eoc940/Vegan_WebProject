@@ -98,13 +98,19 @@
 
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
-					<a href="#" data-filter="*" class="active">All</a>
+					<!-- 
+					<a href="#" onclick="location.href='storeList.do'" data-filter="*" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
+					 -->
+					<a href="storeList.do" class="active">All</a>
+					<c:forEach items="${areaList}" var="a">
+						<a href="storeList.do?area=${a.areaId}" class="active">${a.name}</a>
+					</c:forEach>
 
 					<div class="search">
-						<form action="findByStoreName.do">
+						<form action="storeList.do">
 							<div class="search_bar">
 								<input type="text" id="store" name = "storename" placeholder="Search..." />
 								<input type="submit" value="검색" id="searchButton"/>
@@ -114,7 +120,7 @@
 
 				</div>
 
-
+ 
 			</div>
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">

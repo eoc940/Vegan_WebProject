@@ -18,6 +18,7 @@ public class UpdateHitController implements Controller {
 		
 		String memberId = request.getParameter("member");
 		int storeId = Integer.parseInt(request.getParameter("store"));		
+		
 		System.out.println(memberId);
 		System.out.println(storeId);
 		try {
@@ -27,9 +28,7 @@ public class UpdateHitController implements Controller {
 			}else {
 				StoreDAOImpl.getInstance().plusHitCount(storeId, memberId);
 			}
-			PrintWriter out = response.getWriter();
-			out.print(3);
-			out.close();
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

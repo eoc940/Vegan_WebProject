@@ -131,6 +131,8 @@
 		<!-- ======= 좋아요 ======= -->
 
 						<p>${checkHit}</p>
+
+					<div style=" float:left; margin-right:10px;">
 							<c:if test="${!empty vo}">
 							<c:if test="${checkHit eq true}">
 								<div id="main-content">

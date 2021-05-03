@@ -11,9 +11,11 @@ body {
   z-index: 0;
   padding: 0;
   background-image: url("../../bg_img/bgimg (7).jpg");
+
 }
 
 body:after {
+
   position: absolute;
   top: 0;
   left: 0;

@@ -34,16 +34,7 @@
       filter: '*'
     });
 
-    $('#filters').on('click', 'a', function(e) {
-      e.preventDefault();
-      var filterValue = $(this).attr('data-filter');
-      $container.isotope({
-        filter: filterValue
-      });
-      $('#filters a').removeClass('active');
-      $(this).addClass('active');
-    });
-  }
+   }
   $(window).on('load', function() {
     siteIstotope();
   });
