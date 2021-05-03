@@ -103,7 +103,7 @@
 
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
-					<a href="#" data-filter="*" class="active">All</a>
+					<a href="#" data-filter="" class="active">All</a>
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
