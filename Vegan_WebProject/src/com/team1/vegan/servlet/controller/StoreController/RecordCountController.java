@@ -19,7 +19,7 @@ public class RecordCountController implements Controller {
 		
 		try {
 			PrintWriter out = response.getWriter();
-			int totalHitCount = StoreDAOImpl.getInstance().totalHit(storeId);
+			int totalHitCount = StoreDAOImpl.getInstance().getStoreDetail(storeId).getHit();
 			out.print(totalHitCount);
 			out.close();
 		}catch (Exception e) {

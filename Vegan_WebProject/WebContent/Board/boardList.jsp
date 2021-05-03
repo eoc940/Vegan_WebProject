@@ -128,7 +128,7 @@ function check_write(){
 
 <div class="search">
 	<form action="searchBoard.do">
-    	<select name="opt" >
+    	<select name="opt">
             <option value="0">제목</option>
             <option value="1">내용</option>
             <option value="2">작성자</option>
