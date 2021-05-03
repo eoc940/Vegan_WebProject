@@ -75,7 +75,7 @@
 							// $("#bestNine").append("<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ");
 							// resultView.innerHTML+="<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ";
 							resultList += "<div class='swiper-slide'> <img src=./store_img/" + list[i].imageUrl +
-								" width=819 height =819/> <a href='./Store/storeDetail.do?storeId=" +
+								" width=819 height =819/> <a href='${pageContext.request.contextPath}/Store/storeDetail.do?storeId=" +
 								list[i].storeId +
 								"' class='btn'>" +
 								list[i].name + "</a> </div>";

@@ -88,7 +88,7 @@
 
 				<div class="title">Restaurants for VEGAN</div>
 
-				<div class="chart">
+				<div class="chart" align = "center">
 					<%@ include file="chart.jsp"%>
 				</div>
 				

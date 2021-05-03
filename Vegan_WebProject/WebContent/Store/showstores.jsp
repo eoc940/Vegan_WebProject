@@ -90,7 +90,7 @@
 		            <div id="filters" class="filters" >
 		              <a href="storelist.do" data-filter="" class="active" >All</a>
 		              <c:forEach items="${areaList}" var="a">
-		              	<a href="" data-filter=".${a.name}" class="active" >${a.name}</a>
+		              	<a href="" data-filter=".${a.name}" class="active">${a.name}</a>
 		              </c:forEach>
 		            </div>
 		          </div>
