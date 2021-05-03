@@ -131,7 +131,7 @@
 		<!-- ======= 좋아요 ======= -->
 		<!-- 좋아요 체크된 경우 -->
 		<c:if test="${checkHit eq true}">
-		
+			
 		</c:if>
 		<!-- 좋아요 체크되지 않은 경우 -->
 		<c:if test="${checkHit eq false}">

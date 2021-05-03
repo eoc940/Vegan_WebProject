@@ -107,7 +107,7 @@
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-						<div>${area.name}</div>
+						<div><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
