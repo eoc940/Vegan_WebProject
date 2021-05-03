@@ -32,10 +32,8 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="storeAssets/js/main.js">
-
 	</script>
 	<script src="storeAssets/js/storeList.js">
-
 	</script>
 	<link href="storeAssets/css/storeList.css" rel="stylesheet">
 
@@ -63,8 +61,7 @@
 					<li><a href="../Board/boardList.do">Board</a></li>
 					<li class="active"><a href="storeList.do">Restaurants</a></li>
 					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My
-								Page</a></li>
+						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 					</c:if>
 					<c:if test="${!empty vo}">
 						<li class="book-a-table text-center"><a href="../Member/logout.do">logout</a></li>
@@ -94,8 +91,6 @@
 				<div class="chart">
 					<%@ include file="chart.jsp"%>
 				</div>
-
-
 				
 			</div>
 
@@ -107,14 +102,19 @@
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
-					<form action="findByStoreName.do">
+
 					<div class="search">
-						<input type="text" id="store" name = "storename" placeholder="Search..." />
-						<input type="submit" value="검색" id="searchButton"/>
+						<form action="findByStoreName.do">
+							<div class="search_bar">
+								<input type="text" id="store" name = "storename" placeholder="Search..." />
+								<input type="submit" value="검색" id="searchButton"/>
+							</div>
+						</form> 
 					</div>
-				</form> 
+
 				</div>
-			
+
+
 			</div>
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
@@ -137,7 +137,11 @@
 
 	</section>
 
-
+	<div class="center">
+		<div class="pagination">
+			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">&raquo;</a>
+		</div>
+	</div>
 
 
 
