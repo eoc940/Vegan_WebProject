@@ -81,7 +81,6 @@
 	</header>
 	<!-- End Header -->
 
-
 	<!-- ======= Works Section ======= -->
 	<section class="section site-portfolio">
 
@@ -97,6 +96,11 @@
 				</div>
 
 				
+				<div class="container-1">
+				
+				</div>
+
+				
 			</div>
 
 
@@ -107,14 +111,13 @@
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
-					<input type="search" id="search" placeholder="Search..." />
+					<form action="findByStoreName.do">
+					<input type="text" id="store" name = "storename" placeholder="Search..." />
+					<input type="submit" value="검색" id="searchButton"/>
+				</form> 
 				</div>
 			
 			</div>
-
-
-
-
 
 			<div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
 				<c:forEach items="${storeShowList}" var="store">

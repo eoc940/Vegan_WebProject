@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.team1.vegan.servlet.controller.Controller;
 import com.team1.vegan.servlet.controller.ModelAndView;
+import com.team1.vegan.store.model.AreaVO;
 import com.team1.vegan.store.model.StoreDAOImpl;
 import com.team1.vegan.store.model.StoreImageVO;
+import com.team1.vegan.store.model.StoreShowVO;
 import com.team1.vegan.store.model.StoreVO;
 
 public class FindByStoreNameController implements Controller {
@@ -19,21 +21,28 @@ public class FindByStoreNameController implements Controller {
 		String storeName = request.getParameter("storename");
 		String path ="showstores.jsp";
 		
-		ArrayList<StoreVO> svo = null;
-		ArrayList<StoreImageVO> ivo = new ArrayList<StoreImageVO>();
+		ArrayList<StoreVO> svo = new ArrayList<StoreVO>();
+		ArrayList<StoreImageVO> imageList = new ArrayList<StoreImageVO>();
+		ArrayList<AreaVO> areaList = new ArrayList<AreaVO>();
+		ArrayList<StoreShowVO> storeShowList = new ArrayList<StoreShowVO>();
 		
 		try {
 			svo = StoreDAOImpl.getInstance().findByName(storeName);
+			areaList = StoreDAOImpl.getInstance().getAllArea();
 			for(StoreVO vo: svo) {
-				int storeId = vo.getStoreId();
-				StoreImageVO image = StoreDAOImpl.getInstance().findStoreImage(storeId);
-				ivo.add(image);
+				String area = StoreDAOImpl.getInstance().findStoreArea(vo.getStoreId()).getName();
+				int storeId = StoreDAOImpl.getInstance().getStoreDetail(vo.getStoreId()).getStoreId();
+				String imageUrl = StoreDAOImpl.getInstance().findStoreImage(vo.getStoreId()).getImageUrl();
+				storeShowList.add(new StoreShowVO(
+						area, vo.getName(), imageUrl, storeId
+						));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("storelist", svo);
-		request.setAttribute("imagelist", ivo);
+		
+		request.setAttribute("storeShowList", storeShowList);
+		request.setAttribute("areaList", areaList);
 		
 		return new ModelAndView(path);
 	}
