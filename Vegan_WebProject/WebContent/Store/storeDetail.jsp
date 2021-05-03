@@ -75,9 +75,9 @@
 				}
 			})
 	    };
-	    recCount();
+	    recCount();	 
 	    
-		
+	  
 	    
 	});//ready
 	
@@ -128,9 +128,10 @@
 							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
+					
 					<div style=" float:left; margin-right:10px;">
-						
-							<c:if test="${!empty vo}">
+				     
+						<c:if test="${!empty vo}">
 							<div id="main-content">
 							  <div >
 							    <input type="checkbox" id="btn_like" />
@@ -178,8 +179,10 @@
 	         			<div style=" float:left; margin-top:15px; font-family: 'Montserrat', sans-serif; font-weight: 500; color:#DD4688">	
 							</c:if>
 							<!-- 좋아요 총 개수 들어옴 -->
+							<c:if test="${!empty vo}">							
 								LIKE!!&nbsp;<span class="rec_count"></span>
 								</div>
+							</c:if>
 	
 							
 		<!-- ======= 음식점 ======= -->
