@@ -51,6 +51,7 @@
 					store:'${svo.storeId}'
 				},
 				success: function() {
+					
 					recCount();
 				},
 				error:function() {
@@ -128,8 +129,16 @@
 							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
+		<!-- 좋아요 체크된 경우 -->
+		<c:if test="${checkHit eq true}">
+		
+		</c:if>
+		<!-- 좋아요 체크되지 않은 경우 -->
+		<c:if test="${checkHit eq false}">
+		
+		</c:if>
 					<div style=" float:left; margin-right:10px;">
-						
+		
 							<c:if test="${!empty vo}">
 							<div id="main-content">
 							  <div >
