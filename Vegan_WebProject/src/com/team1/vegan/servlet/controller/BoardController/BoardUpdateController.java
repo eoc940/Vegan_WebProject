@@ -31,7 +31,7 @@ public class BoardUpdateController implements Controller{
 		String path = "boardList.jsp";
 		try {
 			BoardDAOImpl.getInstance().updatePost(vo);
-			list = BoardDAOImpl.getInstance().getAllPost();
+			list = BoardDAOImpl.getInstance().getAllPost(1,10);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 		

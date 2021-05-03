@@ -228,17 +228,19 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public ArrayList<BoardVO> getAllPost() throws SQLException {
+	public ArrayList<BoardVO> getAllPost(int startRow, int endRow) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<BoardVO> list = new ArrayList<>();
 		try {
 			conn = getConnection();
-			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board";
+			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE board_id BETWEEN ? and ?";
 			ps = conn.prepareStatement(query);
 			System.out.println("PreparedStatement...getAllPost()..");
-			
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				list.add(new BoardVO(
@@ -279,5 +281,29 @@ public class BoardDAOImpl implements BoardDAO{
 		
 		return num;
 	}
+	
+	@Override
+	public int getAllPostCount() throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		int allPostCount=0;
+		try {
+			conn = getConnection();
+			String query = "SELECT count(board_id) as count FROM board";
+			ps = conn.prepareStatement(query);
+			System.out.println("PreparedStatement...getAllPostCount()..");
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				allPostCount=rs.getInt(1);
+			}
+			
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return allPostCount;
+	}
+
 
 }
