@@ -100,6 +100,7 @@ function check_write(){
 		</div>
 	</div>
 
+
 			<c:forEach items="${list}" var="board">
 				<div class ="icon-boxes">
 					<div data-aos="zoom-in" data-aos-delay="200">
