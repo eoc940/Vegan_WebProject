@@ -41,6 +41,7 @@
 	<!-- 좋아요 토글 스크립트 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
+	
 	$(function() {
 		$("#btn_like").click(function() {
 			$.ajax({
@@ -51,8 +52,8 @@
 					store:'${svo.storeId}'
 				},
 				success: function() {
-					
 					recCount();
+					checkHit();
 				},
 				error:function() {
 				}
@@ -76,9 +77,40 @@
 				}
 			})
 	    };
-	    recCount();
 	    
-		
+		function checkHit() {
+			
+			$.ajax({
+				url: "checkHit.do",
+                type: "POST",
+                data: {
+                	member:'${vo.memberId}',
+					store:'${svo.storeId}'
+                },
+                success: function (check) {
+                	if(check==1) {
+                		alert("좋아요 되어있음");
+                		//여기에 좋아요 되어있는 표시
+                	}else if(check==0) {
+                		alert("좋아요 안되어있음");
+                		//여기에 좋아요 안되어있는 표시
+                	}
+                },
+                error:function() {
+           
+				}
+			})
+	    };
+	    function checkLogin() {
+			if ("${vo}" == "") {
+				alert("로그인 하시기 바랍니다.")
+				location.href = '../Member/loginForm.jsp';
+			}
+		}
+	    
+	    checkLogin();
+	    recCount();
+	    checkHit();
 	    
 	});//ready
 	
@@ -129,14 +161,7 @@
 							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
-		<!-- 좋아요 체크된 경우 -->
-		<c:if test="${checkHit eq true}">
-			
-		</c:if>
-		<!-- 좋아요 체크되지 않은 경우 -->
-		<c:if test="${checkHit eq false}">
 		
-		</c:if>
 					<div style=" float:left; margin-right:10px;">
 		
 							<c:if test="${!empty vo}">

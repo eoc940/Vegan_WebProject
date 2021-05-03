@@ -13,6 +13,7 @@ import com.team1.vegan.store.model.MapVO;
 import com.team1.vegan.store.model.StoreDAOImpl;
 import com.team1.vegan.store.model.StoreImageVO;
 import com.team1.vegan.store.model.StoreVO;
+import com.team1.vegan.user.model.MemberVO;
 
 public class StoreDetailController implements Controller {
 
@@ -25,17 +26,16 @@ public class StoreDetailController implements Controller {
 		StoreImageVO foodvo = null;
 		StoreImageVO menuvo = null;
 		MapVO mvo = null;
-		String memberId = (String) request.getSession().getAttribute("member_id");
+		
 		//closestStore는 가장 가까운 음식점 객체
 		StoreVO closestStore = null;
-		boolean checkHit = false;
+		boolean checkedHit = false;
 		
 		try {
 			svo = StoreDAOImpl.getInstance().getStoreDetail(storeId);
 			foodvo = StoreDAOImpl.getInstance().findMainFoodImage(storeId);
 			menuvo = StoreDAOImpl.getInstance().findMenuImage(storeId);
 			mvo = StoreDAOImpl.getInstance().findStoreMap(storeId);
-			checkHit = StoreDAOImpl.getInstance().ischeckedHit(storeId, memberId);
 			
 			//알고리즘(해당 음식점에서 가장 가까운 거리의 음식점 찾기)
 			ArrayList<StoreVO> storeList = StoreDAOImpl.getInstance().getAllStore();
@@ -63,7 +63,6 @@ public class StoreDetailController implements Controller {
 		request.setAttribute("menuvo", menuvo);
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("closestStore", closestStore);
-		request.setAttribute("checkHit", checkHit);
 		
 		return new ModelAndView(path);
 	}
