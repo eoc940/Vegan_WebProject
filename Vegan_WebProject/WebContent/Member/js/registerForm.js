@@ -3,10 +3,12 @@
 	$('input:checkbox[name=areas]').click(function(){
 		var areas = $('input:checkbox[name=areas]:checked').length;
 		
+		
 		 if(areas>3){
-			   alert('관심지역은 최대 3개까지 선택 가능합니다.')
+			   alert('관심지역은 최대 3개까지 선택 가능합니다.');
 			   $(this).prop('checked', false);
-			  }
+			}
+			
 			 });
 	 });
 	

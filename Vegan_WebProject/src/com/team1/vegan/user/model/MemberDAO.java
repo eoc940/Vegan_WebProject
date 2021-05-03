@@ -17,7 +17,6 @@ public interface MemberDAO {
 	void closeAll(PreparedStatement ps, Connection conn)throws SQLException ;
 	void closeAll(ResultSet rs, PreparedStatement ps, Connection conn)throws SQLException ;
 	
-
 	void registerMember(MemberVO vo) throws SQLException;
 	MemberVO getMember(String memberId) throws SQLException;
 	void updateMember(MemberVO vo) throws SQLException;
