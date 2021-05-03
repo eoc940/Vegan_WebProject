@@ -158,23 +158,24 @@
                       
                         <div class="grid-container">
                          <div class="grid-item item1">
-                         	<img src="assets/icon/banana.png"><br/>김형근
+                         	<img src="assets/icon/banana.png"><br/>김형근<br>hgk0000@naver.com
                          	<br/>
+                         	
                          </div>
 						  <div class="grid-item">
-						  	<img src="assets/icon/avocado.png"><br/>강수진
+						  	<img src="assets/icon/avocado.png"><br/>강수진<br>ksujin98@gmail.com
 						  </div>
 						  <div class="grid-item">
 						  	<img src="assets/icon/carrot.png"><br/>김진철
 						  </div>
 						  <div class="grid-item">
-						  	<img src="assets/icon/tomato.png"><br/>박재영
+						  	<img src="assets/icon/tomato.png"><br/>박재영<br>jak994@naver.com
 						  </div>  
 						  <div class="grid-item">
 						  	<img src="assets/icon/apple.png"><br/>원광연
 						  </div>
 						  <div class="grid-item">
-						  	<img src="assets/icon/broccoli.png"><br/>임해리
+						  	<img src="assets/icon/broccoli.png"><br/>임해리<br>haeri.lim.lhe@gmail.com
 						  </div>
 						  <div class="grid-item">
 						  	<img src="assets/icon/pumpkin.png"><br/>정다솜
@@ -203,7 +204,7 @@
 		        &copy; Copyright <strong><span>VEGAN PROJECT</span></strong>. All Rights Reserved
 		      </div>
 		      <div class="credits">
-		        Designed by Enocore 1 Team</a>
+		        <a>Designed by Enocore 1 Team</a>
 		      </div>
 		    </div>
 		  </footer><!-- End Footer -->

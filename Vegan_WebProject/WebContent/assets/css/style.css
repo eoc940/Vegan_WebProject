@@ -18,7 +18,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: nanumgothic, sans-serif;
+  font-family: 'Montserrat',nanumgothic, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -89,20 +89,22 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   
   position: absolute;
-  transition: 1.5s;
+  transition: 1.0s;
   backface-visibility: hidden;
 
 }
 
 .reserve-store .btn {
-
+		
+  font-family: nanumgothic, sans-serif;
   text-shadow: 0 0 3px rgb(0, 0, 0); 
   color: #ffffff; 
 
 }
 
 .reserve-store .btn:hover {
-
+	
+  font-family: nanumgothic, sans-serif;
   text-shadow: 0 0 3px rgb(0, 0, 0); 
   color: #5EC75E; 
 
@@ -835,6 +837,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer{
+	text-align: center;
 	background: rgba(0, 0, 0, 0.7);
 	font-size:15px;
 	font-family: 'Montserrat', sans-serif;

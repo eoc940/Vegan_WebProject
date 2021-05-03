@@ -3,3 +3,5 @@ Context.xml
 .classpath/
 .settings/
 
+/bin/
+/.classpath

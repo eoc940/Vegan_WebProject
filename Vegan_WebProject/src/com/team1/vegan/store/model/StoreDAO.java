@@ -1,8 +1,5 @@
 package com.team1.vegan.store.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -11,8 +8,10 @@ public interface StoreDAO {
 	ArrayList<StoreVO> findByArea(int areaId) throws SQLException;
 	ArrayList<StoreVO> findByName(String name) throws SQLException;
 	StoreVO getStoreDetail(int storeId) throws SQLException;
-	void addHitCount(int storeId) throws SQLException;
-	void minusHitCount(int storeId) throws SQLException;
+	void plusHitCount(int storeId, String memberId) throws SQLException;
+	void minusHitCount(int storeId, String memberId) throws SQLException;
+	boolean ischeckedHit(int storeId, String memberId) throws SQLException;
+	int totalHit(int storeId) throws SQLException;
 	ArrayList<StoreImageVO> getBestNine() throws SQLException;
 	MapVO findStoreMap(int storeId) throws SQLException;
 	StoreImageVO findStoreImage(int storeId) throws SQLException;
@@ -20,4 +19,5 @@ public interface StoreDAO {
 	StoreImageVO findMenuImage(int storeId) throws SQLException;
 	AreaVO findStoreArea(int storeId) throws SQLException;
 	ArrayList<AreaVO> getAllArea() throws SQLException;
+	ArrayList<AreaGraphVO> getStoreCountByArea() throws SQLException;
 }

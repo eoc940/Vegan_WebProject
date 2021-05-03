@@ -164,7 +164,7 @@ public class StoreDAOImpl implements StoreDAO {
 	}
 
 	@Override
-	public void addHitCount(int storeId) throws SQLException {
+	public void plusHitCount(int storeId, String memberId) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
@@ -173,6 +173,11 @@ public class StoreDAOImpl implements StoreDAO {
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			System.out.println(ps.executeUpdate() + "row update OK!!");
+			String query2 = "insert into click_hit values (?,?)";
+			ps = conn.prepareStatement(query2);
+			ps.setString(1, memberId);
+			ps.setInt(2, storeId);
+			System.out.println(ps.executeUpdate() + "row update OK!!");
 		} finally {
 			closeAll(ps, conn);
 		}
@@ -180,7 +185,7 @@ public class StoreDAOImpl implements StoreDAO {
 	}
 	
 	@Override
-	public void minusHitCount(int storeId) throws SQLException {
+	public void minusHitCount(int storeId, String memberId) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
@@ -189,9 +194,56 @@ public class StoreDAOImpl implements StoreDAO {
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, storeId);
 			System.out.println(ps.executeUpdate() + "row update OK!!");
+			String query2 = "delete from click_hit where member_id=? and store_id=?";
+			ps = conn.prepareStatement(query2);
+			ps.setString(1, memberId);
+			ps.setInt(2, storeId);
+			System.out.println(ps.executeUpdate() + "row update OK!!");
 		} finally {
 			closeAll(ps, conn);
 		}
+	}
+	
+	@Override
+	public boolean ischeckedHit(int storeId, String memberId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = getConnection();
+			String query = "select * from click_hit where store_id=? and member_id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			ps.setString(2, memberId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return false;
+	}
+	
+	@Override
+	public int totalHit(int storeId) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		int total = 0;
+		try {
+			conn = getConnection();
+			String query = "select count(*) from click_hit where store_id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, storeId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				total = rs.getInt(1);
+			}
+		}finally {
+			closeAll(rs, ps, conn);
+		}
+		return total;
 	}
 
 	@Override
@@ -371,6 +423,30 @@ public class StoreDAOImpl implements StoreDAO {
 			closeAll(rs, ps, conn);
 		}
 		return areaList;
+	}
+
+	@Override
+	public ArrayList<AreaGraphVO> getStoreCountByArea() throws SQLException {
+		ArrayList<AreaGraphVO> list = new ArrayList<AreaGraphVO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			conn = getConnection();
+			String query = "select count(s.name), a.name from store s, area a where a.area_id=s.area_id group by a.name order by count(s.name) desc limit 5";
+			System.out.println("preparedstatement...getStoreCountByArea()...");
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				list.add(new AreaGraphVO(rs.getInt("count(s.name)"),rs.getString("a.name")));
+			}
+			
+		} finally {
+			closeAll(rs, ps, conn);
+		}
+		return list;
 	}
 	
 }
