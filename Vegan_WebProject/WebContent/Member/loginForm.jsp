@@ -4,9 +4,8 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,8 +19,8 @@
 </head>
 <body class="img js-fullheight">
 <form action="login.do" class="signin-form" method="post">
-<center>
-<section class="ftco-section">
+
+<div class="ftco-section">
 <div class="container">
 	
 			<div class="login-wrap p-0">
@@ -34,8 +33,8 @@
 		             		 <input id="password" type="password" class="form-control" name="password"  placeholder="Password" required>
 		            	</div>
 		          
-	          </div>
-		</div>	
+	        </div>
+</div>	
 	 <button type="submit" >Sign In</button><br/>
 	 	<span class="index">
 			 <a href="../index.jsp" >HOME</a>
@@ -43,12 +42,12 @@
 		 <span class = "registerForm">
 	 		<a href="registerForm.jsp" >REGISTER</a> 
 		 </span>
-	</section>
+	</div>
 </form>
 	
 	
 	           
-</center>
+
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
