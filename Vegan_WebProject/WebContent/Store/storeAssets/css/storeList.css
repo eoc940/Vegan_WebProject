@@ -417,18 +417,6 @@ a:focus {
 	center: center;
 }
 
-<<<<<<< HEAD
-.container-1 {
-	margin-top: 20px;
-	margin-right: 80px;
-	width: 300px;
-	float: right;
-
-}
-
-.container-1 input#search {
-	width: 200px;
-=======
 #filters .search{
 	text-align: right;
 	margin-right: 30px;
@@ -439,7 +427,6 @@ a:focus {
 
 #filters .search #store{
 	width: 250px;
->>>>>>> 25d9e1cabd06a17566b891127a87157c1f3a1822
 	height: 30px;
 	background: white;
 	font-size: 12pt;
@@ -477,7 +464,8 @@ a:focus {
 
 
 .filters {
-	padding: 20px 50px 50px 70px;
+	padding: 20px 50px 50px;
+	70 px;
 	word-spacing: 1em;
 	align-content: space-around;
 	margin: 30px;
@@ -517,63 +505,20 @@ a:focus {
 	margin-top: 100px;
 	padding: 10px 100px;
 	width: 100%;
-	
+	display: flex;
 	align-items: center;
 }
 
 .chart{
-	margin-top: 50px;
-	width: 600px;
-	height: 300px;
+	
+	width: 300px;
+	height: 200px;
 	
 }
 
 .title{
-	font-size: 40px;
 	min-width: 30%;
 }
-
-.search_bar{
-	float: right;
-}
-
-.container-1 .search{
-	width: 200px;
-	height: 30px;
-	background: white;
-	font-size: 12pt;
-	padding-right: 20px;
-	padding-left: 20px;
-	border-radius: 38px;
-	background-color: rgba(255, 255, 255, 0.7);
-	outline: none;
-	box-shadow: none;
-}
-
-.container-1 .search::-webkit-input-placeholder {
-	color: gray;
-}
-
-.s_button{
-	height: 35px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
-	color:white; 
-	background: #5EC75E;
-	border-color: white;
-	border-top-left-radius: 15px; 
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px; 
-	border-bottom-right-radius: 15px;
-	margin-right:-4px;
-}
-
-.s_button:hover{
-	color:#5EC75E; 
-	background-color: white;
-	border-color: #5EC75E;
-}
-
 
 
 
