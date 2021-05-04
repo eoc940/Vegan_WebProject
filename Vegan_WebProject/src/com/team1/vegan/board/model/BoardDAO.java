@@ -21,7 +21,9 @@ public interface BoardDAO {
 	void addViewCount(int boardId) throws SQLException ;
 	int maxId() throws SQLException;
 	ArrayList<BoardVO> searchBoard(HashMap<String, Object> listOpt) throws SQLException ;
-	ArrayList<BoardVO> getAllPost() throws SQLException ;
+	
+	int getAllPostCount() throws SQLException;
+	ArrayList<BoardVO> getAllPost(int startRow, int endRow) throws SQLException;
 	
 
 }

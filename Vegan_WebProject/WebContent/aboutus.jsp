@@ -172,7 +172,7 @@
 						  	<img src="assets/icon/tomato.png"><br/>박재영<br>jak994@naver.com
 						  </div>  
 						  <div class="grid-item">
-						  	<img src="assets/icon/apple.png"><br/><br>원광연dnjs2rhkddus@naver.com
+						  	<img src="assets/icon/apple.png"><br/><br>원광연<br>dnjs2rhkddus@naver.com
 						  </div>
 						  <div class="grid-item">
 						  	<img src="assets/icon/broccoli.png"><br/>임해리<br>haeri.lim.lhe@gmail.com

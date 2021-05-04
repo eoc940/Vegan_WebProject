@@ -20,11 +20,18 @@ public class RegisterController implements Controller {
 		String address = request.getParameter("address"	);
 		String[] areas = request.getParameterValues("areas");
 		System.out.println(areas);
-		String path = "";
+		String path = "registerFail.jsp";
 		
 		MemberVO mvo = new MemberVO(memberId, password, address, name);
-		
 		try {
+			if(MemberDAOImpl.getInstance().isExist(memberId)) {
+				request.setAttribute("id_duplicate", "id_duplicate");
+				return new ModelAndView(path);
+			}
+			if(areas==null) {
+				request.setAttribute("area_null", "area_null");
+				return new ModelAndView(path);
+			}
 			MemberDAOImpl.getInstance().registerMember(mvo);
 			MemberDAOImpl.getInstance().registerAreas(memberId, areas);
 			path = "registerSuccess.jsp";
