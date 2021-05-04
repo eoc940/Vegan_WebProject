@@ -23,7 +23,7 @@
 </head>
 <body>
 
-	<canvas id="myChart" width="300" height="200"></canvas>
+	<canvas id="myChart" width="250" height="250"></canvas>
 	<script>
 		var resultLabel = new Array();
 		var resultData = new Array();
@@ -49,32 +49,37 @@
 						var ctx = document.getElementById('myChart');
 						var myChart = new Chart(ctx,
 								{
-									type : 'bar',
+									type : 'doughnut',
 									data : {
 										labels : resultLabel,
 										datasets : [ {
 											label : '음식점 수',
 											data : resultData,
-											backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
-													'rgba(54, 162, 235, 0.2)',
-													'rgba(255, 206, 86, 0.2)',
-													'rgba(75, 192, 192, 0.2)',
-													'rgba(153, 102, 255, 0.2)' ],
-											borderColor : [ 'rgba(255, 99, 132, 1)',
-													'rgba(54, 162, 235, 1)',
-													'rgba(255, 206, 86, 1)',
-													'rgba(75, 192, 192, 1)',
-													'rgba(153, 102, 255, 1)' ],
+											backgroundColor : [ 'rgba(43, 177, 255, 0.2)',
+													'rgba(254, 186, 1, 0.2)',
+													'rgba(254, 237, 6, 0.2)',
+													'rgba(94, 199, 94, 0.2)',
+													'rgba(255,168,168, 0.2)'],
+											borderColor : [ 'rgba(43, 177, 255, 1)',
+													'rgba(254, 186, 1, 1)',
+													'rgba(254, 237, 6, 1)',
+													'rgba(94, 199, 94, 1)',
+													'rgba(255,168,168, 1)' ],
 											borderWidth : 1
 										} ]
 									},
-									options : {
-										scales : {
-											y : {
-												beginAtZero : true
-											}
+									options: {
+										responsive: true,
+										plugins: {
+										  legend: {
+											position: 'left',
+										  },
+										  title: {
+											display: false,
+											text: 'Chart.js Doughnut Chart'
+										  }
 										}
-									}
+									  },
 								});
 					}
 				}
