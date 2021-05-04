@@ -153,13 +153,13 @@
 		<div class="L_title">I LIKE ♥</div>
 		
 		<div>
-			<div>
+			<div class="L_img">
 			
 				<c:forEach items="${listSI}" var="storeIamge">
 					
-						<a href="../Store/storeDetail.do?storeId=${storeIamge.storeId}">
-							<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" width="200px"
-								height="200px">
+						<a href="../Store/storeDetail.do?storeId=${storeIamge.storeId}" >
+							
+							<img alt=${storeIamge.name} src="../store_img/${storeIamge.imageUrl}" >
 						</a>
 					
 				</c:forEach>
