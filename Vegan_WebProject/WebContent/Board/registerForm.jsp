@@ -131,7 +131,7 @@ function checkExistData(value, dataName) {
 		</table>
 		<div id="postRegister">
 			<input type="hidden" name="memberId" value="${vo.memberId}">
-			<input type="submit" value="Register"  id="registerBtn">
+			<input type="submit" value="REGISTER"  id="registerBtn">
 		</div>
 	</div>
 </form>

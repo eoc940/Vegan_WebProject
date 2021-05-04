@@ -173,7 +173,7 @@ function checkExistData(value, dataName) {
 		
 		
 			<div class="list">
-				<input type="button" value="List" onClick="location.href='boardList.do'" id="listBtn">
+				<input type="button" value="LIST" onClick="location.href='boardList.do'" id="listBtn">
 			</div>
 	</div>
 	

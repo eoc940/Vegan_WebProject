@@ -301,28 +301,34 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-.Listbutton a {
-	position:relative;
-	background: #5EC75E;
-	color: #fff;
-	border-radius: 50px;
-	margin: 0 0 0 20px;
-	padding: 10px 25px;
-	text-transform: uppercase;
-	font-size: 13px;
-	font-weight: 500;
-	font-family: 'Montserrat', sans-serif;
-	float:left;
-	
+						
+
+
+#Listbutton{
+ background: #5EC75E ;
+    border: 1px solid #5EC75E; 
+    border: none;
+    height: 50px;
+    width:400px;
+    padding-left:35px;
+  	padding-right:35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+	color: white;
+	border-radius: 40px;
+	margin-top: 20px;
+	-webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+	transition: 0.3s; 
+	margin-left:50%;
 }
-
-.Listbutton a:hover {
-	background: #ffa012;
-	color: #fff;
-}						
-
-
-
+#Listbutton:hover{
+	background-color: white;
+	border: 3px solid !important;
+	border-color:#fdb801;
+	color:#fdb801;		
+}
 	/* Buttons end*/				
 
 a { text-decoration:none !important }
@@ -331,9 +337,14 @@ a { text-decoration:none !important }
 
 	.description{
 	font-size: 11pt;
-	line-height: 1.75em;
+	line-height: 2.3em;
 	color: #4c4c4c;
 	font-family: 'Nanum Gothic', sans-serif;
+	height:300px;
+	border : solid 3px #5EC75E;
+	border-radius:25px;
+	padding:0 20px 0 20px;
+	
 	
 	}
 	#content.h2{
@@ -348,6 +359,9 @@ a { text-decoration:none !important }
 	line-height: 1.75em;
 	color: #4c4c4c;
 	font-family: 'Nanum Gothic', sans-serif;
+	vertical-align: middle;
+	padding:0 0 0 2%;
+	width:391.66;
 	
 	}
 		
@@ -396,99 +410,11 @@ a { text-decoration:none !important }
 		clear: both;
 	}
 
-	/* Sections/Articles */
-	
-		section,
-		article
-		{
-			margin-bottom: 3em;
-		}
-		
-		section > :last-child,
-		article > :last-child
-		{
-			margin-bottom: 0;
-		}
 
-		section:last-child,
-		article:last-child
-		{
-			margin-bottom: 0;
-		}
-
-		.row > section,
-		.row > article
-		{
-			margin-bottom: 0;
-		}
 	
 	/* Lists */
 
-		#sidebar.ul.default
-		{
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-		
-			#sidebar.ul.default li
-			{
-				padding: 0.60em 0em;
-				border-top: 1px solid;
-				border-color: rgba(255,255,255,.1);
-			}
-			
-			#sidebar.ul.default li:first-child
-			{
-				padding-top: 0;
-				border-top: none;
-			}
-			
-			#sidebar.ul.default a
-			{
-				text-decoration: none;
-				color: rgba(255,255,255,.5);
-			}
-			
-			#sidebar.ul.default a:hover
-			{
-				text-decoration: underline;
-			}
-			
 
-		
-		#sidebar.ul.style li {
-			margin: 0;
-			padding: 2em 0em 1.5em 0em;
-			border-top: 1px solid #ECECEC;
-		}
-		
-		#sidebar.ul.style li:first-child
-		{
-			padding-top: 0;
-			border-top: none;
-		}
-		
-		#sidebar.ul.style img {
-			float: left;
-			margin-right: 20px;
-		}
-		
-
-		
-		#sidebar.ul.style .posted {
-			padding: 0em 0em 1em 0em;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			font-size: 8pt;
-			color: #A2A2A2;
-		}
-		
-		#sidebar.ul.style .first {
-			padding-top: 0px;
-			border-top: none;
-		}
-	
 
 /*********************************************************************************/
 /* Main                                                                          */
@@ -561,14 +487,13 @@ a { text-decoration:none !important }
 		.\-7u { margin-left: 58.3333333333% }
 		.\-6u { margin-left: 50% }
 		.\-5u { margin-left: 41.6666666667% }
-		.\-4u { margin-left: 33.3333333333% }
+		.\-4u { margin-left: 0% }
 		.\-3u { margin-left: 25% }
 		.\-2u { margin-left: 16.6666666667% }
 		.\-1u { margin-left: 8.3333333333% }
 
 		.row > * {
-			padding: 50px 0 0 50px;
-			float: left;
+			float: right;
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			-o-box-sizing: border-box;
@@ -689,29 +614,89 @@ a { text-decoration:none !important }
 	#content img
 	{
   		max-width:100%;
-		height:auto;
+		height:600px;
 	}
 	
 	#sidebar h2
 	{
 		display: block;
-		padding-bottom: 2em;
+		padding-bottom: 0.75em;
 		font-size: 1.4em;
+		text-align:center;
+		text-weight:bold;
+		font-family: 'Montserrat', sans-serif;
+		
 	}
 	#sidebar img
 	{
 		max-width:100%;
-		height:auto;
+		height: 450px ; 
+
+
+
 	}
+	
+
 	.form-row {
  	 margin: 0 -15px; }
 
 #sidebar a{
 	
-	display: inline-block; 
-	width:416.66px; 
-	height:200px;
+	display:block; 
+	width:300; 
+	position: relative;
 }
+.nearByRTR{
+ 	position: absolute;
+ 	width:330px;
+	top:670px;
+	float: center;
+	
+
+ }
+ .nearByRTR h6{
+ 	text-align:center;
+ }
+ .nearByRTR a{
+ 	text-align:center;
+ }
+ .info
+ {
+ 	position: absolute;
+ 	top:550px;
+ 	width:330px;
+ 	height:150px;
+ 	
+ }
+ .menu
+ {
+  	position: absolute;
+  	float: center;
+ 	top:5px;
+ 	padding:0 ;
+ }
+ .bottomimg{
+ 	position:absolute;
+ 	top: 1200px;
+ 	margin-left:70px;
+ 	
+ }
+ .bottomimg img{
+  	width:auto;
+ 	max-height:250px;
+ 	
+ }
+ .borderline{
+ 	line-height: 1.8em;
+ 	position:absolute;
+ 	top:160px;
+ 	width:368px;
+ 	height:927px;
+ 	border: solid 3px #fdb801;
+	border-radius:25px;
+	padding:0 1% 0 1%;
+ 
+ }
 
 /*  ###########################################################  */
 #footer {
@@ -735,7 +720,7 @@ a { text-decoration:none !important }
 #main-content {
   display: flex;
   background: white;
-  float: left;
+  float: right;
   
 }
 
