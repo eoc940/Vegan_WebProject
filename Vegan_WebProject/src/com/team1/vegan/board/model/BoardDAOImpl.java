@@ -228,19 +228,18 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public ArrayList<BoardVO> getAllPost(int startRow, int endRow) throws SQLException {
+	public ArrayList<BoardVO> getAllPost(int limit, int offset) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<BoardVO> list = new ArrayList<>();
 		try {
 			conn = getConnection();
-			String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE board_id BETWEEN ? and ?";
+			String query = " SELECT R1.* FROM(SELECT * FROM board ORDER BY board_id asc) R1 LIMIT ? OFFSET ?;";
 			ps = conn.prepareStatement(query);
 			System.out.println("PreparedStatement...getAllPost()..");
-			ps.setInt(1, startRow);
-			ps.setInt(2, endRow);
-
+			ps.setInt(1, limit);
+			ps.setInt(2, offset);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				list.add(new BoardVO(

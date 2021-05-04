@@ -84,9 +84,9 @@ public class MemberDAOImpl implements MemberDAO {
 		try{
 			conn = getConnection();
 			//
-			String query = "SELECT member_id, password, address, name FROM member WHERE memberId=?";
+			String query = "SELECT member_id, password, address, name FROM member WHERE member_id=?";
 			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement....findByIdMember()..");
+			System.out.println("PreparedStatement....getMember()..");
 			
 			ps.setString(1,memberId);
 			rs = ps.executeQuery();
