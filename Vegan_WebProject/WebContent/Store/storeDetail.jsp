@@ -284,13 +284,15 @@
 									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
+
 								<p>					
+
 								<br><br><br><h2>가장 가까운 음식점 정보</h2>
 								<h6>${closestStore.name}</h6><br>
 								${closestStore.address}<br>
+
 								<a href="${closestStore.url}">${closestStore.url} </a>
 								</p>
-							
 							</ul>
 						</section>
 					</div>
@@ -315,9 +317,5 @@
 		    </div>
 		  </footer><!-- End Footer -->
 		</center>
-		
-
-	
-		
 	</body>
 </html>

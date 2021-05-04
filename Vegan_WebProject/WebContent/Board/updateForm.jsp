@@ -130,6 +130,7 @@ function checkExistData(value, dataName) {
 			<input type="hidden" name="boardId" value="${param.boardId}">
 			<!-- <input type="button" value="Update" id="registerBtn" onclick="check_update()"> -->
 			<input type="submit" value="Update" id="registerBtn" >
+
 			
 		</div>
 	</div>
