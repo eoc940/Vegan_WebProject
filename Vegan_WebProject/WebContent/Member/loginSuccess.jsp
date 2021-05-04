@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Login Success</title>
 <script type="text/javascript">
- 	alert("Login Success!"); 	
+ 	alert("${vo.name}님 환영합니다."); 	
  	location.href="../index.jsp";
 </script>
 </head>

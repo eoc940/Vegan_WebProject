@@ -28,6 +28,7 @@ public class BoardListController implements Controller{
         
        int currentPage = Integer.parseInt(pageNum);
         int startRow = (currentPage - 1) * pageSize + 1;//한 페이지의 시작글 번호
+        int offset=startRow-1;
         int endRow = currentPage * pageSize;//한 페이지의 마지막 글번호
         int count;//전체 글의 수		
         int number=0;//글목록에 표시할 글번호
@@ -38,7 +39,7 @@ public class BoardListController implements Controller{
 		
 		try {
 		
-			list = BoardDAOImpl.getInstance().getAllPost(startRow,endRow);
+			list = BoardDAOImpl.getInstance().getAllPost(pageSize,offset);
 			request.setAttribute("list", list);
 			count= BoardDAOImpl.getInstance().getAllPostCount();//전체 글의 수
 //			pageGroupSize=count/pageSize;
@@ -61,16 +62,7 @@ public class BoardListController implements Controller{
             request.setAttribute("pageGroupSize", new Integer(pageGroupSize));
             request.setAttribute("numPageGroup", new Integer(numPageGroup));
             request.setAttribute("pageGroupCount", new Integer(pageGroupCount));
-            
-            System.out.println("currentPage : "+currentPage);
-            System.out.println("startRow : "+startRow);
-            System.out.println("endRow : "+endRow);
-            System.out.println("count : "+count);
-            System.out.println("pageSize : "+pageSize);
-            System.out.println("number : "+number);
-            System.out.println("pageGroupSize : "+pageGroupSize);
-            System.out.println("numPageGroup : "+numPageGroup);
-            System.out.println("pageGroupCount : "+pageGroupCount);
+
           
 		} catch (SQLException e) {
 			

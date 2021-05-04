@@ -17,6 +17,27 @@ function check_delete(){
 		location.href='boardDetailPage.do?boardId=${board.boardId}';
 	}
 }
+
+function validate() {
+	  
+	var content = $('textArea[name=content]').val();
+	
+    if (!checkExistData(content,"댓글에 내용을 ")) {
+        return false;
+    }
+    return true;
+}
+
+// 공백확인 함수
+function checkExistData(value, dataName) {
+    if (value == "") {
+        alert(dataName + " 입력해주세요!");
+        return false;
+    }
+    return true;
+}
+
+	
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,7 +64,7 @@ function check_delete(){
 <script src="js/main.js"> </script>
 <link href="css/boardDetail.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 
 
@@ -126,25 +147,28 @@ function check_delete(){
 				</table>
 			</c:if>	
 			</div>
-			
+			<c:if test="${!empty vo}">
 			<div class="commenterArea">
 				<!-- 댓글 입력창 -->
-				<form action="writeComment.do" method="post">
+				<form action="writeComment.do" method="post"  onsubmit="return validate()">
 					<table id = "commentWrt">
 						<thead>
 							<th colspan="2">작성자 : ${vo.memberId}</th>
 						</thead>
 						<tbody>
 							<tr>
-								<td width=90%><textarea name="content" placeholder="Comments.."></textarea></td>
-								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
 								<input type="hidden" name="boardId" value="${board.boardId}">
 								<input type="hidden" name="memberId" value="${vo.memberId}">
+								<td width=90%><textarea name="content" placeholder="Comments.."></textarea></td>
+								<td width=10%><input type="submit" value = "Write" id="writeBtn"></td>
+								
 							</tr>
 						</tbody>
 					</table>
 				</form>
 			</div>
+			</c:if>
+			
 		</div>
 		
 		

@@ -45,12 +45,24 @@
 
 	<title>My Page</title>
 
-	<!-- javascript 사용하려던거 일단 안써서 지움  -->
+
+
+<script>
+	function check_delete(){
+		if(confirm('계정을 삭제하시겠습니까?')){
+			location.href='delete.do?memberId=${vo.memberId}&name=${vo.name}';
+		}
+		else{
+			location.href='myPage.do?memberId=${vo.memberId}';
+		}
+	}
+</script>
+
 
 </head>
 
 
-<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& body 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<!-- ====================== body 시작 ======================================================================= -->
 
 <body>
 
@@ -66,7 +78,7 @@
 					<li><a href="../Board/boardList.do">Board</a></li>
 					<li><a href="../Store/storeList.do">Restaurants</a></li>
 					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+						<li class="active"><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 					</c:if>
 					<c:if test="${!empty vo}">
 						<li class="book-a-table text-center"><a href="logout.do">logout</a></li>
@@ -81,50 +93,56 @@
 		</div>
 
 	</header>
-	<!-- End Header -->
+	
 
+    <!-- ====================== form 시작 ======================================================================= -->
 
 	<form action="myPage.do">
-		<!-- ======= top ======= -->
+		
+	<!-- ====================== top ======================================================================= -->
 
 		<div class="top">
-			<h1>My Page</h1>
+			<h2>My Page</h2>
 		</div>
 
-		<!-- ======= main ======= -->
-
+		
+    <!-- ====================== main ======================================================================= -->
 
 		<div class="main">
 
-			<!-- =============== side ================================= -->
+			<!-- ====================== side ======================================================================= -->
 
 			<div class="side">
-				<img src="../assets/img/banana.png" width=100px> <br /> <br />
-				NAME : ${vo.name}<br /> ID : ${vo.memberId}<br /> <br /> <br />
-				<br /> Preference<br /> Location<br /> <br />
+				
+				<img src="../bg_img/bgimg (3).png" width=150px> <br /> <br />
+				NAME : ${vo.name}<br /> ID : ${vo.memberId}<br /> <br /> 
+				       Preference<br /> Location<br /> <br />
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-						<div><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
+						<div class="area"><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
 					</c:forEach>
 				</div>
-				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
+				<br /> <br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
 				<br /> <br /> <input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
 
 			</div>
 
-			<!-- =================== contents ================================== -->
+			<!-- ====================== contents ======================================================================= -->
 
-			<div class="contents">
+			<div class="contents" style="overflow:auto; height:580px ">
 
 
 				<c:forEach items="${listB}" var="board">
 					<div class="post">
+						
 						- My Post : ${board.title}
 						<div class="myPostbox">
-
+							<a href="../Board/boardDetailPage.do?boardId=${board.boardId}">
 							<div class="contentbox">${board.content}</div>
+							</a>
 						</div>
+						
 					</div>
 				</c:forEach>
 
@@ -134,13 +152,10 @@
 	</form>
 
 
-	<!-- ===================== like pic ============================== -->
+	<!-- ====================== like pic ======================================================================= -->
 
-	<!-- js 슬라이드 사용하려던 주석 지움 -->
-
-    
-	<!-- table div 요소로 변경 아래로 밀리게 -->
-	<section class="like">
+	    
+		<section class="like">
 		<div class="L_title">I LIKE ♥</div>
 		<div>
 			<div>
@@ -155,12 +170,13 @@
 				</c:forEach>
 				
 			</div>
+
 		</div>
 
 	</section>
    
-    <!-- ======= 오타지움 ======= -->
-	<!-- ======= Footer ======= -->
+   
+	<!-- ====================== Footer ======================================================================= -->
 
 	<footer id="footer">
 		<div class="container">
@@ -176,7 +192,7 @@
 			</div>
 		</div>
 	</footer>
-	<!-- End Footer -->
+	
 
 
 </body>
