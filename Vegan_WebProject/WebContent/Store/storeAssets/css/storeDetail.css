@@ -706,7 +706,12 @@ a { text-decoration:none !important }
 	.form-row {
  	 margin: 0 -15px; }
 
-
+#sidebar a{
+	
+	display: inline-block; 
+	width:416.66px; 
+	height:200px;
+}
 
 /*  ###########################################################  */
 #footer {
@@ -730,6 +735,7 @@ a { text-decoration:none !important }
 #main-content {
   display: flex;
   background: white;
+  float: left;
   
 }
 
@@ -750,11 +756,7 @@ svg #main-circ {
   display: none;
 }
 
-#btn_like:checked + label svg #heart {
-  transform: scale(0.2);
-  fill: #E2264D;
-  animation: animateHeart .3s linear forwards .25s;
-}
+
 #btn_like:checked + label svg #main-circ {
   transition: all 2s;
   animation: animateCircle .3s linear forwards;
