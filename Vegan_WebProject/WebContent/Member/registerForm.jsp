@@ -13,10 +13,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="css/registerForm.css" rel="stylesheet">
-<script src="js/registerForm.js"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script src="js/registerForm.js"> </script>
+<script type="text/javascript">
 
+</script>
 <title>REGISTER</title>
 
 
@@ -36,7 +37,7 @@
 
 						<div class="form-group">
                             <label for="memberId">ID :</label>
-                            <input type="text" name ="memberId" required="required" onkeydown="inputUdChk()"/>
+                            <input type="text" name ="memberId" required="required" onkeydown="inputIdChk()"/>
 							<input type="button" value="중복확인" onclick="startRequest()">
 							<input type ="hidden" name="idDuplication" value="idUncheck">
 							<span id="idCheckResult"> </span>
