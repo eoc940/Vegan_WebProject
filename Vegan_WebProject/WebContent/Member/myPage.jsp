@@ -46,7 +46,16 @@
 	<title>My Page</title>
 
 	<!-- javascript 사용하려던거 일단 안써서 지움  -->
-
+<script>
+function check_delete(){
+	if(confirm('계정을 삭제하시겠습니까?')){
+		location.href='delete.do?memberId=${vo.memberId}&name=${vo.name}';
+	}
+	else{
+		location.href='myPage.do?memberId=${vo.memberId}';
+	}
+}
+</script>	
 </head>
 
 
@@ -122,8 +131,9 @@
 					<div class="post">
 						My Post _ ${board.title}
 						<div class="myPostbox">
-
+							<a href="../Board/boardDetailPage.do?boardId=${board.boardId}">
 							<div class="contentbox">${board.content}</div>
+							</a>
 						</div>
 					</div>
 				</c:forEach>

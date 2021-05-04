@@ -26,7 +26,7 @@ public class BoardListController implements Controller{
             pageNum = "1";
         }
         
-       int currentPage = Integer.parseInt(pageNum);
+        int currentPage = Integer.parseInt(pageNum);
         int startRow = (currentPage - 1) * pageSize + 1;//한 페이지의 시작글 번호
         int offset=startRow-1;
         int endRow = currentPage * pageSize;//한 페이지의 마지막 글번호
