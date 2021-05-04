@@ -47,6 +47,18 @@
 
 
 
+<script>
+	function check_delete(){
+		if(confirm('계정을 삭제하시겠습니까?')){
+			location.href='delete.do?memberId=${vo.memberId}&name=${vo.name}';
+		}
+		else{
+			location.href='myPage.do?memberId=${vo.memberId}';
+		}
+	}
+</script>
+
+
 </head>
 
 
@@ -66,7 +78,7 @@
 					<li><a href="../Board/boardList.do">Board</a></li>
 					<li><a href="../Store/storeList.do">Restaurants</a></li>
 					<c:if test="${!empty vo}">
-						<li><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
+						<li class="active"><a href="../Member/myPage.do?memberId=${vo.memberId}">My Page</a></li>
 					</c:if>
 					<c:if test="${!empty vo}">
 						<li class="book-a-table text-center"><a href="logout.do">logout</a></li>
@@ -158,6 +170,7 @@
 				</c:forEach>
 				
 			</div>
+
 		</div>
 
 	</section>
