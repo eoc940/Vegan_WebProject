@@ -37,7 +37,7 @@
 
 						<div class="form-group">
                             <label for="memberId">ID :</label>
-                            <input type="text" name ="memberId" required="required" onkeydown="inputIdChk()"/>
+                            <input type="text" name ="memberId" required="required" />
 							<input type="button" value="중복확인" onclick="startRequest()">
 							<input type ="hidden" name="idDuplication" value="idUncheck">
 							<span id="idCheckResult"> </span>
@@ -112,7 +112,8 @@
                        		 
 							 <div class= "btn">
                             <input type="reset" value="Reset All" class="submit" name="reset" id="reset" />
-                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+
+                            <input type="submit" onclick="return validation();" value="Submit Form" class="submit" name="submit" id="submit" />
                           	</div>
                           	
                           	
