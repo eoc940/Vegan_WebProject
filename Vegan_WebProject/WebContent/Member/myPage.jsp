@@ -45,12 +45,12 @@
 
 	<title>My Page</title>
 
-	<!-- javascript 사용하려던거 일단 안써서 지움  -->
+
 
 </head>
 
 
-<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& body 시작 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<!-- ====================== body 시작 ======================================================================= -->
 
 <body>
 
@@ -81,39 +81,42 @@
 		</div>
 
 	</header>
-	<!-- End Header -->
+	
 
+    <!-- ====================== form 시작 ======================================================================= -->
 
 	<form action="myPage.do">
-		<!-- ======= top ======= -->
+		
+	<!-- ====================== top ======================================================================= -->
 
 		<div class="top">
 			<h1>My Page</h1>
 		</div>
 
-		<!-- ======= main ======= -->
-
+		
+    <!-- ====================== main ======================================================================= -->
 
 		<div class="main">
 
-			<!-- =============== side ================================= -->
+			<!-- ====================== side ======================================================================= -->
 
 			<div class="side">
-				<img src="../assets/img/banana.png" width=100px> <br /> <br />
-				NAME : ${vo.name}<br /> ID : ${vo.memberId}<br /> <br /> <br />
-				<br /> Preference<br /> Location<br /> <br />
+				
+				<img src="../bg_img/bgimg (3).png" width=150px> <br /> <br />
+				NAME : ${vo.name}<br /> ID : ${vo.memberId}<br /> <br /> 
+				       Preference<br /> Location<br /> <br />
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-						<div><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
+						<div class="area"><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
 					</c:forEach>
 				</div>
-				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
+				<br /> <br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
 				<br /> <br /> <input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
 
 			</div>
 
-			<!-- =================== contents ================================== -->
+			<!-- ====================== contents ======================================================================= -->
 
 			<div class="contents">
 
@@ -137,13 +140,10 @@
 	</form>
 
 
-	<!-- ===================== like pic ============================== -->
+	<!-- ====================== like pic ======================================================================= -->
 
-	<!-- js 슬라이드 사용하려던 주석 지움 -->
-
-    
-	<!-- table div 요소로 변경 아래로 밀리게 -->
-	<section class="like">
+	    
+		<section class="like">
 		<div class="L_title">I LIKE ♥</div>
 		<div>
 			<div>
@@ -162,8 +162,8 @@
 
 	</section>
    
-    <!-- ======= 오타지움 ======= -->
-	<!-- ======= Footer ======= -->
+   
+	<!-- ====================== Footer ======================================================================= -->
 
 	<footer id="footer">
 		<div class="container">
@@ -179,7 +179,7 @@
 			</div>
 		</div>
 	</footer>
-	<!-- End Footer -->
+	
 
 
 </body>
