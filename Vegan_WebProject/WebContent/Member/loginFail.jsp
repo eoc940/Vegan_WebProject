@@ -11,17 +11,17 @@
 
 </head>
 <body>
-<c:if test="${!empty wrongId}">
-	<script>
-	alert("아이디가 존재하지 않습니다.");
-	location.href="loginForm.jsp";
-	</script>
-</c:if>
-<c:if test="${!empty wrongPassword}">
-	<script>
-	alert("잘못된 비밀번호 입니다.");
-	location.href="loginForm.jsp";
-	</script>
-</c:if>
+	<c:if test="${!empty wrongId}">
+		<script>
+		alert("아이디가 존재하지 않습니다.");
+		location.href="loginForm.jsp";
+		</script>
+	</c:if>
+	<c:if test="${!empty wrongPassword}">
+		<script>
+		alert("잘못된 비밀번호 입니다.");
+		location.href="loginForm.jsp";
+		</script>
+	</c:if>
 </body>
 </html>
