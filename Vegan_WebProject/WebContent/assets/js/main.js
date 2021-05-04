@@ -235,7 +235,8 @@ document.getElementById("menu_img").innerHTML = "<img src=" + img_url + " width 
   + name;
 
 }
-var xhr;
+
+let xhr;
 
 function showBestNine() {
 xhr = new XMLHttpRequest();
@@ -249,11 +250,12 @@ xhr.send();
 function callback() {
 if (xhr.readyState == 4) {
 if (xhr.status == 200) {
-  var list = JSON.parse(xhr.responseText);
-  var resultView = document.getElementById("bestNine");
-  var resultList;
-  if (list != null)
-    for (var i = 0; i < 9; i++) {
+  let list = JSON.parse(xhr.responseText);
+  let resultView = document.getElementById("bestNine");
+  let resultList = "" ;
+    
+  if (list != null )
+    for (let i = 0; i < 9; i++) {
       // $("#bestNine").append("<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ");
       // resultView.innerHTML+="<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ";
       resultList += "<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='./Store/storeDetail.do?storeId="
@@ -262,7 +264,11 @@ if (xhr.status == 200) {
           + (i+1) +"  "+list[i].name + "</a> </div>";
 
     }
+  
+  
   $("#bestNine").html(resultList);
+ 
+  
   new Swiper('.promotion .swiper-container', {
     // direction: 'horizontal', // 수평 슬라이드
     autoplay : { // 자동 재생 여부
