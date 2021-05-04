@@ -20,12 +20,17 @@ public class UpdateController implements Controller {
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String[] areas = request.getParameterValues("areas");
+		String path = "registerFail.jsp";
 		
 		//2.
 		MemberVO mvo = new MemberVO(memberId, password, address, name);
 		
-		String path="index.jsp";
-		try{			
+		
+		try{
+			if(areas==null) {
+				request.setAttribute("area_null", "area_null");
+				return new ModelAndView(path);
+			}
 			MemberDAOImpl.getInstance().updateMember(mvo);
 			MemberDAOImpl.getInstance().updateAreas(memberId, areas);
 			HttpSession session  = request.getSession();
