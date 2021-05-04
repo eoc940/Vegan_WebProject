@@ -54,14 +54,14 @@
 		}
 		
 		if(areas==0) {
-			alert("관심지역을 1개이상 선택하세요!!!");
+			alert("관심지역을 1개이상 선택하세요");
 			return false;
 		}
 	}
 	
 	function updateValidation() {
 		if(areas==0) {
-			alert("관심지역을 1개이상 선택하세요!!!");
+			alert("관심지역을 1개이상 선택하세요");
 			return false;
 		}
 	}
