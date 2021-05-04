@@ -62,17 +62,7 @@ public class BoardListController implements Controller{
             request.setAttribute("pageGroupSize", new Integer(pageGroupSize));
             request.setAttribute("numPageGroup", new Integer(numPageGroup));
             request.setAttribute("pageGroupCount", new Integer(pageGroupCount));
-            
-            System.out.println("currentPage: "+currentPage);
-            System.out.println("startRow: "+startRow);
-            System.out.println("endRow: "+endRow);
-            System.out.println("count: "+count);
-            System.out.println("pageSize: "+pageSize);
-            System.out.println("number: "+currentPage);
-            System.out.println("pageGroupSize: "+pageGroupSize);
-            System.out.println("numPageGroup: "+numPageGroup);
-            System.out.println("pageGroupCount: "+pageGroupCount);
-            System.out.println("offset: "+offset);
+
           
 		} catch (SQLException e) {
 			
