@@ -95,8 +95,6 @@
 				
 			</div>
 
-
-
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
 					<!-- 
