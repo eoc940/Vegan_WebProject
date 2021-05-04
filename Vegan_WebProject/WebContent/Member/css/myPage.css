@@ -488,6 +488,7 @@ form .main {
   letter-spacing: .3em;
 
 
+
  
 }
 
@@ -670,6 +671,7 @@ form .main {
 .anima{
 	margin:10px;
 	margin-left: -10px;
+	margin-bottom:30px;
 	
 }
 svg {
@@ -677,7 +679,7 @@ svg {
   animation: rotate infinite linear;
   mix-blend-mode: multiply;
   margin: 0 120px;
- z-index: -1;
+ 
 }
 svg:nth-child(1) {
   fill: tomato;
