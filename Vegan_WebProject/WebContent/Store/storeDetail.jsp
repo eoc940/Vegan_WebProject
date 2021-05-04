@@ -288,7 +288,7 @@
 								<br><br><br><h2>가장 가까운 음식점 정보</h2>
 								<h6>${closestStore.name}</h6><br>
 								${closestStore.address}<br>
-								<a href="${closestStore.url}">${closestStore.url} </a>
+								<a href="${closestStore.url}">이동하기</a>
 								</p>
 							
 							</ul>

@@ -708,11 +708,10 @@ a { text-decoration:none !important }
 
 #sidebar a{
 	
-	display: inline-block; 
-	width:416.66px; 
-	height:200px;
+	display:block; 
+	width:300; 
+	position: relative;
 }
-
 /*  ###########################################################  */
 #footer {
 	background: rgba(0, 0, 0, 0.7);
