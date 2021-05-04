@@ -108,7 +108,7 @@
 							 
                        		 
 							 <div class= "btn">
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="reset" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" onclick="return updateValidation();" value="Confirm" class="submit" name="submit" id="submit" />
                           	</div>
 
