@@ -23,7 +23,7 @@ public interface BoardDAO {
 	ArrayList<BoardVO> searchBoard(HashMap<String, Object> listOpt) throws SQLException ;
 	
 	int getAllPostCount() throws SQLException;
-	ArrayList<BoardVO> getAllPost(int startRow, int endRow) throws SQLException;
+	ArrayList<BoardVO> getAllPost(int limit, int offset) throws SQLException;
 	
 
 }

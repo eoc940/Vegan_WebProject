@@ -132,14 +132,12 @@
 	</div>
 	<div id="container">
 
-
-
-			<c:forEach items="${list}" var="board">
+			<c:forEach items="${list}" var="board" varStatus="status">
 				<div class ="icon-boxes">
 					<div data-aos="zoom-in" data-aos-delay="200">
 						<div class="grid-container">
 							<div class="grid-item icon-box">
-					            <div class="icon"><a href="boardDetailPage.do?boardId=${board.boardId}"><h5>No. ${board.boardId}</h5></a><h6>DATE ${board.date}</h6></div>
+					            <div class="icon"><a href="boardDetailPage.do?boardId=${board.boardId}"><h5>No. ${status.index+startRow}</h5></a><h6>DATE ${board.date}</h6></div>
 						            <h4 class="title"><a href="boardDetailPage.do?boardId=${board.boardId}">${board.title}</a></h4><h6>Writer_ ${board.memberId}</h6>
 						            <p class="description">${board.content}</p>
 						            <h6>VIEWS_ ${board.viewCount}</h6>
