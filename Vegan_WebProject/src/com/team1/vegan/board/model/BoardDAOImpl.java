@@ -166,7 +166,7 @@ public class BoardDAOImpl implements BoardDAO{
 		try{
 			conn = getConnection();
 			if(opt.equals("0")){
-				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title like ?";
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE title like ? ORDER BY date DESC";
 				
 				ps = conn.prepareStatement(query);
 				System.out.println("PreparedStatement...findByTitle()..");
@@ -184,7 +184,7 @@ public class BoardDAOImpl implements BoardDAO{
 							rs.getString("member_id")));
 				}
 			}else if(opt.equals("1")) {
-				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE content LIKE concat ('%', ?, '%')";
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE content LIKE concat ('%', ?, '%') ORDER BY date DESC";
 				
 				ps = conn.prepareStatement(query);
 				System.out.println("PreparedStatement...findByContent()..");
@@ -202,7 +202,7 @@ public class BoardDAOImpl implements BoardDAO{
 							rs.getString("member_id")));
 				}
 			}else if(opt.equals("2")) {
-				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id like ?";
+				String query = "SELECT board_id,title,content,date,view_count,member_id FROM board WHERE member_id like ? ORDER BY date DESC";
 				
 				ps = conn.prepareStatement(query);
 				System.out.println("PreparedStatement...findByWriter()..");
@@ -235,7 +235,7 @@ public class BoardDAOImpl implements BoardDAO{
 		ArrayList<BoardVO> list = new ArrayList<>();
 		try {
 			conn = getConnection();
-			String query = " SELECT R1.* FROM(SELECT * FROM board ORDER BY board_id asc) R1 LIMIT ? OFFSET ?;";
+			String query = " SELECT R1.* FROM(SELECT * FROM board ORDER BY date desc) R1 LIMIT ? OFFSET ?;";
 			ps = conn.prepareStatement(query);
 			System.out.println("PreparedStatement...getAllPost()..");
 			ps.setInt(1, limit);
