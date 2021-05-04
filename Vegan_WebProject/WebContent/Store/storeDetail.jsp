@@ -292,7 +292,6 @@
 								${closestStore.address}<br>
 
 								<a href="${closestStore.url}">${closestStore.url} </a>
-
 								</p>
 							</ul>
 						</section>
@@ -318,9 +317,5 @@
 		    </div>
 		  </footer><!-- End Footer -->
 		</center>
-		
-
-	
-		
 	</body>
 </html>
