@@ -181,13 +181,10 @@
 						<div class="area"><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
 					</c:forEach>
 				</div>
-<<<<<<< HEAD
+
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
 				<br /> <br /> <input type="button" value="Delete Account" onClick="location.href='deleteForm.jsp'" id="withdraw">
-=======
-				<br /> <br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
-				<br /> <br /> <input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
->>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
+
 
 			</div>
 
