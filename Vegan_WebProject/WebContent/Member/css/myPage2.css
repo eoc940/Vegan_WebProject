@@ -316,8 +316,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-image: url(../../assets/img/myp_back.jpg);
-  background-size: cover;
+  
 
 }
 
@@ -331,14 +330,37 @@ form {
 
 
 .top {
-
-  color: rgb(255, 255, 255);
   margin-left: 40px;
   min-width: 300px;
-  font-weight: 900;
+ 
   /* background-color: rgb(154, 201, 255); */
 }
 
+
+.top>h1{ 
+	
+    letter-spacing: 3px;
+    line-height: 32px;
+    margin: 0 5px 39px;
+    padding: 0 0 15px;
+    position: relative;
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    text-shadow: 3px 3px 0px #fdb801 ;
+    
+	}
+	
+.top>h1:after{
+	background: white none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 210px;
+    
+	
+}
 form .main {
   margin-top: 40px;
   margin-left: 40px;
@@ -348,28 +370,43 @@ form .main {
 
 
 .side {
+	
   font-size: 20px;
   font-weight: bold;
   width: 250px;
   padding: 35px;
   text-align: center;
-  background-color: rgb(66, 149, 242);
-  color: rgb(0, 0, 0);
+  border: 3px solid;
+  border-color:#5EC75E;
+  border-radius: 60px;
+  color: #515151;
 
 
 }
 
-.preference {
-  font-size: 23px;
-  color: rgb(255, 255, 255);
+
+.preference>ul>a{
+	 font-size: 15px;
+  color: #5e5e5e;
   text-shadow: none;
 }
 
-.contents {
 
+.preference>ul>a:hover{
+	
+	color:#fdb801;
+	font-size: 20px;
+	text-decoration: none;
+	
+}
+
+.contents {
+  margin-left: 30px;
   padding: 20px 50px;
   width: 100%;
-  background-color: rgb(101, 207, 255);
+  border:3px solid;
+  border-radius:40px;
+  border-color: rgb(255,168,168);
 
 }
 
@@ -380,21 +417,26 @@ form .main {
   border-radius: 40px;
   border: 1.5px solid rgb(50, 191, 166);
   background-color: white;
-  width: 180px;
+  width: 90px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 
 }
 
+.delete{
+	text-align:right;
+	margin-right: 150px;
+	margin-bottom:30px;
+}
 #withdraw {
-
+	
+	margin-bottom: 30px;
   font-weight: bold;
   color: rgb(255, 0, 0);
   border-radius: 40px;
   border: 1.5px solid rgb(255, 0, 0);
-  background-color: rgb(255, 143, 143);
-  ;
-  width: 180px;
+  background-color: white;
+  width: 150px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 
@@ -402,28 +444,37 @@ form .main {
 
 
 
-#modifyButton:hover,
-#withdraw:hover {
+#modifyButton:hover{
   background-color: #fdb801;
   border: 1.5px solid #fdb801 !important;
   color: white;
 
 }
 
+#withdraw:hover{
+ background-color: #ff8080;
+  border: 1.5px solid #ff8080 !important;
+  color: white;
+	
+	
+}
+
 .post {
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: #5e5e5e;
 }
 
 .myPostbox {
-
+  margin-top:10px;
   padding: 20px;
   width: auto;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid transparent;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-top: 3px solid rgba(254,237,6);
   border-radius: 20px;
-  color: rgb(50, 191, 166);
+  color: #5e5e5e;
+  
 
 
 }
@@ -570,18 +621,20 @@ form .main {
 .like {
   margin-top: 50px;
   margin-bottom: 100px;
+  padding: 0px 150px;
   
-  padding: 0px 200px;
+
   
   
 }
 
 
-.L_title {
+.L_title  {
+  font-weight: normal;
   font-size: 25px;
-  color: rgb(255, 255, 255);
   padding-bottom: 10px;
-}
+  
+} 
 
 
 

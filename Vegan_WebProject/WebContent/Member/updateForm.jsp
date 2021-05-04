@@ -100,13 +100,16 @@
 								
 					</div>	
                                         
-                        <div class="form-submit">
-                       		 <span class="index">
+                         <div class="form-submit">
+                        <div class="index">
 								 <a href="../index.jsp" >HOME</a>
-							 </span>
+							 </div>
+							 
+                       		 
+							 <div class= "btn">
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Confirm" class="submit" name="submit" id="submit" />
-                          
+                          	</div>
 						 	
                         </div>
                     </form>

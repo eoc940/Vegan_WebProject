@@ -99,17 +99,17 @@
 			<!-- =============== side ================================= -->
 
 			<div class="side">
-				<img src="../assets/img/banana.png" width=100px> <br /> <br />
-				NAME : ${vo.name}<br /> ID : ${vo.memberId}<br /> <br /> <br />
-				<br /> Preference<br /> Location<br /> <br />
+				<img src="../assets/img/mypagelogo.png" width=150px> <br /> <br /><br />
+				NAME&nbsp;&nbsp;&nbsp;${vo.name}<br /> ID&nbsp;&nbsp;&nbsp;${vo.memberId}<br />
+				<br /> Preference Location<br /> <br />
 
 				<div class="preference">
 					<c:forEach items="${listA}" var="area">
-						<div><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></div>
+						<ul><a href="../Store/storeList.do?area=${area.areaId}">${area.name}</a></ul>
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
-				<br /> <br /> <input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
+			
 
 			</div>
 
@@ -120,7 +120,7 @@
 
 				<c:forEach items="${listB}" var="board">
 					<div class="post">
-						- My Post : ${board.title}
+						My Post _ ${board.title}
 						<div class="myPostbox">
 
 							<div class="contentbox">${board.content}</div>
@@ -158,7 +158,9 @@
 		</div>
 
 	</section>
-   
+	<div class="delete">
+   		<input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
+    </div>
     <!-- ======= 오타지움 ======= -->
 	<!-- ======= Footer ======= -->
 
