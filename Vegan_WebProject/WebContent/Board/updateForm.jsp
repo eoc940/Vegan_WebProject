@@ -30,21 +30,48 @@
 <script src="js/main.js"> </script>
 <link href="css/updateForm.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
 <title>Insert title here</title>
 <script>
+//유효성 검사
+function validate() {
+	  
+	var title = $('input:text[name=title]').val();
+	var content = $('input:text[name=content]').val();
+
+    if (!checkExistData(title,"제목을 ")) {
+        return false;
+    }
+    if (!checkExistData(content,"내용을 ")) {
+        return false;
+    }
+   if(!check_update()) {
+	   return false;
+   }
+    return true;
+}
+
+// 공백확인 함수
+function checkExistData(value, dataName) {
+    if (value == "") {
+        alert(dataName + " 입력해주세요!");
+        return false;
+    }
+    return true;
+}
+
+
 	function check_update(){
-		var title = $('input:text[name=title]').length;
-		if(title==0){
-			
-		}
 		if(confirm('게시글을 수정하시겠습니까?')){
-			boardUpdateForm.submit();
+			return true;
 		}
 		else{
-			location.href='updateForm.jsp';
+			return false;
+	
 		}
 	}
+
 </script>
 </head>
 <body>
@@ -76,7 +103,7 @@
 			</div>
 </div>
 
-<form action = "boardUpdate.do" method="post" name="boardUpdateForm">
+<form action = "boardUpdate.do" method="post" name="boardUpdateForm" onsubmit="return validate()" >
 	<div class = "boardContainer">
 		<table>
 			<thead>
@@ -101,7 +128,8 @@
 		<div id="postRegister">
 		
 			<input type="hidden" name="boardId" value="${param.boardId}">
-			<input type="button" value="Update" onclick="check_update()" id="registerBtn">
+			<!-- <input type="button" value="Update" id="registerBtn" onclick="check_update()"> -->
+			<input type="submit" value="Update" id="registerBtn" >
 			
 		</div>
 	</div>

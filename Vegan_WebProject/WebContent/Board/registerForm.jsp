@@ -7,16 +7,7 @@
 <meta charset="UTF-8">
 
 <title>Register</title>
-<script>
-	function check_register(){
-		if(confirm('게시글을 작성하시겠습니까?')){
-			boardRegisterForm.submit();
-		}
-		else{
-			location.href='registerForm.jsp';
-		}
-	}
-</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
@@ -42,6 +33,50 @@
 <script src="js/main.js"> </script>
 <link href="css/registerForm.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<script>
+
+//유효성 검사
+function validate() {
+	  
+	var title = $('input:text[name=title]').val();
+	var content = $('input:text[name=content]').val();
+
+    if (!checkExistData(title,"제목을 ")) {
+        return false;
+    }
+    if (!checkExistData(content,"내용을 ")) {
+        return false;
+    }
+   if(!check_update()) {
+	   return false;
+   }
+    return true;
+}
+
+// 공백확인 함수
+function checkExistData(value, dataName) {
+    if (value == "") {
+        alert(dataName + " 입력해주세요!");
+        return false;
+    }
+    return true;
+}
+
+
+	function check_update(){
+		if(confirm('게시글을 작성하시겠습니까?')){
+			return true;
+		}
+		else{
+			return false;
+	
+		}
+	}
+	
+</script>
+
 
 </head>
 <body>
@@ -72,7 +107,7 @@
 			</div>
 </div>
 	
-<form action = "boardRegister.do" method="post" name="boardRegisterForm">
+<form action = "boardRegister.do" method="post" name="boardRegisterForm" onsubmit="return validate()">
 	<div class = "boardContainer">
 		<table>
 			<thead>
@@ -96,7 +131,7 @@
 		</table>
 		<div id="postRegister">
 			<input type="hidden" name="memberId" value="${vo.memberId}">
-			<input type="button" value="Register" onclick="check_register()" id="registerBtn">
+			<input type="submit" value="Register"  id="registerBtn">
 		</div>
 	</div>
 </form>

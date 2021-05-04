@@ -18,7 +18,7 @@ public class BoardDeleteController implements Controller{
 		
 		int boardId = Integer.parseInt(request.getParameter("boardId"));
 		
-		String path = "boardList.jsp";
+		String path = "boardList.do";
 		
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
