@@ -30,6 +30,7 @@ public class searchBoardController implements Controller{
 		try {
 			list = BoardDAOImpl.getInstance().searchBoard(listOpt);
 			request.setAttribute("list", list);
+			request.setAttribute("startRow", 1);
 		} catch (SQLException e) {
 			
 		}
