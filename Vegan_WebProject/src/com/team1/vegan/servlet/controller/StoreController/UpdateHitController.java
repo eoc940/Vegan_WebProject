@@ -22,12 +22,9 @@ public class UpdateHitController implements Controller {
 			boolean isCheckedHit = StoreDAOImpl.getInstance().ischeckedHit(storeId, memberId);
 			if(isCheckedHit) {				
 				StoreDAOImpl.getInstance().minusHitCount(storeId, memberId);
-				
 			}else {
 				StoreDAOImpl.getInstance().plusHitCount(storeId, memberId);
-				
-			}
-			
+			}			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
