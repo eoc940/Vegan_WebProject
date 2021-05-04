@@ -310,6 +310,7 @@ public class StoreDAOImpl implements StoreDAO {
 						rs.getString("i.image_url"),
 						rs.getInt("i.store_id"),
 						rs.getString("s.name"));
+				System.out.println(image);
 			}
 		}finally {
 			closeAll(rs, ps, conn);
@@ -337,6 +338,7 @@ public class StoreDAOImpl implements StoreDAO {
 						rs.getString("i.image_url"),
 						rs.getInt("i.store_id"),
 						rs.getString("s.name"));
+				System.out.println(image);
 			}
 		}finally {
 			closeAll(rs, ps, conn);
@@ -366,6 +368,7 @@ public class StoreDAOImpl implements StoreDAO {
 						rs.getString("i.image_url"),
 						rs.getInt("i.store_id"),
 						rs.getString("s.name"));
+				System.out.println(image);
 			}
 			//String imageUrl, int storeId, String name
 		}finally {
