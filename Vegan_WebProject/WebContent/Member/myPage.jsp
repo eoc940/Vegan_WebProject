@@ -115,10 +115,8 @@
 		});
 	</script>
 
+<!-- javascript 사용하려던거 일단 안써서 지움  -->
 
-<<<<<<< HEAD
-	<!-- javascript 사용하려던거 일단 안써서 지움  -->
-=======
 <script>
 	function check_delete(){
 		if(confirm('계정을 삭제하시겠습니까?')){
@@ -129,9 +127,6 @@
 		}
 	}
 </script>
-
-
->>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 </head>
 
 
