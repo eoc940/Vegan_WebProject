@@ -37,7 +37,13 @@
 	<link href="storeAssets/css/storeDetail.css" rel="stylesheet">
 
 	<title>StoreDetail Main</title>
+	<style type="text/css" >
+	#btn_like:checked + label svg #heart {
+ 		 transform: scale(0.2);
+ 		 animation: animateHeart .3s linear forwards .25s;
+	}
 	
+	</style>
 	<!-- 좋아요 토글 스크립트 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>
@@ -79,7 +85,8 @@
 	    };
 	    recCount();	 
 	    
-	 
+	    var heartColor="#btn_like:checked + label svg #heart";
+	 	 	
 		function checkHit() {
 			
 			$.ajax({
@@ -91,11 +98,13 @@
                 },
                 success: function (check) {
                 	if(check==1) {
-                		alert("좋아요 되어있음");
-                		//여기에 좋아요 되어있는 표시
+                		document.getElementById("heart").setAttribute("fill","#E2264D");
+                		document.getElementById('heartColor').style.fill='#AAB8C2';
+
                 	}else if(check==0) {
-                		alert("좋아요 안되어있음");
-                		//여기에 좋아요 안되어있는 표시
+                		document.getElementById("heart").setAttribute("fill","#AAB8C2");
+                		document.getElementById('heartColor').style.fill='#E2264D';
+
                 	}
                 },
                 error:function() {
@@ -164,72 +173,52 @@
 							
 							<h2>${svo.name}</h2>
 		<!-- ======= 좋아요 ======= -->
-
-						<p>${checkHit}</p>
-
-		
-					<div style=" float:left; margin-right:10px;">
-							<c:if test="${!empty vo}">
-							<c:if test="${checkHit eq true}">
-								<div id="main-content">
-							  <div>
-							    <input type="checkbox" id="btn_like" />
-							    <label for="btn_like">
-							      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" fill="E2264D">
-								</svg>
-								</label>
-								</div>
-								</div>
-								</c:if>
-								<c:if test="${checkHit eq false}">
-								<div id="main-content">
-							  <div>
-							    <input type="checkbox" id="btn_like" />
-							    <label for="btn_like">
-							      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-								      <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
-									      <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
-									      <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-									      <g id="grp7" opacity="0" transform="translate(7 6)">
-										      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-										      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-									      </g>
-									      <g id="grp6" opacity="0" transform="translate(0 28)">
-										      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-										      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
-									      </g>
-									      <g id="grp3" opacity="0" transform="translate(52 28)">
-										      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-										      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-									      </g>
-									      <g id="grp2" opacity="0" transform="translate(44 6)" fill="#CC8EF5">
-										      <circle id="oval2" transform="matrix(-1 0 0 1 10 0)" cx="5" cy="6" r="2"/>
-										      <circle id="oval1" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
-									      </g>
-									      <g id="grp5" opacity="0" transform="translate(14 50)" fill="#91D2FA">
-										      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
-										      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
-									      </g>
-									      <g id="grp4" opacity="0" transform="translate(35 50)" fill="#F48EA7">
-										      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
-										      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
-									      </g>
-									      <g id="grp1" opacity="0" transform="translate(24)" fill="#9FC7FA">
-										      <circle id="oval1" cx="2.5" cy="3" r="2"/>
-										      <circle id="oval2" cx="7.5" cy="2" r="2"/>
-									      </g>
+					<c:if test="${!empty vo}">
+						<div id="main-content">
+						    <input type="checkbox" id="btn_like" />
+						    <label for="btn_like">
+						      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+							      <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+								      <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+								      <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+								      <g id="grp7" opacity="0" transform="translate(7 6)">
+									      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+									      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
 								      </g>
-							      </svg>
-							    </label>
-							  
-	
-							  		</div>
-								</div>
-								
-								</c:if>
+								      <g id="grp6" opacity="0" transform="translate(0 28)">
+									      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+									      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+								      </g>
+								      <g id="grp3" opacity="0" transform="translate(52 28)">
+									      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+									      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+								      </g>
+								      <g id="grp2" opacity="0" transform="translate(44 6)" fill="#CC8EF5">
+									      <circle id="oval2" transform="matrix(-1 0 0 1 10 0)" cx="5" cy="6" r="2"/>
+									      <circle id="oval1" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+								      </g>
+								      <g id="grp5" opacity="0" transform="translate(14 50)" fill="#91D2FA">
+									      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
+									      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+								      </g>
+								      <g id="grp4" opacity="0" transform="translate(35 50)" fill="#F48EA7">
+									      <circle id="oval1" transform="matrix(-1 0 0 1 12 0)" cx="6" cy="5" r="2"/>
+									      <circle id="oval2" transform="matrix(-1 0 0 1 4 0)" cx="2" cy="2" r="2"/>
+								      </g>
+								      <g id="grp1" opacity="0" transform="translate(24)" fill="#9FC7FA">
+									      <circle id="oval1" cx="2.5" cy="3" r="2"/>
+									      <circle id="oval2" cx="7.5" cy="2" r="2"/>
+								      </g>
+							      </g>
+						      </svg>
+						    </label>
+						  
+
+							</div>
+						</c:if>
+							
 								
 							
-						</c:if>
 							<!-- 좋아요 총 개수 들어옴 -->
 							<c:if test="${!empty vo}">	
 								<div style=" float:left; margin-top:15px; font-family: 'Montserrat', sans-serif; font-weight: 500; color:#DD4688">							
@@ -295,14 +284,13 @@
 									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
-								<p>
-								
+								<p>					
 								<br><br><br><h2>가장 가까운 음식점 정보</h2>
 								<h6>${closestStore.name}</h6><br>
 								${closestStore.address}<br>
-								<a href="${closestStore.url}">${closestStore.url}</a>
+								<a href="${closestStore.url}">${closestStore.url} </a>
 								</p>
-						
+							
 							</ul>
 						</section>
 					</div>
