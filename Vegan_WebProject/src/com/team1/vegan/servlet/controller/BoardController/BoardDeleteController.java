@@ -18,13 +18,13 @@ public class BoardDeleteController implements Controller{
 		
 		int boardId = Integer.parseInt(request.getParameter("boardId"));
 		
-		String path = "boardList.jsp";
+		String path = "boardList.do";
 		
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
 		try {
 			BoardDAOImpl.getInstance().deletePost(boardId);
-			list = BoardDAOImpl.getInstance().getAllPost(1,10);
+			list = BoardDAOImpl.getInstance().getAllPost(10,0);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 			

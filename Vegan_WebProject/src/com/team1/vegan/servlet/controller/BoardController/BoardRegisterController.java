@@ -35,10 +35,10 @@ public class BoardRegisterController implements Controller{
 		BoardVO vo = new BoardVO(title, content, date, 0, boardId, memberId);
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
-		String path = "boardList.jsp";
+		String path = "boardList.do";
 		try {
 			BoardDAOImpl.getInstance().writePost(vo);
-			list = BoardDAOImpl.getInstance().getAllPost(1,10);
+			list = BoardDAOImpl.getInstance().getAllPost(10,0);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 		

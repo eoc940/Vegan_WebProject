@@ -26,12 +26,13 @@ public class BoardUpdateController implements Controller{
 		Date time = new Date();
 		String date = format1.format(time);
 		BoardVO vo = new BoardVO(title, content, date, 0, boardId, memberId);
+		System.out.println(vo);
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
-		String path = "boardList.jsp";
+		String path = "boardList.do";
 		try {
 			BoardDAOImpl.getInstance().updatePost(vo);
-			list = BoardDAOImpl.getInstance().getAllPost(1,10);
+			list = BoardDAOImpl.getInstance().getAllPost(10,0);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 		

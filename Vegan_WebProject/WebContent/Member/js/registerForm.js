@@ -1,7 +1,7 @@
-
+	var areas = 0;
 	$(function () {	
 	$('input:checkbox[name=areas]').click(function(){
-		var areas = $('input:checkbox[name=areas]:checked').length;
+	    areas= $('input:checkbox[name=areas]:checked').length;
 		
 		
 		 if(areas>3){
@@ -16,6 +16,55 @@
 		document.registerForm.idDuplication.value="ID중복확인!!!!"
 	}
 	
+	function validation() {
+		if(flag=='false'){
+			var id = document.registerForm.memberId.value;
+		resultView = document.getElementById("idCheckResult");
+		if(id.search(/\s/) != -1) {
+			alert("아이디에 공백을 사용할 수 없습니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
+		var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/;
+		if(special_pattern.test(id) == true) { 
+			alert("아이디에 특수문자를 사용할 수 없습니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
+		var pattern1 = /[0-9]/; 
+		var pattern2 = /[a-zA-Z]/; 
+		
+		if(!pattern1.test(id) || !pattern2.test(id) || id.length < 4) {
+			alert("아이디는 4자리 이상 영문자, 숫자로 구성하여야 합니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
+		}else{
+			alert("아이디 중복체크 해주세요");	
+			return false;
+		}
+		
+		if(areas==0) {
+			alert("관심지역을 1개이상 선택하세요!!!");
+			return false;
+		}
+	}
+	
+	function updateValidation() {
+		if(areas==0) {
+			alert("관심지역을 1개이상 선택하세요!!!");
+			return false;
+		}
+	}
 	
 
 	function passCheck() {
@@ -28,15 +77,67 @@
 			f.repassword.focus();
 			return false;
 		}
+		if(f.password.value.search(/\s/) != -1) {
+			alert("비밀번호에 공백을 사용할 수 없습니다");
+			f.password.value="";
+			f.password.focus();
+			return false;
+		}
+		var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/;
+		if(special_pattern.test(f.password.value) == true) { 
+			alert("비밀번호에 특수문자를 사용할 수 없습니다");
+			f.password.value="";
+			f.password.focus();
+			return false; 
+		}
+		var pattern1 = /[0-9]/; 
+		var pattern2 = /[a-zA-Z]/; 
+		
+		if(!pattern1.test(f.password.value) || !pattern2.test(f.password.value) || f.password.value.length < 4) {
+			alert("비밀번호는 4자리 이상 영문자, 숫자로 구성하여야 합니다");
+			f.password.focus();
+			return false;
+		}
+
+		
 	}//
 	
 	var xhr;	
 	var resultView;
+	var flag;
 	
 	function startRequest() {
 		
-		var memberId = document.registerForm.memberId.value;
+		var id = document.registerForm.memberId.value;
 		resultView = document.getElementById("idCheckResult");
+		if(id.search(/\s/) != -1) {
+			alert("아이디에 공백을 사용할 수 없습니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
+		var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/;
+		if(special_pattern.test(id) == true) { 
+			alert("아이디에 특수문자를 사용할 수 없습니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
+		var pattern1 = /[0-9]/; 
+		var pattern2 = /[a-zA-Z]/; 
+		
+		if(!pattern1.test(id) || !pattern2.test(id) || id.length < 4) {
+			alert("아이디는 4자리 이상 영문자, 숫자로 구성하여야 합니다");
+			document.registerForm.memberId.value="";
+			document.registerForm.memberId.focus();
+			resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
+			flag='true';
+			return false;
+		}
 		
 		//위 if가 true가 아니면은 비동기 통신으로 로직을 전개시킨다.
 		
@@ -44,14 +145,14 @@
 		xhr.onreadystatechange = callback;
 		xhr.open("post", "idCheck.do", true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-		xhr.send("memberId="+memberId);
+		xhr.send("memberId="+id);
 		
 	}
 	
 	 function callback() {
 		if(xhr.readyState==4){
 			if(xhr.status==200){
-				var flag = xhr.responseText;
+				flag = xhr.responseText;
 
 				if(flag=='true')
 					resultView.innerHTML="<font color='red'><b>해당 ID 사용 불가!!</b></font>";
