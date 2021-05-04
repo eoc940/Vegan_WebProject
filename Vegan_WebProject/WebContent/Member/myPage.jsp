@@ -109,7 +109,7 @@
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
-				<br /> <br /> <input type="button" value="Delete Account" onClick="check_delete()" id="withdraw">
+				<br /> <br /> <input type="button" value="Delete Account" onClick="location.href='deleteForm.jsp'" id="withdraw">
 
 			</div>
 

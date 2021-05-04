@@ -97,7 +97,7 @@
 								<input type="checkbox" name="areas" value="320">관악구
 								<input type="checkbox" name="areas" value="321">서초구
 								<input type="checkbox" name="areas" value="322">강남구
-								<input type="checkbox" name="areas" value="323">송차구
+								<input type="checkbox" name="areas" value="323">송파구
 								<input type="checkbox" name="areas" value="324">강동구
 								
 						</div>	
@@ -111,7 +111,7 @@
 							 
                        		 
 							 <div class= "btn">
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="reset" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
                           	</div>
                           	

@@ -104,7 +104,7 @@
                        		 <span class="index">
 								 <a href="../index.jsp" >HOME</a>
 							 </span>
-                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="reset" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Confirm" class="submit" name="submit" id="submit" />
                           
 						 	

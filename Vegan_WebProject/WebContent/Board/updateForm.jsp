@@ -101,7 +101,7 @@
 		<div id="postRegister">
 		
 			<input type="hidden" name="boardId" value="${param.boardId}">
-			<input type="button" value="Update" onclick="check_update()" id="registerBtn">
+			<input type="submit" value="Update" onclick="check_update()" id="registerBtn">
 			
 		</div>
 	</div>
