@@ -235,7 +235,7 @@ public class BoardDAOImpl implements BoardDAO{
 		ArrayList<BoardVO> list = new ArrayList<>();
 		try {
 			conn = getConnection();
-			String query = " SELECT R1.* FROM(SELECT * FROM board ORDER BY board_id asc) R1 LIMIT ? OFFSET ?;";
+			String query = " SELECT R1.* FROM(SELECT * FROM board ORDER BY date desc) R1 LIMIT ? OFFSET ?;";
 			ps = conn.prepareStatement(query);
 			System.out.println("PreparedStatement...getAllPost()..");
 			ps.setInt(1, limit);
