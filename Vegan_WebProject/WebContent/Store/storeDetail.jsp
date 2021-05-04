@@ -235,13 +235,14 @@
 							</header>
 							<img src="../store_img/${foodvo.imageUrl}" alt="" height = "500" width = "780"/></a>
 
-							<div class="description" style="text-indent: 1em;"><br><p>${svo.description}</p><br><p><a href="${svo.url}">${svo.url}</a></p></div>
+							<br><br><div class="description" style="text-indent: 1em;"><br><p>${svo.description}</p></div>
+							
 							
 		<!-- ======= Map ======= -->
 							
 
-
-							<div id="map" style="width:740px; height:350px;"></div>
+							<br><p><a href="${svo.url}">더 보기</a></p>
+							<div id="map" style="width:783px; height:350px;"></div>
 
 
 						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5bf49455bd52ffe815d6b4b7e706d467"></script>
@@ -269,33 +270,38 @@
 
 
 						<div class="Listbutton">
+							<br>
 							<input type="button" value="LIST" onClick="location.href='storeList.do'" id="Listbutton">
 						</div>
 						
 </div>					<!-- Sidebar -->
 					<div id="sidebar" class="4u">
-						<section>
-							<header>
-								<h2>INFORMATION</h2>
-								<p>"${svo.address}"</p>
-							</header>
-							<ul class="style">
-								<li>
+						<div class=borderline>
+							<div class="menu">
+								<p>
 									<h2>MENU</h2>
-									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
-								</li>
-								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
-								<p>					
-								<br><br><br><h2>가장 가까운 음식점 정보</h2>
-								<h6>${closestStore.name}</h6><br>
-								${closestStore.address}<br>
-								<a href="${closestStore.url}">이동하기</a>
+									<img src="../store_img/${menuvo.imageUrl}" alt="" width="330" height="400"/>
 								</p>
-							
-							</ul>
-						</section>
-					</div>
-					
+							</div>
+							<div class=info>
+								<h2>INFORMATION</h2>
+								<p>"${svo.address}"</p><br>
+							</div>
+								<div class=nearByRTR>
+									<p>					
+									<br><h2>NEARBY RESTAURANT</h2>
+									<h6>${closestStore.name}</h6>
+									${closestStore.address}<br>	
+									<a href="${closestStore.url}">이동하기</a>								
+									</p>
+								</div>							
+							</div>
+							<div class=bottomimg>
+								<img src="../bg_img/bgimg (2).png" alt=""/>
+							</div>
+						</div>
+						
+
 				</div>
 			</div>
 		</div>
