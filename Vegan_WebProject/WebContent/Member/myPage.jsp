@@ -192,11 +192,14 @@
 
 				<c:forEach items="${listB}" var="board">
 					<div class="post">
+						
 						- My Post : ${board.title}
 						<div class="myPostbox">
-
+							<a href="../Board/boardDetailPage.do?boardId=${board.boardId}">
 							<div class="contentbox">${board.content}</div>
+							</a>
 						</div>
+						
 					</div>
 				</c:forEach>
 
