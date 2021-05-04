@@ -38,7 +38,7 @@ public class BoardRegisterController implements Controller{
 		String path = "boardList.do";
 		try {
 			BoardDAOImpl.getInstance().writePost(vo);
-			list = BoardDAOImpl.getInstance().getAllPost(1,10);
+			list = BoardDAOImpl.getInstance().getAllPost(10,0);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 		
