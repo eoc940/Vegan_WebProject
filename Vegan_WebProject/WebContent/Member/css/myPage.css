@@ -309,23 +309,19 @@
   color: #fff;
 }
 
+
 /*  navi css end   &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
 
 
 
-
-/*--------------------------------------------------------------
- body 시작
---------------------------------------------------------------*/
-
 body {
   font-family: 'Montserrat', sans-serif;
-  background-image: url(../../bg_img/bgimg\ \(6\).jpg);
-  background-size: cover;
+  
+
 }
 
 form {
-  margin-top: 100px;
+  margin-top: 140px;
   margin-left: 100px;
   margin-right: 140px;
   margin-bottom: 10px;
@@ -334,16 +330,39 @@ form {
 
 
 .top {
-
-  color: rgb(255, 255, 255);
   margin-left: 40px;
   min-width: 300px;
-  font-weight: 900;
+ 
   /* background-color: rgb(154, 201, 255); */
 }
 
+
+.top>h1{ 
+	
+    letter-spacing: 3px;
+    line-height: 32px;
+    margin: 0 5px 39px;
+    padding: 0 0 15px;
+    position: relative;
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    text-shadow: 3px 3px 0px #fdb801 ;
+    
+	}
+	
+.top>h1:after{
+	background: white none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 210px;
+    
+	
+}
 form .main {
-  margin-top:  30px;
+  margin-top: 40px;
   margin-left: 40px;
   display: flex;
   /* background-color: rgb(153, 248, 169); */
@@ -351,61 +370,71 @@ form .main {
 
 
 .side {
-  font-size: 15px;
+	
+  font-size: 20px;
+  font-weight: bold;
   width: 250px;
   padding: 35px;
   text-align: center;
-  background-color: rgb(62, 80, 92);
-  color: #ffffff;
+  border: 3px solid;
+  border-color:#5EC75E;
+  border-radius: 60px;
+  color: #515151;
+
+
 }
 
 
-.side a:link {
-  color : #5EC75E;
-}
-.side a:visited {
-  color : #5EC75E;
-}
-.side a:hover {
-  color : #fdb801;
-}
-/* .side a:active {
-  color : green;
-} */
-
-
-.preference {
-  font-size: 23px;
-  color: rgb(255, 255, 255);
+.preference>ul>a{
+	 font-size: 15px;
+  color: #5e5e5e;
   text-shadow: none;
 }
 
-.contents {
 
+.preference>ul>a:hover{
+	
+	color:#fdb801;
+	font-size: 20px;
+	text-decoration: none;
+	
+}
+
+.contents {
+  margin-left: 30px;
   padding: 20px 50px;
   width: 100%;
-  height: 580px;
-  background-color: rgb(122, 149, 169);
-  overflow: auto;  
+  border:3px solid;
+  border-radius:40px;
+  border-color: rgb(255,168,168);
 
-}
-
-.contents::-webkit-scrollbar {
-  width: 10px;
-}
-.contents::-webkit-scrollbar-thumb {
-  background-color: #2f3542;
-}
-.contents::-webkit-scrollbar-track {
-  background-color: grey;
 }
 
 #modifyButton {
 
   font-weight: bold;
-  color: #5EC75E;
+  color: rgb(94, 199, 94);
   border-radius: 40px;
-  border: 1.5px solid #5EC75E;
+  border: 1.5px solid rgb(94, 199, 94);
+  background-color: white;
+  width: 90px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+
+}
+/**//**/
+.delete{
+	text-align:right;
+	margin-right: 150px;
+	margin-bottom:30px;
+}
+#withdraw {
+	
+	margin-bottom: 30px;
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+  border-radius: 40px;
+  border: 1.5px solid rgb(255, 0, 0);
   background-color: white;
   width: 150px;
   font-family: 'Montserrat', sans-serif;
@@ -413,70 +442,234 @@ form .main {
 
 }
 
-#withdraw {
-
-  font-weight: bold;
-  color: rgb(185, 53, 28);
-  border-radius: 40px;
-  border: 1.5px solid rgb(185, 53, 28);
-  background-color: white ;
-  ;
-  width: 150px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-
-}
 
 
-
-#modifyButton:hover,
-#withdraw:hover {
+#modifyButton:hover{
   background-color: #fdb801;
   border: 1.5px solid #fdb801 !important;
   color: white;
 
 }
 
-.post {
-  font-size: 16px;
-  padding: 12px 20px;
-  color: rgb(255, 255, 255);
+#withdraw:hover{
+ background-color: #ff8080;
+  border: 1.5px solid #ff8080 !important;
+  color: white;
+	
+	
 }
 
+.post {
+  padding: 20px 0 10px 0;
+  font-weight: bold;
+  color: #5e5e5e;
+}
 
 .myPostbox {
-  margin-top: 10px;
-  padding: 15px;
+  margin-top:10px;
+  padding: 20px;
   width: auto;
-  font-size: 14px;
-  font-weight:normal;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid transparent;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-top: 3px solid rgba(254,237,6);
   border-radius: 20px;
-  color: rgb(0, 0, 0);
-
-
-}
-
-/*--------------------------------------------------------------
-# like     정렬을 위한 추가 css
---------------------------------------------------------------*/
-
-.like {
-  margin-top: 50px;
-  margin-bottom: 100px;
-  
-  padding: 0px 140px;
-  
-  
+  color: #5e5e5e;
+ 
 }
 
 
 .L_title {
-  font-size: 25px;
-  color: rgb(255, 255, 255);
-  padding-bottom: 20px;
+  font-size: 45px;
+  color: #ffe6e6;
+  padding-bottom: 10px;
+  font-weight:900;
+  width: fit-content;
+  height: fit-content;
+  letter-spacing: 2px;
+  text-shadow: -1px 0 0px #ff8080, 0 1px 0px #ff8080, -2px 1px 0px #ff8080, -1px 2px 0px #ff8080, -3px 2px 0px #ff8080, -2px 3px 0px #ff8080, -4px 3px 0px #ff8080, -3px 4px 0px #ff8080, -5px 4px 0px #ff8080, -4px 5px 0px #ff8080, -6px 5px 0px #ff8080;
+  display: inline-block;
+  position: relative;
+
+ }
+
+
+.like {
+  margin-left:30px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 0px 150px;
+  
+
+  
 }
+
+.L_img{
+	
+	margin-top: 20px;
+
+	
+	
+}
+
+.L_img img{
+	height:250px;
+	width: 250px;
+	padding: 5px;
+	margin: 10px;
+	border:3px solid;
+	border-color: buttonface;
+	border-radius:40px;
+
+	
+}
+
+.L_img img:hover{
+	
+	transform: scale(1.04);
+	
+}
+
+
+
+
+/*-------------------------------------------------------------*/
+/*PROMOTION----------------------------------------------------*/
+/*-------------------------------------------------------------*/
+.notice .notice-line .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice-line .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
+}
+
+.notice .promotion {
+  /*width: auto;*/
+  height: 693px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+  transition: height .4s;
+}
+
+.notice .promotion.hide {
+  height: 0;
+}
+
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+}
+
+.notice .promotion .swiper-slide {
+  position: relative;
+  opacity: .5;
+  transition: opacity 1s;
+}
+
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.notice .promotion .swiper-slide .btn {
+  /*width: 130px;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent;
+  background-image: url("../img/promotion_slide_pager.png");
+  width: 13px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../img/promotion_slide_pager_on.png");
+}
+
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  /* Swiper Container 높이의 절반만큼 끌어올림 */
+  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.notice .promotion .swiper-slide .btn {
+
+  color: #fff;
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+  font-size: 40px;
+
+}
+
+.notice .promotion .swiper-slide .btn:hover {
+
+  color: #5EC75E;
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+  font-size: 40px;
+
+}
+
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+/*--------------------------------------------------------------
+# like     정렬을 위한 추가 css
+--------------------------------------------------------------*/
 
 
 
@@ -500,3 +693,42 @@ form .main {
 
 
 }
+/*.....ilike 애니메이션 효과*/
+
+.anima{
+	margin-top:50px;
+	margin-left: -10px;
+	margin-bottom:50px;
+	
+	
+}
+svg {
+  width: 50px;
+  animation: rotate infinite linear;
+  mix-blend-mode: multiply;
+  margin: 0 120px;
+ 
+}
+svg:nth-child(1) {
+  fill: tomato;
+  animation-duration: 4s;
+}
+svg:nth-child(2) {
+  fill: gold;
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+svg:nth-child(3) {
+  fill: #5EC75E;
+  animation-duration: 6s;
+}
+svg:nth-child(4) {
+  fill: turquoise;
+  animation-duration: 3s;
+  animation-direction: reverse;
+}
+@keyframes rotate {
+  100%{transform: rotate(360deg)}
+}
+
+

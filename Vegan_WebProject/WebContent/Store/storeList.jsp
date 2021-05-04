@@ -89,7 +89,7 @@
 
 				<div class="title">Restaurants for VEGAN</div>
 
-				<div class="chart">
+				<div class="chart" align = "center">
 					<%@ include file="chart.jsp"%>
 				</div>
 				
@@ -97,8 +97,12 @@
 
 			<div data-aos="fade-up" data-aos-delay="100">
 				<div id="filters" class="filters">
+
 					<!-- 
 					<a href="#" onclick="location.href='storeList.do'" data-filter="*" class="active">All</a>
+
+					<a href="#" data-filter="" class="active">All</a>
+
 					<c:forEach items="${areaList}" var="a">
 						<a href="#" data-filter=".${a.name}" class="active">${a.name}</a>
 					</c:forEach>
@@ -141,11 +145,6 @@
 
 	</section>
 
-	<div class="center">
-		<div class="pagination">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">&raquo;</a>
-		</div>
-	</div>
 
 
 

@@ -412,8 +412,8 @@ a:focus {
 }
 
 #portfolio-grid {
-	padding: 20px;
-	margin: 30px;
+	
+	margin: 180px;
 	margin-top: 50px;
 	center: center;
 }
@@ -422,10 +422,11 @@ a:focus {
 
 
 #filters .search{
+
+	margin-top: 30px;
 	text-align: right;
-	margin-right: 80px;
 	float:right;
-	margin-top: 20px;
+
 }
 
 
@@ -469,62 +470,36 @@ a:focus {
 
 .filters {
 
-	padding: 20px 50px 10px 60px;
-
+    margin: 20px 200px;
 	word-spacing: 1em;
 	align-content: space-around;
-	margin: 30px;
 	font-size: 15px;
 	line-height: 30px;
 }
 
-.pagination {
-	display: inline-block;
-	center: center;
-}
-
-.pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
-}
-
-.pagination a.active {
-	background-color: #4CAF50;
-	color: white;
-	border-radius: 5px;
-}
-
-.pagination a:hover:not (.active) {
-	background-color: #ddd;
-	border-radius: 5px;
-}
 
 
 /*  ######################### header ##################################  */
 
 .header {
-	margin-top: 100px;
-	padding: 10px 100px;
+	margin-top: 30px;
+	padding: 10px 200px;
 	width: 100%;
-	
+	display: flex;
 	align-items: center;
 }
 
 .chart{
-	margin-top: 50px;
-	margin-bottom: 70px;
-	width: 600px;
-	height: 300px;
 	
+	width: 250px;
+	height: 250px;
+	margin-left: auto;
 }
 
 .title{
 	font-size: 30px;
 	min-width: 30%;
 }
-
 
 
 
