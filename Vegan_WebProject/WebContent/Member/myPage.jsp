@@ -45,8 +45,88 @@
 
 	<title>My Page</title>
 
-	<!-- javascript 사용하려던거 일단 안써서 지움  -->
+	<script>
+		function check_delete() {
+			if (confirm('정말 탈퇴 하시겠습니까?')) {
+				location.href = 'delete.do?memberId=${vo.memberId}&name=${vo.name}';
+			} else {
+				location.href = 'myPage.do?memberId=${vo.memberId}';
+			}
+		}
 
+		function showBestNine() {
+			xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = callback;
+			xhr.open("post", "bestNine.do", true);
+			xhr.setRequestHeader("Content-Type",
+				"application/x-www-form-urlencoded;charset=utf-8");
+			xhr.send();
+		}
+
+		function callback() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					var list = JSON.parse(xhr.responseText);
+					var resultView = document.getElementById("bestNine");
+					var resultList;
+					if (list != null)
+						for (var i = 0; i < 9; i++) {
+							// $("#bestNine").append("<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ");
+							// resultView.innerHTML+="<div class='swiper-slide'> <img src=./store_img/"+list[i].imageUrl+" width=819 height =819/> <a href='javascript:void(0)' class='btn'>"+list[i].name+"</a> </div> ";
+							resultList += "<div class='swiper-slide'> <img src=./store_img/" + list[i].imageUrl +
+								" width=819 height =819/> <a href='./Store/storeDetail.do' class='btn'>" +
+								list[i].name + "</a> </div>";
+
+						}
+					$("#bestNine").html(resultList);
+					new Swiper('.promotion .swiper-container', {
+						// direction: 'horizontal', // 수평 슬라이드
+						autoplay: { // 자동 재생 여부
+							delay: 5000
+							// 5초마다 슬라이드 바뀜
+						},
+						loop: true, // 반복 재생 여부
+						slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+						spaceBetween: 10, // 슬라이드 사이 여백
+						centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+						pagination: { // 페이지 번호 사용 여부
+							el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+							clickable: true
+							// 사용자의 페이지 번호 요소 제어 가능 여부
+						},
+						navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+							prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
+							nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
+						}
+					})
+				}
+			}
+		}
+
+		$(document).ready(function () {
+			showMenu();
+			showBestNine();
+		});
+
+		var mySwiper = new Swiper('.swiper-container', {
+
+			// 여기에 옵션을 넣어야 합니다.
+
+		});
+	</script>
+
+<!-- javascript 사용하려던거 일단 안써서 지움  -->
+
+<script>
+	function check_delete(){
+		if(confirm('계정을 삭제하시겠습니까?')){
+			location.href='delete.do?memberId=${vo.memberId}&name=${vo.name}';
+		}
+		else{
+			location.href='myPage.do?memberId=${vo.memberId}';
+		}
+	}
+</script>
 </head>
 
 
@@ -109,7 +189,6 @@
 					</c:forEach>
 				</div>
 				<br /> <input type="button" value="Modify" onClick="location.href='updateForm.jsp'" id="modifyButton">
-			
 
 			</div>
 
