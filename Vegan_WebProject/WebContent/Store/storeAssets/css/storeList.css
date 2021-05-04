@@ -469,11 +469,10 @@ a:focus {
 
 .filters {
 
-	padding: 20px 50px 10px 60px;
+	padding: 0px 50px 20px 60px;
 
 	word-spacing: 1em;
 	align-content: space-around;
-	margin: 30px;
 	font-size: 15px;
 	line-height: 30px;
 }
@@ -505,26 +504,25 @@ a:focus {
 /*  ######################### header ##################################  */
 
 .header {
-	margin-top: 100px;
+	margin-top: 30px;
 	padding: 10px 100px;
 	width: 100%;
-	
+	display: flex;
 	align-items: center;
 }
 
 .chart{
-	margin-top: 50px;
-	margin-bottom: 70px;
-	width: 600px;
-	height: 300px;
 	
+	width: 250px;
+	height: 250px;
+	margin-left: auto;
 }
 
 .title{
 	font-size: 30px;
 	min-width: 30%;
 }
-
+beginAtZero : true
 
 
 
