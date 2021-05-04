@@ -24,7 +24,7 @@ public class BoardDeleteController implements Controller{
 		
 		try {
 			BoardDAOImpl.getInstance().deletePost(boardId);
-			list = BoardDAOImpl.getInstance().getAllPost(1,10);
+			list = BoardDAOImpl.getInstance().getAllPost(10,0);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 			
