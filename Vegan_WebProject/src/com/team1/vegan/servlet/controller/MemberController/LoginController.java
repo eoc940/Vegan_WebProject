@@ -18,18 +18,24 @@ public class LoginController implements Controller {
 		String memberId = request.getParameter("memberId");
 		String password = request.getParameter("password");
 		String path ="loginFail.jsp";
-		System.out.println("여긴가");
 		
 		try {
 			MemberVO mvo = MemberDAOImpl.getInstance().login(memberId, password);
-			System.out.println();
+			MemberVO testVO = MemberDAOImpl.getInstance().getMember(memberId);
 			HttpSession session = request.getSession();
-			
+
 			if(mvo!=null) {
 				session.setAttribute("vo", mvo);
 				System.out.println("JSESSIONID:: "+session.getId());
 				path = "loginSuccess.jsp";
 			}
+			else if(testVO == null){
+				request.setAttribute("wrongId", "wrongId");
+			}
+			else {
+				request.setAttribute("wrongPassword", "wrongPassword");
+			}
+			
 		}catch(Exception e) {
 			
 		}
