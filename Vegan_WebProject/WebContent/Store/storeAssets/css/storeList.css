@@ -478,6 +478,8 @@ a:focus {
 	line-height: 30px;
 }
 
+<<<<<<< HEAD
+=======
 .pagination {
 	display: inline-block;
 	center: center;
@@ -500,6 +502,7 @@ a:focus {
 	background-color: #ddd;
 	border-radius: 5px;
 }
+>>>>>>> branch 'main' of https://github.com/eoc940/Vegan_WebProject.git
 
 
 /*  ######################### header ##################################  */
