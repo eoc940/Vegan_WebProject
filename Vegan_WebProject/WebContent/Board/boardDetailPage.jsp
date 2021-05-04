@@ -43,7 +43,7 @@ function check_delete(){
 <script src="js/main.js"> </script>
 <link href="css/boardDetail.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 
 
