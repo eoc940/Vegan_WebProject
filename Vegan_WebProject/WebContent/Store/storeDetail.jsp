@@ -273,14 +273,13 @@
 									<img src="../store_img/${menuvo.imageUrl}" alt="" width="416.66" height="416.66"/>
 								</li>
 								<!-- 알고리즘 결과 임시적으로 보여줌(예시) -->
-								<p>
 								
+								<p>
 								<br><br><br><h2>가장 가까운 음식점 정보</h2>
 								<h6>${closestStore.name}</h6><br>
 								${closestStore.address}<br>
-								<div width="416.66" height="416.66"><a href="${closestStore.url}">${closestStore.url}</a></div>
+								<a href="${closestStore.url}" width="416.66" height="416.66">${closestStore.url}</a>
 								</p>
-						
 							</ul>
 						</section>
 					</div>
