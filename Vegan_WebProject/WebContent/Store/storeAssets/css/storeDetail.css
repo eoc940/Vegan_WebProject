@@ -625,6 +625,8 @@ a { text-decoration:none !important }
 		text-align:center;
 		text-weight:bold;
 		font-family: 'Montserrat', sans-serif;
+		text-decoration: underline; 
+		text-underline-position:under;
 		
 	}
 	#sidebar img
