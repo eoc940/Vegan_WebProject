@@ -75,12 +75,6 @@
 
 
 
-<script>ㄴ
-<!-- 돌림판/best9 코드 asset/js/main.js 하단으로 이동 -->
-</script>
-
-
-
 
 </head>
 
