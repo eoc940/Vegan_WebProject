@@ -186,14 +186,11 @@
 						<div class="carousel-container">
 							<div class="carousel-content">
 								<h2 class="animate__animated animate__fadeInDown">
-									Try <span>Vegan</span> Diet
+									Our <span>journalistic </span> focus
 								</h2>
-								<p class="animate__animated animate__fadeInUp">The Academy
-									of Nutrition and Dietetics states that an appropriately planned
-									vegan diet is healthful for all stages of life. They further
-									advise that plant-based diets may provide a variety of
-									preventative health benefits. Of course, as with any diet, a
-									poorly planned vegan diet could be dangerous or unhealthful.</p>
+								<p class="animate__animated animate__fadeInUp">is on the following issues : 
+								animal rights, the plant-based, cruelty-free lifestyle, climate change, food justice, 
+								health and associated issues like human world hunger and workers’ rights.</p>
 								<!-- <div>
                   <a href="#recommend_menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Today's Menu</a>
                   <a href="#bestNine" class="btn-book animate__animated animate__fadeInUp scrollto">Best Restaurant</a>
