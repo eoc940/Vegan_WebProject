@@ -1,7 +1,7 @@
 # Vegan_WebProject
-> Encore PlayData Web Project
-> 국내 채식 인구 증가로 커져가는 수요에 맞는 편리한 서비스 제공 목적
-> 비건을 위한 웹서비스 
+> Encore PlayData Web Project  
+> 국내 채식 인구 증가로 커져가는 수요에 맞는 편리한 서비스 제공 목적  
+> 비건을 위한 웹서비스  
 
 ## 실행 화면
 <img src="https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg" width="70%">
