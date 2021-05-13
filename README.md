@@ -4,7 +4,7 @@
 > 비건을 위한 웹서비스 
 
 ## 실행 화면
-![index](https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg)
+![index](https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg){: width="500px"}
 
 
 ## 사용 기술
@@ -23,9 +23,9 @@
 
 
 ## Contributors
-[eoc640](https://github.com/eoc940)
-[Koartifact](https://github.com/Koartifact)
-[qkqwof](https://github.com/qkqwof)
-[kwangyunwon](https://github.com/kwangyunwon)
-[haeri-lim](https://github.com/haeri-lim)
-[Cheols](https://github.com/Cheols)
+- [eoc640](https://github.com/eoc940)
+- [Koartifact](https://github.com/Koartifact)
+- [qkqwof](https://github.com/qkqwof)
+- [kwangyunwon](https://github.com/kwangyunwon)
+- [haeri-lim](https://github.com/haeri-lim)
+- [Cheols](https://github.com/Cheols)
