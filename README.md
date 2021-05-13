@@ -4,7 +4,7 @@
 > 비건을 위한 웹서비스 
 
 ## 실행 화면
-![index](https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg){: width="500px"}
+<img src="https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg" width="70%">
 
 
 ## 사용 기술
@@ -19,7 +19,7 @@
   - HTML : 기본 틀 작성
 
 ## DB 테이블 
-![dbmodel210506](https://user-images.githubusercontent.com/55026558/118145047-19e4c480-b448-11eb-9a49-32e0f425a8fc.png)
+<img src="https://user-images.githubusercontent.com/55026558/118145047-19e4c480-b448-11eb-9a49-32e0f425a8fc.png" width="70%">
 
 
 ## Contributors
