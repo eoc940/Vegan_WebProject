@@ -1,1 +1,31 @@
 # Vegan_WebProject
+> Encore PlayData Web Project
+> 국내 채식 인구 증가로 커져가는 수요에 맞는 편리한 서비스 제공 목적
+> 비건을 위한 웹서비스 
+
+## 실행 화면
+![index](https://user-images.githubusercontent.com/55026558/118144698-b3f83d00-b447-11eb-8991-c0cb1d1d66c3.jpg)
+
+
+## 사용 기술
+> BACK
+  - Java 1.8 : Servlet Controller 구현
+  - Tomcat : 서버연결
+  - MySQL : 가게 데이터베이스와 연동 로그인 및 게시판 글
+> FRONT
+  - Bootstrap : 전체적인 디자인 틀 수립
+  - JAVASCRIPT (jQuery, JSON, Ajax)
+  - CSS : 각각의 홈페이지 구성에 맞게 디자인
+  - HTML : 기본 틀 작성
+
+## DB 테이블 
+![dbmodel210506](https://user-images.githubusercontent.com/55026558/118145047-19e4c480-b448-11eb-9a49-32e0f425a8fc.png)
+
+
+## Contributors
+@eoc640
+@Koartifact
+@qkqwof
+@kwangyunwon
+@haeri-lim
+@Cheols
