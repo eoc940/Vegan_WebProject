@@ -21,6 +21,12 @@
 ## DB 테이블 
 <img src="https://user-images.githubusercontent.com/55026558/118145047-19e4c480-b448-11eb-9a49-32e0f425a8fc.png" width="70%">
 
+- 3차 정규화를 진행하여 총 9개의 테이블로 분리
+- 테이블 간 다대다 관계를 맺기 위해 interest_area, click_hit 테이블 생성
+
+## 주요 기능
+- 1조 vegan_final.pdf 파일에서 확인할 수 있습니다
+
 
 ## Contributors
 - [eoc640](https://github.com/eoc940)
