@@ -29,7 +29,7 @@
 
 
 ## Contributors
-- [eoc640](https://github.com/eoc940)
+- [eoc940](https://github.com/eoc940)
 - [Koartifact](https://github.com/Koartifact)
 - [qkqwof](https://github.com/qkqwof)
 - [sxxzin](https://github.com/sxxzin)
